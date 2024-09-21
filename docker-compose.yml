@@ -1,0 +1,11 @@
+# Please refer https://aka.ms/HTTPSinContainer on how to setup an https developer certificate for your ASP.NET Core service.
+
+services:
+  sunedoesui:
+    image: sunedoesui
+    build:
+      context: .
+      dockerfile: SuneDoes.UI/Dockerfile
+    ports:
+      - 80:80
+      - 443:443

@@ -3,9 +3,7 @@
 services:
   sunedoesui:
     image: sunedoesui
-    build:
-      context: .
-      dockerfile: SuneDoes.UI/Dockerfile
+    build: SuneDoes.UI
     ports:
       - 80:80
       - 443:443

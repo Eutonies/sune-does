@@ -9,4 +9,8 @@
     
   </PropertyGroup>
 
+  <ItemGroup>
+    <Folder Include="designs\" />
+  </ItemGroup>
+
 </Project>

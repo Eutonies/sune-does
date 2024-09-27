@@ -13,4 +13,8 @@
     <Folder Include="designs\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Include="wwwroot\images\main\sune-does.webp" />
+  </ItemGroup>
+
 </Project>

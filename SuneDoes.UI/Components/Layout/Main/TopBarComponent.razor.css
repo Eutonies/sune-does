@@ -1,0 +1,20 @@
+﻿.sundo-navbar {
+    position:absolute;
+    width:100%;
+    height:100px;
+    background-color:transparent;
+    display:flex;
+}
+
+.sundo-navbar-left {
+    width:30%;
+}
+
+.sundo-navbar-title {
+    content:'';
+    height:95%;
+    background-image:url('images/main/sune-does.webp');
+    background-size:contain;
+    background-repeat:no-repeat;
+    min-width:400px;
+}

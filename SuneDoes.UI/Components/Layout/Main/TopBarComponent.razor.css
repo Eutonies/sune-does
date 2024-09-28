@@ -1,9 +1,13 @@
 ﻿.sundo-navbar {
-    position:absolute;
-    width:100%;
-    height:100px;
-    background-color:transparent;
-    display:flex;
+    position: absolute;
+    width: 100%;
+    height: 100px;
+    background-image: url('images/main/gold.webp');
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    z-index: 100;
+    border-bottom: 1px ridge rgba(156,123,33,0.5);
 }
 
 .sundo-navbar-left {

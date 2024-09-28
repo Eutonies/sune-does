@@ -1,0 +1,12 @@
+﻿.sundo-bg {
+    height: 100%;
+    width: 100%;
+    content: '';
+    background-image: url('images/main/master-layout.webp');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.sundo-about-me {
+    position:relative;
+}

@@ -5,8 +5,53 @@
     background-image: url('images/main/master-layout.webp');
     background-size: cover;
     background-repeat: no-repeat;
+    margin:0px;
 }
 
 .sundo-about-me {
-    position:relative;
+    position: relative;
+    top: 30px;
+    left: 10%;
+    min-width: 400px;
+    max-width: 1000px;
+    background-color: rgba(255,255,255,0.7);
+    min-height: 200px;
+    max-height: 450px;
+    border-radius: 8px;
+    box-shadow: 8px 8px 1px rgba(150,150,150,0.6), 6px 6px 5px rgba(150,150,150,0.4);
+    padding-bottom: 10px;
+}
+
+.sundo-about-me-container {
+    font-family: 'Ink Free';
+}
+
+.sundo-about-me-img {
+    position: relative;
+    float:right;
+    right: 20px;
+    top:20px;
+    transform: rotate(2deg);
+    width: 420px;
+    height: 375px;
+    background-size: contain;
+    background-image: url('images/main/about-me.webp');
+    background-repeat: no-repeat;
+}
+
+.sundo-about-me h1 {
+    font-size: 34pt;
+    font-weight: 700;
+    margin-left:20px;
+    margin-top:10px;
+}
+
+.sundo-about-me-facts-header {
+
+
+}
+
+
+.sundo-about-me-facts-table :is(th,td) {
+    padding: 0px;
 }

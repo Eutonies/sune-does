@@ -1,0 +1,19 @@
+﻿.sundo-online-dating-app-container {
+    background-color: rgba(245,240,240,0.6);
+    border-radius: 8px;
+    border-style: solid;
+    border-width: 2px;
+    box-shadow: 5px 5px 5px rgba(30,30,30,0.9);
+}
+
+.sundo-online-dating-app-title {
+    font-family: '4 My Lover';
+    font-size: 30px;
+    font-weight:900;
+}
+
+.sundo-online-dating-app-logo-container {
+    display: flex;
+    justify-content:flex-end;
+    margin-top: 8px;
+}

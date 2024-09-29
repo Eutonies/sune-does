@@ -23,10 +23,21 @@
     font-weight:bold;
 }
 
+.sundo-online-dating-app-row {
+    margin-top: 30px;
+}
+
 .sundo-online-dating-footer {
+    margin-top: 40px;
     font-family: 'Ink Free';
     font-size: 12pt;
     font-style: italic;
-    float:right;
+    float: right;
     margin-right: 40px;
+    background-color: rgba(245,240,240,0.3);
+    box-shadow: 5px 5px 5px rgba(240,180,180,0.6);
+    border-radius: 8px;
+    padding: 10px;
+    padding-left: 50px;
 }
+

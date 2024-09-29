@@ -1,0 +1,32 @@
+﻿.sundo-online-dating-bg {
+    font-family: 'Ink Free';
+    background-image: url('images/online-dating/online-dating-background.webp');
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100%;
+    width: 100%;
+    overflow-x:hidden;
+}
+
+.sundo-online-dating-summary-container {
+    margin-top: 30px;
+    background-color: rgba(245,240,240,0.6);
+    border-radius: 8px;
+    border-style:solid;
+    border-width: 2px;
+    box-shadow: 5px 5px 5px rgba(30,30,30,0.9);
+}
+
+.sundo-online-dating-summary-header {
+    font-family: '4 My Lover';
+    font-size: 30pt;
+    font-weight:bold;
+}
+
+.sundo-online-dating-footer {
+    font-family: 'Ink Free';
+    font-size: 12pt;
+    font-style: italic;
+    float:right;
+    margin-right: 40px;
+}

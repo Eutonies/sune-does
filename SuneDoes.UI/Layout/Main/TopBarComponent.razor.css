@@ -22,3 +22,10 @@
     background-repeat:no-repeat;
     min-width:400px;
 }
+
+.sundo-navbar-additional-logo {
+    height: 100px;
+    width:400px;
+    margin-top:-3px;
+    margin-left:40px;
+}

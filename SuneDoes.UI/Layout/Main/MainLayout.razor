@@ -1,8 +1,10 @@
 ﻿@inherits LayoutComponentBase
 
 <div class="page sundo-page">
-    <TopBarComponent></TopBarComponent>
-    <main>
-        @Body
-    </main>
+    <CascadingValue Value="_sessionState">
+        <TopBarComponent></TopBarComponent>
+        <main>
+          @Body
+        </main>
+    </CascadingValue>
 </div>

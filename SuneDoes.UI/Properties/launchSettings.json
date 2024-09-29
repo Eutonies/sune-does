@@ -25,7 +25,8 @@
         "applicationUrl": "https://localhost:443",
         "environmentVariables": {
           "ASPNETCORE_ENVIRONMENT": "Development"
-        }
+        },
+        "launchUrl": "online-dating"
       }
     }
   }

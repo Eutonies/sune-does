@@ -6,15 +6,12 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <RootNamespace>SuneDoes.UI</RootNamespace>
     <AssemblyName>$(AssemblyName.Replace(' ', '_'))</AssemblyName>
-    
   </PropertyGroup>
-
-  <ItemGroup>
-    <Folder Include="designs\" />
-  </ItemGroup>
 
   <ItemGroup>
     <None Include="wwwroot\images\main\sune-does.webp" />
   </ItemGroup>
+
+
 
 </Project>

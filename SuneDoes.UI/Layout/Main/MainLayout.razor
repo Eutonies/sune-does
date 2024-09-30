@@ -1,4 +1,5 @@
-﻿@inherits LayoutComponentBase
+﻿@using SuneDoes.UI.Components;
+@inherits LayoutComponentBase
 
 <div class="page sundo-page">
     <CascadingValue Value="_sessionState">
@@ -6,5 +7,9 @@
         <main>
           @Body
         </main>
+        @if(_sessionState.CurrentShowImages != null) 
+        {
+            <ImageShowComponent Images="_sessionState.CurrentShowImages" Title="@_sessionState.CurrentShowImagesTitle"></ImageShowComponent>
+        }
     </CascadingValue>
 </div>

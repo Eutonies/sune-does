@@ -1,7 +1,13 @@
 ﻿<div class="sundo-online-dating-app-container container-fluid">
     <div class="row">
-        <div class="col-8 sundo-online-dating-app-title">
+        <div class="col-4 sundo-online-dating-app-title">
             <h1><b>@Title</b></h1>
+        </div>
+        <div class="col-4 sundo-online-dating-app-image-container" onclick="@(() => OnImagesClick())">
+            @foreach (var (img, indx) in Images.Select((_, indx) => (Image: _, Index: indx % NumberOfImagePositions)))
+            {
+                <img src="@img.Location" class="sundo-online-dating-app-image sundo-online-dating-app-image-@indx" />
+            }
         </div>
         <div class="col-4 sundo-online-dating-app-logo-container">
             @AppLogo

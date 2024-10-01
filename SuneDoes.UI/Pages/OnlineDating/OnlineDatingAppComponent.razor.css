@@ -17,3 +17,52 @@
     justify-content:flex-end;
     margin-top: 8px;
 }
+
+.sundo-online-dating-app-image-container {
+    margin-top:5px;
+    display: flex;
+}
+
+.sundo-online-dating-app-img-button {
+    background-color: transparent;
+    border: none;
+    padding: 0px;
+    margin: 0px;
+}
+
+.sundo-online-dating-app-image {
+    width: 50px;
+    height: 50px;
+    position: relative;
+    cursor: pointer;
+}
+
+.sundo-online-dating-app-image-0 {
+    z-index: 100;
+    transform: rotate(-1deg);
+}
+
+.sundo-online-dating-app-image-1 {
+    z-index: 101;
+    transform: rotate(7deg) scale(1.01) translate(-1px);
+}
+
+.sundo-online-dating-app-image-2 {
+    z-index: 102;
+    transform: translate(-10px);
+}
+
+.sundo-online-dating-app-image-3 {
+    z-index: 100;
+    transform: rotate(2deg) scale(1.1) translate(-15px);
+}
+
+.sundo-online-dating-app-image-4 {
+    z-index: 101;
+    transform: scale(1.1) translate(-20px);
+}
+
+.sundo-online-dating-app-image-5 {
+    z-index: 99;
+    transform: translate(-20px);
+}

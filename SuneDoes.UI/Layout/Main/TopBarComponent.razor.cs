@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Components;
+using SuneDoes.UI.Pages.Meditation;
 using SuneDoes.UI.Pages.OnlineDating;
 using SuneDoes.UI.Session;
 
@@ -25,16 +26,25 @@ public partial class TopBarComponent : IDisposable
 
     private void OnPageSelectionChanged(object? sender, SessionSelectedPage? newPageSelection)
     {
-        if(newPageSelection == null)
+        if (newPageSelection == null)
         {
             _additionalLogo = null;
         }
-        else if(newPageSelection == SessionSelectedPage.OnlineDating)
+        else if (newPageSelection == SessionSelectedPage.OnlineDating)
         {
             _additionalLogo = (builder) =>
             {
                 builder.OpenComponent<OnlineDatingLogoComponent>(0);
                 builder.AddAttribute(1, nameof(OnlineDatingLogoComponent.Height), 100);
+                builder.CloseComponent();
+            };
+        }
+        else if (newPageSelection == SessionSelectedPage.Meditation)
+        {
+            _additionalLogo = (builder) =>
+            {
+                builder.OpenComponent<MeditationLogoComponent>(0);
+                builder.AddAttribute(1, nameof(MeditationLogoComponent.Height), 100);
                 builder.CloseComponent();
             };
         }

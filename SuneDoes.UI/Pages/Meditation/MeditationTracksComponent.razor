@@ -18,6 +18,10 @@
                 <div class="accordion-body container-fluid">
                     <div class="row">
                         <div class="col-10">
+                            @foreach(var paragraph in track.Summary)
+                            {
+                                <p>@paragraph</p>
+                            }
                         </div>
                         <div class="col-2">
                             <SoundCloudPlayerComponent

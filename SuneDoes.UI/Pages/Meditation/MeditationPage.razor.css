@@ -8,7 +8,7 @@
     overflow-x:hidden;
 }
 
-.sundo-meditation-container {
+.sundo-meditation-summary-container {
     margin-top: 30px;
     background-color: rgba(245,240,240,0.6);
     border-radius: 8px;
@@ -22,10 +22,17 @@
     font-size: 30pt;
     font-weight:bold;
 }
-
-.sundo-meditation-app-row {
+.sundo-meditation-tracks-container {
     margin-top: 30px;
+    padding-20px;
+    background-color: rgba(245,240,240,0.6);
+    border-radius: 8px;
+    border-style: solid;
+    border-width: 2px;
+    box-shadow: 5px 5px 5px rgba(30,30,30,0.9);
 }
+
+
 
 .sundo-meditation-footer {
     margin-top: 40px;

@@ -1,0 +1,37 @@
+﻿@using SuneDoes.UI.Components
+
+<div class="accordion" id="sundo-meditation-tracks">
+    @foreach(var (track, indx) in MeditationTracks.Select((_,indx) => (Track: _, Index: indx + 1))) {
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button 
+                    class="accordion-button" 
+                    type="button" 
+                    data-bs-toggle="collapse" 
+                    data-bs-target="#sundo-mediation-tracks-track-@indx" 
+                    aria-expanded="true" 
+                    aria-controls="sundo-mediation-tracks-track-@indx">
+                    @(track.TrackName)
+                </button>
+            </h2>
+            <div id="sundo-mediation-tracks-track-@indx" class="accordion-collapse collapse show">
+                <div class="accordion-body container-fluid">
+                    <div class="row">
+                        <div class="col-10">
+                        </div>
+                        <div class="col-2">
+                            <SoundCloudPlayerComponent
+                                TrackId="@(track.TrackId)"
+                                TrackTitle="@(track.TrackName)"
+                                TrackProducer="Sune-Tzu Forkbeard"
+                                TrackProducerUrl="https://soundcloud.com/sune-tzu-forkbeard"
+                                TrackUrl="@(track.TrackUrl)">
+                            </SoundCloudPlayerComponent>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    }
+</div>

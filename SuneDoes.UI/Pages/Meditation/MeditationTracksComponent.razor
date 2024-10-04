@@ -1,11 +1,13 @@
 ﻿@using SuneDoes.UI.Components
 
+<script src="lib/bootstrap/js/bootstrap.bundle.js"></script>
+
 <div class="accordion" id="sundo-meditation-tracks">
     @foreach(var (track, indx) in MeditationTracks.Select((_,indx) => (Track: _, Index: indx + 1))) {
         <div class="accordion-item">
             <h2 class="accordion-header">
-                <button 
-                    class="accordion-button" 
+                <button class="accordion-button sundo-meditation-accordian-button"
+                    style="background-image: url('@track.ButtonImage');"
                     type="button" 
                     data-bs-toggle="collapse" 
                     data-bs-target="#sundo-mediation-tracks-track-@indx" 

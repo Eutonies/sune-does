@@ -1,7 +1,8 @@
 ﻿@using Microsoft.AspNetCore.Components.Web
-<div class="sundo-topbar-expand" onclick="@OnExpandedChanged">
-    <button type="button" class="sundo-topbar-expand-button" @onclick="@((MouseEventArgs e) => OnClick(!IsExpanded))">
-        @if (IsExpanded)
+@using SuneDoes.UI.Session
+<div class="sundo-topbar-expand">
+    <button type="button" class="sundo-topbar-expand-button" @onclick="OnClick">
+        @if (SessionState.SideBarExpanded)
         {
             <i class="bi bi-arrow-left-square-fill sundo-topbar-expand-icon"/>
 
@@ -15,15 +16,12 @@
 </div>
 
 @code {
-    [Parameter]
-    public bool IsExpanded { get; set; }
 
-    [Parameter]
-    public Action<bool> OnExpandedChanged { get; set; }
+    [CascadingParameter]
+    public SessionState SessionState { get; set; }
 
-    private void OnClick(bool setExpanded)
+    private void OnClick(MouseEventArgs ev)
     {
-        IsExpanded = setExpanded;
-        OnExpandedChanged(setExpanded);
+        SessionState.SideBarExpanded = !SessionState.SideBarExpanded;
     }
 }

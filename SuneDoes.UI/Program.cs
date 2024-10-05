@@ -23,5 +23,7 @@ app.UseAntiforgery();
 
 app.MapRazorComponents<App>()
     .AddInteractiveServerRenderMode();
+app.UseRouting();
+app.UseAntiforgery();
 
 app.Run();

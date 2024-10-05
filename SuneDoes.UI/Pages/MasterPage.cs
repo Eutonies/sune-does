@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Components;
 using SuneDoes.UI.Session;
+using System.Reflection;
 
 namespace SuneDoes.UI.Pages;
 

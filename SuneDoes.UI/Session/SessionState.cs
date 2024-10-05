@@ -1,8 +1,12 @@
-﻿using SuneDoes.UI.Components;
+﻿using Microsoft.AspNetCore.Components;
+using SuneDoes.UI.Components;
+using SuneDoes.UI.Pages.Meditation;
+using SuneDoes.UI.Pages.OnlineDating;
+using System.Reflection;
 
 namespace SuneDoes.UI.Session;
 
-public record SessionState(Action OnUpdate)
+public record SessionState(Action OnUpdate, IServiceScopeFactory ScopeFactory)
 {
     private SessionSelectedPage? _selectedPage;
     public SessionSelectedPage? SelectedPage { 
@@ -36,6 +40,11 @@ public record SessionState(Action OnUpdate)
     }
 
     public event EventHandler<SessionSelectedPage?> CurrentSelectedPageChanged;
+
+    private bool _sideBarExpanded = false;
+    public bool SideBarExpanded { get => _sideBarExpanded; set { _sideBarExpanded = value; OnUpdate(); } }
+
+
 
 
 }

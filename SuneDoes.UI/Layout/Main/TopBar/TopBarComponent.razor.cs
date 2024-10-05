@@ -12,7 +12,6 @@ public partial class TopBarComponent : IDisposable
 
     private RenderFragment? _additionalLogo;
     private bool _registeredAsPageSelectionListener = false;
-    private bool _expandNavigation = false;
 
 
     protected override Task OnParametersSetAsync()
@@ -60,9 +59,4 @@ public partial class TopBarComponent : IDisposable
         }
     }
 
-    private void OnExpandChange(bool expand)
-    {
-        _expandNavigation = expand;
-        InvokeAsync(StateHasChanged);
-    }
 }

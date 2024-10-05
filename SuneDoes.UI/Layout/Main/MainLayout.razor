@@ -3,14 +3,28 @@
 @inherits LayoutComponentBase
 
 <div class="page sundo-page">
-    <CascadingValue Value="_sessionState">
-        <TopBarComponent></TopBarComponent>
-        <main>
-          @Body
-        </main>
-        @if(_sessionState.CurrentShowImages != null) 
-        {
-            <ImageShowComponent Images="_sessionState.CurrentShowImages" Title="@_sessionState.CurrentShowImagesTitle"></ImageShowComponent>
-        }
-    </CascadingValue>
+    @if(_sessionState != null)
+    {
+        <CascadingValue Value="_sessionState">
+            <div class="sundo-topbar-container">
+                <TopBarComponent></TopBarComponent>
+            </div>
+            <div class="sundo-main-under-topbar"></div>
+            <div class="sundo-main-below-topbar">
+                @if (_sessionState.SideBarExpanded)
+                {
+                    <div class="sundo-main-layout-sidebar-container">
+                        <SideNavigationBar></SideNavigationBar>
+                    </div>
+                }
+                <main class="@(_sessionState.SideBarExpanded ? "sundo-main-shrinked" : "sundo-main-max")">
+                    @Body
+                </main>
+            </div>
+            @if (_sessionState.CurrentShowImages != null)
+            {
+                <ImageShowComponent Images="_sessionState.CurrentShowImages" Title="@_sessionState.CurrentShowImagesTitle"></ImageShowComponent>
+            }
+        </CascadingValue>
+    }
 </div>

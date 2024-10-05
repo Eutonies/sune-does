@@ -1,0 +1,15 @@
+﻿<div class="sundo-navbar">
+    <div class="sundo-navbar-left">
+        <div class="sundo-navbar-expand-container">
+            <TopBarExpandComponent OnExpandedChanged="OnExpandChange" IsExpanded="_expandNavigation"></TopBarExpandComponent>
+        </div>
+
+    </div>
+    <div class="sundo-navbar-title"></div>
+    @if(_additionalLogo != null)
+    {
+        <div class="sundo-navbar-additional-logo">
+            @_additionalLogo
+        </div>
+    }
+</div>

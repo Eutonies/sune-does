@@ -1,0 +1,29 @@
+﻿@using Microsoft.AspNetCore.Components.Web
+<div class="sundo-topbar-expand" onclick="@OnExpandedChanged">
+    <button type="button" class="sundo-topbar-expand-button" @onclick="@((MouseEventArgs e) => OnClick(!IsExpanded))">
+        @if (IsExpanded)
+        {
+            <i class="bi bi-arrow-left-square-fill sundo-topbar-expand-icon"/>
+
+        }
+        else
+        {
+            <i class="bi bi-arrow-right-square-fill sundo-topbar-expand-icon"/>
+        }
+    </button>
+
+</div>
+
+@code {
+    [Parameter]
+    public bool IsExpanded { get; set; }
+
+    [Parameter]
+    public Action<bool> OnExpandedChanged { get; set; }
+
+    private void OnClick(bool setExpanded)
+    {
+        IsExpanded = setExpanded;
+        OnExpandedChanged(setExpanded);
+    }
+}

@@ -1,0 +1,38 @@
+﻿@using SuneDoes.UI.Components;
+
+<div class="card sundo-meditation-track-card" style="background-image: url('@(Track.ButtonImage)');">
+    <div class="card-header sundo-meditation-track-card-header">@(Track.TrackName)</div>
+    <div class="card-body sundo-meditation-track-body">
+        <p class="card-text container-fluid">
+            <div class="row">
+                <div class="col-10">
+                    @foreach (var summLine in @Track.Summary)
+                    {
+                        <div>@summLine</div>
+                    }
+                    @if(Track.BreathingTechniques != null)
+                    {
+                        <b>New breathing technique(s):</b>
+                        <ul>
+                            @foreach(var bt in Track.BreathingTechniques)
+                            {
+                                <li>
+                                    <b><i>@bt</i></b>
+                                </li>
+                            }
+                        </ul>
+                    }
+                </div>
+                <div class="col-2 d-flex justify-content-center">
+                    <SoundCloudPlayerComponent TrackId="@(Track.TrackId)"
+                                               TrackTitle="@(Track.TrackName)"
+                                               TrackProducer="Sune-Tzu Forkbeard"
+                                               TrackProducerUrl="https://soundcloud.com/sune-tzu-forkbeard"
+                                               TrackUrl="@(Track.TrackUrl)">
+                    </SoundCloudPlayerComponent>
+                </div>
+            </div>
+        </p>
+    </div>
+</div>
+

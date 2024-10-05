@@ -16,7 +16,7 @@
                     <p>
                         Back in 2016, I did the great Tour de Religion which had me trying on the popular Abrahamic/Ibrahimic religions for size, as well as testing out
                         my previous view on the matter of identifying primarily as Buddhist. All in all, I kinda liked the part about Jesus (though I don't see the need for
-                        relaying the same story by 4 different accounts) but sort of settled on being at least 80% Buddhist with at least part of the residual reserved for
+                        relaying the same story by 4 different accounts) but sort of settled on being around 80% Buddhist with at least part of the residual reserved for
                         the Danish viking heritage.
                     </p>
                     <p>
@@ -32,18 +32,18 @@
                     </p>
                     <p>Medium-length story short: I came out of my meditation endeavour with a couple of somewhat firm beliefs:</p>
                     <ol>
-                        <li>Nobody alive really knows what happens to us when we die</li>
-                        <li>On account of 1, each individual is allowed to decide on what they think should happen after death, and stand about as good odds of being right as anyone else (regardless of the numbers)</li>
+                        <li>No living person really knows what happens to us when we die</li>
+                        <li>On account of 1, every individual can decide what should happen after death, and stand about the same odds of being right as anyone else (regardless of numbers)</li>
                     </ol>
                     <p>
                         Personally, I believe that as long as I die in battle I'll get picked up by the fierce and lovely Valerie the Valkyrie, and she'll take my off to Valhal (or whatever name the establishment goes by these days),
                         and on our way there we'll talk and get to know each other and decide that we don't really owe 'that One-eyed Bastard' anything, and go off on a destructive rampage
                         inspired by Springsteens title track for his 1982 Nebraska album, and meet whatever wrath of the gods this might incur head-on. And if I don't die in battle,
-                        I'll hedge my bets and do an on-the-spot, Hail Mary-type shot for Nirvana. It literally can't go tits up.
+                        I'll hedge my bets and do an on-the-spot, Hail Mary-type shot at Nirvana. It literally can't go tits up!
                     </p>
                     <p>
-                        But that's jumping the gun, isn't it? Before death, is life, and I found that the Buddhist/Viking-scene was in dire need for good set of meditations, and seeing
-                        as they were nowhere to be found, I made them myself using Google Cloud's Text-to-Speech API and license-free background music (mad props to David Fesliyan at <a href="https://www.fesliyanstudios.com/">Fesliyan Studios</a>
+                        But that's jumping the gun, isn't it? Before death, is life, and I found that the Buddhist/Viking-scene was in dire need for a good set of meditations, and being the 
+                        change I wanted to see in the world, I set about making them myself using Google Cloud's Text-to-Speech API and license-free background music (mad props to David Fesliyan at <a href="https://www.fesliyanstudios.com/">Fesliyan Studios</a>
                         for making high-class music available royalty-free!). I published the result to SoundCloud under the pseudonym 'Sune-Tzu Forkbeard', and you'll find links to the
                         meditations below. Enjoy!
                     </p>
@@ -51,16 +51,26 @@
             </div>
         </div>
         <div class="col-md-2"></div>
-        </div>
-    <div class="row">
+    </div>
+    <div class="row mt-5 mb-2">
         <div class="col-md-2"></div>
         <div class="col-md-8 col-sm-12">
-            <div class="sundo-meditation-tracks-container">
-                <MeditationTracksComponent></MeditationTracksComponent>
-            </div>
+            <h3 class="sundo-meditation-tracks-header">The meditations</h3>
         </div>
         <div class="col-md-2"></div>
     </div>
+    @foreach(var track in MeditationTracks)
+    {
+        <div class="row">
+            <div class="col-md-2"></div>
+            <div class="col-md-8 col-sm-12">
+               <MeditationTrackComponent Track="track"></MeditationTrackComponent>
+            </div>
+            <div class="col-md-2"></div>
+        </div>
+    }
+
+
 
 </div>
 

@@ -9,7 +9,7 @@ public partial class HomePage
     {
         if (SessionState != null && SessionState.SelectedPage != null)
         {
-            SessionState.SelectedPage = null;
+            SessionState.SelectedPage = SessionSelectedPage.Home;
         }
         return base.OnParametersSetAsync();
     }

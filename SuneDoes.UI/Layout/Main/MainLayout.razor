@@ -1,30 +1,59 @@
 ﻿@using SuneDoes.UI.Components;
 @using SuneDoes.UI.Layout.Main.TopBar;
+@using SuneDoes.UI.Layout.Main.SideBar;
+
 @inherits LayoutComponentBase
 
 <div class="page sundo-page">
-    @if(_sessionState != null)
+    @if(Js != null)
     {
-        <CascadingValue Value="_sessionState">
-            <div class="sundo-topbar-container">
-                <TopBarComponent></TopBarComponent>
-            </div>
-            <div class="sundo-main-under-topbar"></div>
-            <div class="sundo-main-below-topbar">
-                @if (_sessionState.SideBarExpanded)
-                {
-                    <div class="sundo-main-layout-sidebar-container">
-                        <SideNavigationBar></SideNavigationBar>
-                    </div>
-                }
-                <main class="@(_sessionState.SideBarExpanded ? "sundo-main-shrinked" : "sundo-main-max")">
-                    @Body
-                </main>
-            </div>
-            @if (_sessionState.CurrentShowImages != null)
+        <CascadingValue Value="new FileDownloader(Js)">
+            @if (_sessionState != null)
             {
-                <ImageShowComponent Images="_sessionState.CurrentShowImages" Title="@_sessionState.CurrentShowImagesTitle"></ImageShowComponent>
+                <CascadingValue Value="_sessionState">
+                    <div class="sundo-topbar-container">
+                        <TopBarComponent></TopBarComponent>
+                    </div>
+                    <div class="sundo-main-under-topbar"></div>
+                    <div class="sundo-main-below-topbar">
+                        @if (_sessionState.SideBarExpanded)
+                    {
+                        <div class="sundo-main-layout-sidebar-container">
+                            <SideNavigationBar></SideNavigationBar>
+                        </div>
+                    }
+                    <main class="@(_sessionState.SideBarExpanded ? "sundo-main-shrinked" : "sundo-main-max")">
+                        @Body
+                    </main>
+                </div>
+                @if (_sessionState.CurrentShowImages != null)
+                {
+                    <ImageShowComponent Images="_sessionState.CurrentShowImages" Title="@_sessionState.CurrentShowImagesTitle"></ImageShowComponent>
+                }
+            </CascadingValue>
             }
         </CascadingValue>
     }
 </div>
+<script>
+    window.downloadFileFromStream = async (fileName, contentStreamReference) => {
+        const arrayBuffer = await contentStreamReference.arrayBuffer();
+        const blob = new Blob([arrayBuffer]);
+        const url = URL.createObjectURL(blob);
+        const anchorElement = document.createElement('a');
+        anchorElement.href = url;
+        anchorElement.download = fileName ?? '';
+        anchorElement.click();
+        anchorElement.remove();
+        URL.revokeObjectURL(url);
+    }
+
+    window.downloadFileFromUrl = (fileName, url) => {
+        const anchorElement = document.createElement('a');
+        anchorElement.href = url;
+        anchorElement.download = fileName ?? '';
+        anchorElement.click();
+        anchorElement.remove();
+    }
+
+</script>

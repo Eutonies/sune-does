@@ -1,7 +1,9 @@
 ﻿using Microsoft.AspNetCore.Components;
+using SuneDoes.UI.Pages.Home;
 using SuneDoes.UI.Pages.Meditation;
 using SuneDoes.UI.Pages.OnlineDating;
 using SuneDoes.UI.Session;
+using System.Reflection;
 
 namespace SuneDoes.UI.Layout.Main.TopBar;
 
@@ -51,11 +53,16 @@ public partial class TopBarComponent : IDisposable
         SessionState?.OnUpdate();
     }
 
+    private static string HomeLink => typeof(HomePage)
+        .GetCustomAttribute<RouteAttribute>()!
+        .Template;
+
     public void Dispose()
     {
         if (_registeredAsPageSelectionListener && SessionState != null)
         {
             SessionState.CurrentSelectedPageChanged -= OnPageSelectionChanged;
+            _registeredAsPageSelectionListener = false;
         }
     }
 

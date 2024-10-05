@@ -1,0 +1,24 @@
+﻿@using SuneDoes.UI.Session
+@using Microsoft.AspNetCore.Components.Web
+
+<div class="sundo-sidenav-bar">
+    <h1 class="sundo-sidenav-bar-header mt-2">
+        Stuff done
+    </h1>
+    <div class="sundo-sidenav-bar-page">
+        <a href="@(TargetUrlFor(SessionSelectedPage.OnlineDating))" class="sundo-sidenav-bar-page-link">
+            <img src="images/online-dating/online-dating-logo.webp" height="20" width="80" />
+        </a>
+    </div>
+
+    <div class="sundo-sidenav-bar-page">
+        <a href="@(TargetUrlFor(SessionSelectedPage.Meditation))" class="sundo-sidenav-bar-page-link">
+            <img src="images/meditation/meditation-logo.webp" height="20" width="80"/>
+        </a>
+    </div>
+
+    <div class="sundo-sidenav-bar-writings-container">
+        <WritingsComponent></WritingsComponent>
+    </div>
+
+</div>

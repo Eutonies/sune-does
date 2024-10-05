@@ -20,7 +20,13 @@
     left: 30px;
 }
 
+.sundo-navbar-title-container {
+    border: none;
+    background-color: transparent;
+}
+
 .sundo-navbar-title {
+    cursor: pointer;
     content: '';
     height: 95%;
     background-image: url('images/main/sune-does.webp');

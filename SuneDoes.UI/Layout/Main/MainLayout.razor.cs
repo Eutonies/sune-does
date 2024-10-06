@@ -20,6 +20,4 @@ public partial class MainLayout
         _sessionState = new SessionState(() => InvokeAsync(StateHasChanged), ScopeFactory);
         return base.OnParametersSetAsync();
     }
-
-
 }

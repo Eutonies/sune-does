@@ -7,7 +7,7 @@ public partial class HomePage
 
     protected override Task OnParametersSetAsync()
     {
-        if (SessionState != null && SessionState.SelectedPage != null)
+        if (SessionState != null)
         {
             SessionState.SelectedPage = SessionSelectedPage.Home;
         }

@@ -9,7 +9,7 @@ public partial class MeditationPage
 {
     protected override Task OnParametersSetAsync()
     {
-        if(SessionState!= null && SessionState.SelectedPage != SessionSelectedPage.Meditation)
+        if(SessionState!= null)
         {
             SessionState.SelectedPage = SessionSelectedPage.Meditation;
         }

@@ -14,7 +14,7 @@ public partial class OnlineDatingPage
 
     protected override Task OnParametersSetAsync()
     {
-        if(SessionState!= null && SessionState.SelectedPage != Session.SessionSelectedPage.OnlineDating)
+        if(SessionState!= null)
         {
             SessionState.SelectedPage = Session.SessionSelectedPage.OnlineDating;
         }

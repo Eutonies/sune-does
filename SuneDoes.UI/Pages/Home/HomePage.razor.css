@@ -1,9 +1,9 @@
 ﻿.sundo-bg {
-    height: 100%;
+    position:page;
+    height: 1500px;
     width: 100%;
-    content: '';
     background-image: url('images/main/master-layout.webp');
     background-size: cover;
     background-repeat: no-repeat;
-    margin:0px;
+    overflow-x: hidden;
 }

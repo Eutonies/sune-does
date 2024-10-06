@@ -9,10 +9,14 @@ public partial class WritingsComponent
     public FileDownloader FileDownloader { get; set; }
 
 
-    private void OnPdfDownloadClicked(MouseEventArgs ev)
+    private void OnJohnAndAngelaPdfDownloadClicked(MouseEventArgs ev)
     {
         _ = FileDownloader.DownloadFileFromUrl("Angela and John - Forever.pdf", "docs/Angela-and-John-Forever.pdf");
     }
 
+    private void OnSimrebogenPdfClicked(MouseEventArgs ev)
+    {
+        _ = FileDownloader.DownloadFileFromUrl("Simrebogen.pdf", "docs/Simrebogen.pdf");
+    }
 
 }

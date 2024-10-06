@@ -7,28 +7,44 @@ using System.Reflection;
 
 namespace SuneDoes.UI.Layout.Main.TopBar;
 
-public partial class TopBarComponent : IDisposable
+public partial class TopBarComponent 
 {
+
+    [Inject]
+    public NavigationManager NavManager { get; set; }
+
     [CascadingParameter]
     public SessionState? SessionState { get; set; }
 
     private RenderFragment? _additionalLogo;
-    private bool _registeredAsPageSelectionListener = false;
+    private SessionSelectedPage? _currentLogoPage;
 
 
-    protected override Task OnParametersSetAsync()
+
+    protected override void OnAfterRender(bool firstRender)
     {
-        if(!_registeredAsPageSelectionListener && SessionState != null)
-        {
-            SessionState.CurrentSelectedPageChanged += OnPageSelectionChanged;
-            _registeredAsPageSelectionListener = true;
-        }
-        return base.OnParametersSetAsync();
+        UpdateLogo();
     }
 
-    private void OnPageSelectionChanged(object? sender, SessionSelectedPage? newPageSelection)
+    protected override void OnInitialized()
     {
-        if (newPageSelection == null)
+        UpdateLogo();
+    }
+
+    private void UpdateLogo()
+    {
+        if (SessionState != null)
+        {
+            var currentPage = SessionState.CurrentPage(NavManager);
+            if (currentPage != _currentLogoPage)
+                OnPageSelectionChanged(currentPage);
+        }
+    }
+
+
+    private void OnPageSelectionChanged(SessionSelectedPage? newPageSelection)
+    {
+        if (newPageSelection == null || newPageSelection == SessionSelectedPage.Home)
         {
             _additionalLogo = null;
         }
@@ -50,20 +66,12 @@ public partial class TopBarComponent : IDisposable
                 builder.CloseComponent();
             };
         }
-        SessionState?.OnUpdate();
+        _currentLogoPage = newPageSelection;
+        InvokeAsync(StateHasChanged);
     }
 
     private static string HomeLink => typeof(HomePage)
         .GetCustomAttribute<RouteAttribute>()!
         .Template;
-
-    public void Dispose()
-    {
-        if (_registeredAsPageSelectionListener && SessionState != null)
-        {
-            SessionState.CurrentSelectedPageChanged -= OnPageSelectionChanged;
-            _registeredAsPageSelectionListener = false;
-        }
-    }
 
 }

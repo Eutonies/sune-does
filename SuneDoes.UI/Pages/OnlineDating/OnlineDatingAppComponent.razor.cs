@@ -21,6 +21,9 @@ public partial class OnlineDatingAppComponent
     public RenderFragment AppLogo { get; set; }
 
     [Parameter]
+    public RenderFragment TheVerdict { get; set; }
+
+    [Parameter]
     public IReadOnlyCollection<ImageShowComponent.ShowImage> Images { get; set; }
 
     private void OnImagesClick() => SessionState.ShowImages(

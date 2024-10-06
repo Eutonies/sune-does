@@ -19,7 +19,8 @@
 }
 
 .sundo-online-dating-app-image-container {
-    margin-top:5px;
+    margin-top:15px;
+    margin-bottom: 15px;
     display: flex;
 }
 
@@ -35,6 +36,7 @@
     height: 50px;
     position: relative;
     cursor: pointer;
+    box-shadow: 1.5px 1.5px 1.5px rgba(128,128,128,0.5);
 }
 
 .sundo-online-dating-app-image-0 {
@@ -65,4 +67,27 @@
 .sundo-online-dating-app-image-5 {
     z-index: 99;
     transform: translate(-20px);
+}
+
+.sundo-online-dating-app-verdict-container {
+    padding: 7px;
+    border-width: 1.3px;
+    border-style: solid;
+    border-radius: 4px;
+    background-color: rgba(244, 164, 250,0.2);
+    box-shadow: 1.5px 1.5px 0.5px rgba(128,128,128,0.9);
+    margin-bottom: 25px;
+}
+
+.sundo-online-dating-app-verdict-title {
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border-bottom-color: rgba(128, 128, 128,0.5);
+    margin-bottom: 10px;
+}
+
+.sundo-online-dating-app-verdict {
+    font-weight: 700;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }

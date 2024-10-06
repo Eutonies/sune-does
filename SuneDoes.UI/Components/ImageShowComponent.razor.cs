@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Components;
+using Microsoft.AspNetCore.Components.Web;
 using SuneDoes.UI.Session;
 
 namespace SuneDoes.UI.Components;
@@ -33,6 +34,9 @@ public partial class ImageShowComponent
         string Name
         );
 
-    private void OnCloseClick() => SessionState.StopShowImages();
+    private void OnCloseClick(MouseEventArgs ev) => SessionState.StopShowImages();
+
+    private void OnBackgroundClick(MouseEventArgs ev) => SessionState.StopShowImages();
+
 
 }

@@ -1,5 +1,5 @@
-﻿<div class="sundo-image-show-bg">
-    <div class="sundo-image-show-container">
+﻿<div class="sundo-image-show-bg" @onclick="OnBackgroundClick">
+    <div class="sundo-image-show-container" @onclick:stopPropagation>
         <div class="sundo-image-show-title-row">
             <h1 class="sundo-image-show-title">@Title</h1>
         </div>

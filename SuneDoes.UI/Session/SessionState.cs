@@ -23,10 +23,14 @@ public record SessionState(Action OnUpdate, IServiceScopeFactory ScopeFactory)
     private IReadOnlyCollection<ImageShowComponent.ShowImage>? _currentShowImages;
     public IReadOnlyCollection<ImageShowComponent.ShowImage>? CurrentShowImages => 
         _currentShowImages;
-    public void ShowImages(string curremtShowImagesTitle, params ImageShowComponent.ShowImage[] images)
+
+    private bool _useDarkModeForImages = false;
+    public bool UseDarkModeForImages => _useDarkModeForImages;
+    public void ShowImages(string curremtShowImagesTitle, bool useDarkMode = false, params ImageShowComponent.ShowImage[] images)
     {
         _currentShowImagesTitle = curremtShowImagesTitle;
         _currentShowImages = images;
+        _useDarkModeForImages = useDarkMode;
         OnUpdate();
     }
     public void StopShowImages()

@@ -3,8 +3,8 @@
         <div class="sundo-image-show-title-row">
             <h1 class="sundo-image-show-title">@Title</h1>
         </div>
-        <div class="sundo-image-show-body">
-            <div id="sundo-image-show-carousel" class="carousel slide">
+        <div class="sundo-image-show-body" data-bs-theme="@(UseDarkMode ? "dark" : "light")">
+            <div id="sundo-image-show-carousel" class="carousel slide @(UseDarkMode ? "carousel-dark" : "")">
                 <div class="carousel-indicators">
                     @foreach(var (img, indx) in _images.Select((_,indx) => (_,indx)))
                     {

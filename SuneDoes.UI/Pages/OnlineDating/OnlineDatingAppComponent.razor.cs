@@ -26,8 +26,12 @@ public partial class OnlineDatingAppComponent
     [Parameter]
     public IReadOnlyCollection<ImageShowComponent.ShowImage> Images { get; set; }
 
+    [Parameter]
+    public bool UseDarkModeForImages { get; set; } = false;
+
     private void OnImagesClick() => SessionState.ShowImages(
         curremtShowImagesTitle: $"{Title}",
+        useDarkMode: UseDarkModeForImages,
         images: [.. Images]
         );
 

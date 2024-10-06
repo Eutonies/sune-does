@@ -9,6 +9,9 @@ public partial class ImageShowComponent
     [CascadingParameter]
     public SessionState SessionState { get; set; }
 
+    [Parameter]
+    public bool UseDarkMode { get; set; } = false;
+
 
     [Parameter]
     public string Title { get; set; }

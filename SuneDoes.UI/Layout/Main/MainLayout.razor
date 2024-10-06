@@ -28,7 +28,7 @@
                 </div>
                 @if (_sessionState.CurrentShowImages != null)
                 {
-                    <ImageShowComponent Images="_sessionState.CurrentShowImages" Title="@_sessionState.CurrentShowImagesTitle"></ImageShowComponent>
+                    <ImageShowComponent Images="_sessionState.CurrentShowImages" Title="@_sessionState.CurrentShowImagesTitle" UseDarkMode="_sessionState.UseDarkModeForImages"></ImageShowComponent>
                 }
             </CascadingValue>
             }

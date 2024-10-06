@@ -15,6 +15,9 @@ public partial class OnlineDatingPage
 
     private static ImageShowComponent.ShowImage HappnImage(string imageName, string name) => Image("happn", imageName, name);
 
+    private static ImageShowComponent.ShowImage FeeldImage(string imageName, string name) => Image("feeld", imageName, name);
+
+
     protected override Task OnParametersSetAsync()
     {
         if(SessionState!= null)
@@ -51,12 +54,12 @@ public partial class OnlineDatingPage
                 HingeImage("ways-of-thinking.webp", "Ways of the Mind")
             ];
     private static IReadOnlyCollection<ImageShowComponent.ShowImage> FeeldImages = [
-            TinderImage("tinder-frontpage.png", "Adventure"),
-                TinderImage("sune-w-quote-1.png", "Jesper endorsement 1/3"),
-                TinderImage("sune-w-quote-2.png", "Jesper endorsement 2/3"),
-                TinderImage("sune-w-quote-3.png", "Jesper endorsement 3/3"),
-                TinderImage("partner-in-crime.jpg", "Partner in crime"),
-                TinderImage("sunes-timeline.jpg", "Timeline of important events")
+                FeeldImage("feeld-profile.webp", "My Profile"),
+                FeeldImage("be-a-brat.webp", "A brat"),
+                FeeldImage("anal-is-life.webp", "Well..."),
+                FeeldImage("unhinged.webp", "Had me in the first half..."),
+                FeeldImage("housewife.webp", "Well..."),
+                FeeldImage("show-some-skin.webp", "Some skin")
         ];
 
     private static IReadOnlyCollection<ImageShowComponent.ShowImage> HappnImages = [

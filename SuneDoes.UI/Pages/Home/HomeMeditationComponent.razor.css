@@ -1,4 +1,5 @@
-﻿.sundo-online-dating {
+﻿.sundo-meditation {
+    position: relative;
     background-color: rgba(255,255,255,0.7);
     min-height: 200px;
     max-height: 450px;
@@ -8,7 +9,10 @@
     font-family: 'Ink Free';
 }
 
-.sundo-online-dating-img {
+.sundo-meditation-container {
+}
+
+.sundo-meditation-img {
     position: relative;
     float:right;
     right: 20px;
@@ -17,11 +21,11 @@
     width: 300px;
     height: 355px;
     background-size: contain;
-    background-image: url('images/main/online-dating.webp');
+    background-image: url('images/meditation/meditation-home-logo.webp');
     background-repeat: no-repeat;
 }
 
-.sundo-online-dating h1 {
+.sundo-meditation h1 {
     font-size: 24pt;
     font-weight: 700;
     margin-left:20px;

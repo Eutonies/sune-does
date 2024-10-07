@@ -6,4 +6,9 @@
     <RootNamespace>SuneDoes.UI</RootNamespace>
     <AssemblyName>$(AssemblyName.Replace(' ', '_'))</AssemblyName>
   </PropertyGroup>
+  <ItemGroup>
+    <Content Update="Pages\Home\HomeMeditationComponent.razor">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+    </Content>
+  </ItemGroup>
 </Project>

@@ -1,17 +1,19 @@
-﻿<div class="sundo-navbar">
-    <div class="sundo-navbar-left">
-        <div class="sundo-navbar-expand-container">
-            <TopBarExpandComponent></TopBarExpandComponent>
-        </div>
+﻿<div class="sundo-navbar-bg">
+    <div class="sundo-navbar">
+        <div class="sundo-navbar-left">
+            <div class="sundo-navbar-expand-container">
+                <TopBarExpandComponent></TopBarExpandComponent>
+            </div>
 
-    </div>
-    <a href="@HomeLink" class="sundo-navbar-title-container">
-        <div class="sundo-navbar-title"></div>
-    </a>
-    @if(_additionalLogo != null)
-    {
-        <div class="sundo-navbar-additional-logo">
-            @_additionalLogo
         </div>
-    }
+        <a href="@HomeLink" class="sundo-navbar-title-container">
+            <div class="sundo-navbar-title"></div>
+        </a>
+        @if(_additionalLogo != null)
+        {
+            <div class="sundo-navbar-additional-logo">
+                @_additionalLogo
+            </div>
+        }
+    </div>
 </div>

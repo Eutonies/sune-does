@@ -1,7 +1,10 @@
 ﻿@using SuneDoes.UI.Components;
 
 <div class="card sundo-meditation-track-card" style="background-image: url('@(Track.ButtonImage)');">
-    <div class="card-header sundo-meditation-track-card-header">@(Track.TrackName)</div>
+    <div class="card-header sundo-meditation-track-card-header">@(Track.TrackName)
+        <a href="@(Track.TrackUrl)" class="sundo-meditation-header-link">Listen on Soundcloud <i class="bi bi-box-arrow-up-right sundo-meditation-header-link-icon"></i></a>
+
+    </div>
     <div class="card-body sundo-meditation-track-body">
         <p class="card-text container-fluid">
             <div class="row">

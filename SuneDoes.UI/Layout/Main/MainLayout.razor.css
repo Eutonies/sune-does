@@ -9,7 +9,7 @@
     width: 100%;
     padding: 0px;
     margin: 0px;
-    z-index: 9000;
+    z-index: 1000;
 }
 
 .sundo-main-below-topbar {
@@ -36,6 +36,8 @@ main {
     height: 100%;
     content: '';
 }
+
+
 
 .sundo-main-shrinked {
     width: 85%;

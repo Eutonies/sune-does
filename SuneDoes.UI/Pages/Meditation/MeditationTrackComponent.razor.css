@@ -13,6 +13,19 @@
 .sundo-meditation-track-card-header {
     font-size: 20pt;
     color: rgb(244,244,244);
+    display: flex;
+    justify-content: space-between;
+}
+
+.sundo-meditation-header-link {
+    font-size: 14pt;
+    font-family: 'Old Standard TT';
+    colors: rgb(49, 44, 64);
+    color: rgb(255, 106, 0);
+}
+
+.sundo-meditation-header-link-icon {
+    margin-left: 10px;
 }
 
 .sundo-meditation-track-body {

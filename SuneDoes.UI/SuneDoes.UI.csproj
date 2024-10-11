@@ -5,7 +5,12 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <RootNamespace>SuneDoes.UI</RootNamespace>
     <AssemblyName>$(AssemblyName.Replace(' ', '_'))</AssemblyName>
+    <UserSecretsId>16d17bbe-6170-455d-9d32-2fb13ca181fa</UserSecretsId>
+    <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
   </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.21.0" />
+  </ItemGroup>
   <ItemGroup>
     <Content Update="Pages\Home\HomeMeditationComponent.razor">
       <ExcludeFromSingleFile>true</ExcludeFromSingleFile>

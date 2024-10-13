@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sunedoes
+  labels:
+    app: sunedoes
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: sunedoes
+  template:
+    metadata:
+      labels:
+        app: sunedoes
+    spec:
+      containers:
+      - name: sunedoes
+        image: docker.io/suneroenne/sunedoes:1.0.0
+        ports:
+        - containerPort: 8080
+          name: http-sunedoes

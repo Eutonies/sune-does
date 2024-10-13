@@ -1,0 +1,27 @@
+[0;1;32m●[0m libvirtd.service - libvirt legacy monolithic daemon
+     Loaded: loaded (]8;;file://localhost.localdomain/usr/lib/systemd/system/libvirtd.service/usr/lib/systemd/system/libvirtd.service]8;;; [0;1;32menabled[0m; preset: [0;1;38;5;185mdisabled[0m)
+     Active: [0;1;32mactive (running)[0m since Sat 2024-10-12 14:33:00 CEST; 29s ago
+TriggeredBy: [0;1;32m●[0m libvirtd-admin.socket
+             [0;1;32m●[0m libvirtd-ro.socket
+             [0;1;32m●[0m libvirtd.socket
+       Docs: ]8;;man:libvirtd(8)man:libvirtd(8)]8;;
+             ]8;;https://libvirt.org/https://libvirt.org/]8;;
+   Main PID: 51621 (libvirtd)
+      Tasks: 22 (limit: 32768)
+     Memory: 23.4M
+        CPU: 317ms
+     CGroup: /system.slice/libvirtd.service
+             ├─[0;38;5;245m51621 /usr/sbin/libvirtd --timeout 120[0m
+             ├─[0;38;5;245m51741 /usr/sbin/dnsmasq --conf-file=/var/lib/libvirt/dnsmasq/default.conf --leasefile-ro --dhcp-script=/usr/libexec/libvirt_leaseshelper[0m
+             └─[0;38;5;245m51742 /usr/sbin/dnsmasq --conf-file=/var/lib/libvirt/dnsmasq/default.conf --leasefile-ro --dhcp-script=/usr/libexec/libvirt_leaseshelper[0m
+
+Oct 12 14:33:00 localhost.localdomain dnsmasq[51741]: started, version 2.85 cachesize 150
+Oct 12 14:33:00 localhost.localdomain dnsmasq[51741]: compile time options: IPv6 GNU-getopt DBus no-UBus no-i18n IDN2 DHCP DHCPv6 no-Lua TFTP no-conntrack ipset auth cryptohash DNSSEC loop-detect inotify dumpfile
+Oct 12 14:33:00 localhost.localdomain dnsmasq-dhcp[51741]: DHCP, IP range 192.168.122.2 -- 192.168.122.254, lease time 1h
+Oct 12 14:33:00 localhost.localdomain dnsmasq-dhcp[51741]: DHCP, sockets bound exclusively to interface virbr0
+Oct 12 14:33:00 localhost.localdomain dnsmasq[51741]: reading /etc/resolv.conf
+Oct 12 14:33:00 localhost.localdomain dnsmasq[51741]: using nameserver 192.168.0.1#53
+Oct 12 14:33:00 localhost.localdomain dnsmasq[51741]: using nameserver 1.1.1.1#53
+Oct 12 14:33:00 localhost.localdomain dnsmasq[51741]: read /etc/hosts - 2 addresses
+Oct 12 14:33:00 localhost.localdomain dnsmasq[51741]: read /var/lib/libvirt/dnsmasq/default.addnhosts - 0 addresses
+Oct 12 14:33:00 localhost.localdomain dnsmasq-dhcp[51741]: read /var/lib/libvirt/dnsmasq/default.hostsfile

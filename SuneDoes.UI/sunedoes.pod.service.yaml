@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+    k8s-app: sunedoes
+    app: sunedoes
+  name: sunedoes
+spec:
+  containers:
+  - name: sunedoes
+    image: docker.io/suneroenne/sunedoes:1.0.0
+    ports:
+    - containerPort: 8080
+      name: http-sunedoes

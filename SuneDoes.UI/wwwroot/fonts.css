@@ -2,7 +2,7 @@
     font-family: '4 My Lover';
     font-weight: 400;
     font-style: normal;
-    src: url('../fonts/4-my-lover.ttf');
+    src: url('../fonts/4mylover.ttf');
 }
 
 @font-face {
@@ -19,3 +19,9 @@
     src: url('../fonts/Norsebold.otf');
 }
 
+@font-face {
+    font-family: 'Ink Free';
+    font-weight: 400;
+    font-style: normal;
+    src: url('../fonts/Inkfree.ttf');
+}

@@ -5,6 +5,9 @@ metadata:
   annotations:
     sunedoes.ingress.kubernetes.io/rewrite-target: /
 spec:
-  backend:
-    serviceName: sunedoes
-    servicePort: 30007
+  ingressClassName: nginx
+  defaultBackend: 
+    service:
+      name: sunedoes
+      port:
+        name: svc-sunedoes

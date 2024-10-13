@@ -39,9 +39,9 @@ public partial class OnlineDatingPage
 
     private static IReadOnlyCollection<ImageShowComponent.ShowImage> TinderImages = [ 
                 TinderImage("tinder-frontpage.png", "Adventure"),
-                TinderImage("sune-w-quote-1.png", "Jesper endorsement 1/3"),
-                TinderImage("sune-w-quote-2.png", "Jesper endorsement 2/3"),
-                TinderImage("sune-w-quote-3.png", "Jesper endorsement 3/3"),
+                TinderImage("sune-w-quote1.png", "Jesper endorsement 1/3"),
+                TinderImage("sune-w-quote2.png", "Jesper endorsement 2/3"),
+                TinderImage("sune-w-quote3.png", "Jesper endorsement 3/3"),
                 TinderImage("partner-in-crime.jpg", "Partner in crime"),
                 TinderImage("sunes-timeline.jpg", "Timeline of important events")
             ];

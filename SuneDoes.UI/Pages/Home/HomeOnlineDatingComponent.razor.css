@@ -1,39 +1,81 @@
-﻿.sundo-online-dating {
-    background-color: rgba(255,255,255,0.7);
-    min-height: 200px;
-    max-height: 450px;
-    border-radius: 8px;
-    box-shadow: 8px 8px 1px rgba(150,150,150,0.6), 6px 6px 5px rgba(150,150,150,0.4);
-    padding-bottom: 10px;
-    font-family: 'Ink Free';
+﻿@media only screen and (min-width: 990px) {
+
+    .sundo-online-dating {
+        background-color: rgba(255,255,255,0.7);
+        min-height: 200px;
+        max-height: 450px;
+        border-radius: 8px;
+        box-shadow: 8px 8px 1px rgba(150,150,150,0.6), 6px 6px 5px rgba(150,150,150,0.4);
+        padding-bottom: 10px;
+        font-family: 'Ink Free';
+    }
 }
 
-.sundo-online-dating-img {
-    position: relative;
-    float:right;
-    right: 20px;
-    top:20px;
-    transform: rotate(2deg);
-    width: 300px;
-    height: 355px;
-    background-size: contain;
-    background-image: url('images/main/online-dating.webp');
-    background-repeat: no-repeat;
+@media only screen and (max-width: 990px) {
+    .sundo-online-dating {
+        background-color: rgba(255,255,255,0.7);
+        min-height: 200px;
+        max-height: 550px;
+        min-width: 350px;
+        max-width: 400px;
+        border-radius: 8px;
+        box-shadow: 8px 8px 1px rgba(150,150,150,0.6), 6px 6px 5px rgba(150,150,150,0.4);
+        padding-bottom: 10px;
+        font-family: 'Ink Free';
+        font-size: 10pt;
+    }
 }
 
-.sundo-online-dating h1 {
-    font-size: 24pt;
-    font-weight: 700;
-    margin-left:20px;
-    margin-top:10px;
+@media only screen and (min-width: 990px) {
+    .sundo-online-dating-img {
+        position: relative;
+        float: right;
+        right: 20px;
+        top: 20px;
+        transform: rotate(2deg);
+        width: 300px;
+        height: 355px;
+        background-size: contain;
+        background-image: url('images/main/online-dating.webp');
+        background-repeat: no-repeat;
+    }
 }
 
-.sundo-online-dating-facts-header {
-
-
+@media only screen and (max-width: 990px) {
+    .sundo-online-dating-img {
+        position: relative;
+        float: right;
+        right: 20px;
+        top: 20px;
+        transform: rotate(2deg);
+        width: 100px;
+        height: 355px;
+        background-size: contain;
+        background-image: url('images/main/online-dating.webp');
+        background-repeat: no-repeat;
+    }
 }
 
 
-.sundo-online-dating-facts-table :is(th,td) {
-    padding: 0px;
+@media only screen and (min-width: 990px) {
+    .sundo-online-dating h1 {
+        font-size: 24pt;
+        font-weight: 700;
+        margin-left: 20px;
+        margin-top: 10px;
+    }
+}
+
+
+@media only screen and (max-width: 990px) {
+    .sundo-online-dating h1 {
+        font-size: 16pt;
+        font-weight: 700;
+        margin-top: 10px;
+    }
+}
+@media only screen and (max-width: 990px) {
+    .sundo-online-dating-title-prefix {
+        display: none;
+    }
 }

@@ -20,7 +20,6 @@
 .sundo-meditation-header-link {
     font-size: 14pt;
     font-family: 'Old Standard TT';
-    colors: rgb(49, 44, 64);
     color: rgb(255, 106, 0);
 }
 
@@ -30,4 +29,10 @@
 
 .sundo-meditation-track-body {
     background-color: rgba(244,244,244,0.85);
+}
+
+@media only screen and (max-width: 990px) {
+    .sundo-meditation-track-player-container {
+        display: none;
+    }
 }

@@ -16,7 +16,14 @@ spec:
     spec:
       containers:
       - name: sunedoes
-        image: docker.io/suneroenne/sunedoes:1.0.1
+        image: docker.io/suneroenne/sunedoes:1.0.2
         ports:
         - containerPort: 8080
           name: http-sunedoes
+        env:
+          - name: HostingBasePath
+            valueFrom: 
+              configMapKeyRef:
+                name: sunedoes-config
+                key: SuneDoes.BasePath
+

@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: sunedoes
-        image: docker.io/suneroenne/sunedoes:1.0.2
+        image: docker.io/suneroenne/sunedoes:1.0.5
         ports:
         - containerPort: 8080
           name: http-sunedoes

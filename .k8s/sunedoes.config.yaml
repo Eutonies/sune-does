@@ -3,4 +3,4 @@ kind: ConfigMap
 metadata:
   name: sunedoes-config
 data:
-  SuneDoes.BasePath: "/sune-does"
+  SuneDoes.BasePath: sune-does

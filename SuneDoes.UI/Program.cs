@@ -15,11 +15,6 @@ builder.Services.AddRazorComponents()
 
 var app = builder.Build();
 
-if(appConfig.HostingBasePath != null) 
-{
-    app.UsePathBase(appConfig.HostingBasePath);
-}
-
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
 {

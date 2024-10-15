@@ -2,26 +2,26 @@
     font-family: '4 My Lover';
     font-weight: 400;
     font-style: normal;
-    src: url('../fonts/4mylover.ttf');
+    src: url('fonts/4mylover.ttf');
 }
 
 @font-face {
     font-family: 'Norse';
     font-weight: 400;
     font-style: normal;
-    src: url('../fonts/Norse.otf');
+    src: url('fonts/Norse.otf');
 }
 
 @font-face {
     font-family: 'Norse';
     font-weight: 800;
     font-style: normal;
-    src: url('../fonts/Norsebold.otf');
+    src: url('fonts/Norsebold.otf');
 }
 
 @font-face {
     font-family: 'Ink Free';
     font-weight: 400;
     font-style: normal;
-    src: url('../fonts/Inkfree.ttf');
+    src: url('fonts/Inkfree.ttf');
 }

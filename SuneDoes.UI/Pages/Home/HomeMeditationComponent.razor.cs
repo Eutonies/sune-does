@@ -1,5 +1,7 @@
 ﻿using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Web;
+using Microsoft.Extensions.Options;
+using SuneDoes.UI.Configuration;
 using SuneDoes.UI.Pages.Meditation;
 using SuneDoes.UI.Pages.OnlineDating;
 using System.Reflection;
@@ -11,12 +13,19 @@ public partial class HomeMeditationComponent
     [Inject]
     public NavigationManager NavManager { get; set; }
 
+    [Inject]
+    public IOptions<SuneDoesConfiguration> AppConfig { get; set; }
+
     private void OnImageClick(MouseEventArgs ev)
     {
         var url = typeof(MeditationPage)
             .GetCustomAttribute<RouteAttribute>()!
             .Template;
-        NavManager.NavigateTo(url);
+        var basePath = AppConfig?.Value?.HostingBasePath;
+        if(basePath != null)
+            NavManager.NavigateTo("/" + basePath + url);
+        else 
+            NavManager.NavigateTo(url);
     }
 
 }

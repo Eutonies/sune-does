@@ -28,6 +28,10 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 app.UseAntiforgery();
 
+if (!string.IsNullOrEmpty(appConfig.HostingBasePath))
+    app.MapBlazorHub(appConfig.HostingBasePath);
+else app.MapBlazorHub();
+
 app.MapRazorComponents<App>()
     .AddInteractiveServerRenderMode();
 app.UseRouting();

@@ -1,0 +1,35 @@
+﻿@media only screen and (max-width: 990px) {
+    .sundo-home-writing-card {
+        margin-top: 30px;
+        font-family: 'Ink Free';
+        min-height: 350px;
+        max-height: 650px;
+    }
+}
+@media only screen and (min-width: 990px) {
+    .sundo-home-writing-card {
+        font-family: 'Ink Free';
+        height: 350px;
+    }
+}
+
+@media only screen and (max-width: 990px) {
+    .sundo-home-writing-card-header {
+        font-size: 18pt;
+        font-weight: 700;
+    }
+}
+
+@media only screen and (min-width: 990px) {
+    .sundo-home-writing-card-header {
+        font-size: 18pt;
+        font-weight: 700;
+    }
+}
+
+.sundo-home-writing-card-body {
+    font-size: 10pt;
+}
+
+.sundo-home-writing-card-footer {
+}

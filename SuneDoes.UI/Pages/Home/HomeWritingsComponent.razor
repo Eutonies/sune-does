@@ -1,0 +1,66 @@
+﻿<div class="sundo-home-writings container-fluid">
+    <div class="sundo-home-writings-container ">
+        <div class="row px-3">
+            <div class="col-12">
+                <h1>My Writings</h1>
+            </div>
+        </div>
+        <div class="row px-3">
+            <div class="col-12">
+                <p>
+                    I once saw a psychologist for a period of about 3 months. I found the experience pleasant, but I have a feeling the ordeal left the poor woman questioning
+                    her professional merits, aside from wondering just what the hell is wrong with me. I think I've figured it out on my own: I just have a lot of 
+                    noise in my head, and I have found it surprisingly therapeutic to just <i>write out the noise</i> through more or less nonsensical works. <br />
+                    You'll find some of these works below.
+                </p>
+            </div>
+        </div>
+        <div class="row row-cols-lg-2 row-cols-sm-12">
+            <div class="col">
+                <HomeWritingComponent Title="Angela & John Forever">
+                    <BodyFragment>
+                        I started out writing what was to be a frame narrative for an edutainment site on <i>Finance meets Nerd</i> and before I knew it, I'd written
+                        the love story of the century. Or, at least it was better than Twilight 🤷‍<br />
+                        I'm pretty sure there'll be a sequel. 
+                    </BodyFragment>
+                    <FooterFragment>
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-12">
+                                    <a class="sundo-home-writings-button"
+                                       href="https://angelaandjohnforever.com">
+                                        <img src="images/main/angela-and-john-logo.webp" height="20" /><b> Website</b>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12">
+                                    <button type="button" class="sundo-home-writings-button" @onclick="OnJohnAndAngelaPdfDownloadClicked">
+                                        <img src="images/main/angela-and-john-logo-pdf.webp" height="20" />
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </FooterFragment>
+                </HomeWritingComponent>
+            </div>
+            <div class="col">
+                <HomeWritingComponent Title="Simrebogen - The SoVs Manifesto">
+                    <BodyFragment>
+                        Some time after my divorce I took up salsa-dancing in order to meet chicks. Then I was reminded that I am essentially a pretty introverted 
+                        person, hyper-sensitive to rejection. No matter; I found that I actually rather like dancing in and of itself, and then the engineer in me
+                        took over and started pondering: '<i>wonder what else one might do with dancing</i>' and before long, a daring new salsa/martial-arts fusion: <b>SoVs</b> was born.<br />
+                        You can learn all you need to know about SoVs in the PDF downloadable below. Enjoy!
+                    </BodyFragment>
+                    <FooterFragment>
+                        <button type="button" class="sundo-home-writings-button" @onclick="OnSimrebogenPdfClicked">
+                            <img src="images/main/simrebogen-button.webp" height="20" />
+                        </button>
+                    </FooterFragment>
+                </HomeWritingComponent>
+            </div>
+
+        </div>
+
+    </div>
+</div>

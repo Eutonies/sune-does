@@ -1,0 +1,60 @@
+﻿@media only screen and (max-width: 990px) {
+    .sundo-home-writings {
+        position: relative;
+        background-color: rgba(255,255,255,0.7);
+        min-height: 400px;
+        max-height: 2050px;
+        border-radius: 8px;
+        box-shadow: 8px 8px 1px rgba(150,150,150,0.6), 6px 6px 5px rgba(150,150,150,0.4);
+        padding-bottom: 10px;
+        font-family: 'Ink Free';
+        font-size:10pt;
+    }
+}
+
+@media only screen and (min-width: 990px) {
+    .sundo-home-writings {
+        position: relative;
+        background-color: rgba(255,255,255,0.7);
+        min-height: 400px;
+        max-height: 850px;
+        border-radius: 8px;
+        box-shadow: 8px 8px 1px rgba(150,150,150,0.6), 6px 6px 5px rgba(150,150,150,0.4);
+        padding-bottom: 10px;
+        font-family: 'Ink Free';
+    }
+}
+
+.sundo-home-writings-button {
+    margin-left: 0px;
+    margin-top: 15px;
+    width: 160px;
+    height: 30px;
+    border-radius: 5px;
+    border-style: solid;
+    border-width: 0.5px;
+    border-color: rgba(130,130,130,0.2);
+    box-shadow: 0.5px 0.5px 1px rgba(60,60,60,0.5);
+    padding-left: 12px;
+    padding-right: 12px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    font-size: 9px;
+    justify-items: center;
+}
+@media only screen and (max-width: 990px) {
+    .sundo-home-writings h1 {
+        font-size: 20pt;
+        font-weight: 700;
+        margin-top: 10px;
+    }
+}
+
+@media only screen and (min-width: 990px) {
+    .sundo-home-writings h1 {
+        font-size: 34pt;
+        font-weight: 700;
+        margin-left: 20px;
+        margin-top: 10px;
+    }
+}

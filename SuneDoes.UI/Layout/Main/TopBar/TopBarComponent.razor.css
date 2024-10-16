@@ -34,12 +34,18 @@
         width: 20%;
     }
 }
-
+@media only screen and (max-width: 990px) {
+    .sundo-navbar-expand-container {
+        display: none;
+    }
+}
+@media only screen and (min-width: 990px) {
     .sundo-navbar-expand-container {
         position: relative;
         top: 30px;
         left: 30px;
     }
+}
 
     .sundo-navbar-title-container {
         border: none;

@@ -1,4 +1,6 @@
 ﻿using Microsoft.AspNetCore.Components;
+using Microsoft.Extensions.Options;
+using SuneDoes.UI.Configuration;
 using SuneDoes.UI.Pages.Home;
 using SuneDoes.UI.Pages.Meditation;
 using SuneDoes.UI.Pages.OnlineDating;
@@ -15,6 +17,9 @@ public partial class TopBarComponent
 
     [CascadingParameter]
     public SessionState? SessionState { get; set; }
+
+    [Inject]
+    public IOptions<SuneDoesConfiguration> AppConfig { get; set; }
 
     private RenderFragment? _additionalLogo;
     private SessionSelectedPage? _currentLogoPage;
@@ -70,7 +75,12 @@ public partial class TopBarComponent
         InvokeAsync(StateHasChanged);
     }
 
-    private static string HomeLink => typeof(HomePage)
+    private string? BasePath => AppConfig.Value.HostingBasePath;
+
+    private string HomeLink => BasePath switch {
+        null => "",
+        string bp => "/" + bp
+    } + typeof(HomePage)
         .GetCustomAttribute<RouteAttribute>()!
         .Template;
 

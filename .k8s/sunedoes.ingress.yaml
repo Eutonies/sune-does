@@ -17,31 +17,3 @@ spec:
             name: sunedoes
             port: 
               number: 80
-
-
-#      - path: /
-#        pathType: Prefix
-#        backend:
-#          service:
-#            name: sunedoes
-#            port: 
-#              number: 80
-
-# ---
-# apiVersion: networking.k8s.io/v1
-# kind: Ingress
-# metadata:
-#   name: ingress-myserviceb
-# spec:
-#   rules:
-#   - host: myserviceb.foo.org
-#     http:
-#       paths:
-#       - path: /
-#         pathType: Prefix
-#         backend:
-#           service:
-#             name: myserviceb
-#             port:
-#               number: 80
-#   ingressClassName: nginx

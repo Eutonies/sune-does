@@ -5,6 +5,13 @@ VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SuneDoes.UI", "SuneDoes.UI\SuneDoes.UI.csproj", "{5D4FCE8E-1B66-4B6E-9871-70CA02BAB27C}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "k8s", "k8s", "{3B9B0639-23A4-4C1D-BF83-FFF6265A73D0}"
+	ProjectSection(SolutionItems) = preProject
+		.k8s\sunedoes.config.yaml = .k8s\sunedoes.config.yaml
+		.k8s\sunedoes.deployment.yaml = .k8s\sunedoes.deployment.yaml
+		.k8s\sunedoes.service.yaml = .k8s\sunedoes.service.yaml
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

@@ -1,0 +1,42 @@
+﻿.sundo-lucid-dreaming-bg {
+    font-family: 'Ink Free';
+    background-image: url('images/online-dating/online-dating-background.webp');
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100%;
+    width: 100%;
+    overflow-x:hidden;
+}
+
+.sundo-lucid-dreaming-summary-container {
+    margin-top: 30px;
+    background-color: rgba(245,240,240,0.6);
+    border-radius: 8px;
+    border-style: solid;
+    border-width: 2px;
+    box-shadow: 5px 5px 5px rgba(30,30,30,0.9);
+}
+
+.sundo-lucid-dreaming-summary-header {
+    font-size: 30pt;
+    font-weight: bold;
+}
+
+.sundo-lucid-dreaming-app-row {
+    margin-top: 30px;
+}
+
+.sundo-lucid-dreaming-footer {
+    margin-top: 40px;
+    font-family: 'Ink Free';
+    font-size: 12pt;
+    font-style: italic;
+    float: right;
+    margin-right: 40px;
+    background-color: rgba(245,240,240,0.3);
+    box-shadow: 5px 5px 5px rgba(240,180,180,0.6);
+    border-radius: 8px;
+    padding: 10px;
+    padding-left: 50px;
+}
+

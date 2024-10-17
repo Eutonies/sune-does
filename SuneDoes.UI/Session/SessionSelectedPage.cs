@@ -4,5 +4,6 @@ public enum SessionSelectedPage
 {
     Home = 1,
     OnlineDating = 10,
-    Meditation = 20
+    Meditation = 20,
+    LucidDreaming = 30
 }

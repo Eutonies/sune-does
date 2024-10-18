@@ -11,12 +11,4 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.21.0" />
   </ItemGroup>
-  <ItemGroup>
-    <Content Update="Pages\Home\HomeWritingsComponent.razor">
-      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
-    </Content>
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="wwwroot\fonts\merienda\" />
-  </ItemGroup>
 </Project>

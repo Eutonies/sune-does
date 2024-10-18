@@ -1,6 +1,6 @@
 ﻿@media only screen and (min-width: 990px) {
 
-    .sundo-online-dating {
+    .sundo-home-lucid-dreaming {
         background-color: rgba(255,255,255,0.7);
         min-height: 200px;
         max-height: 450px;
@@ -12,7 +12,7 @@
 }
 
 @media only screen and (max-width: 990px) {
-    .sundo-online-dating {
+    .sundo-home-lucid-dreaming {
         background-color: rgba(255,255,255,0.7);
         min-height: 200px;
         max-height: 550px;
@@ -27,7 +27,7 @@
 }
 
 @media only screen and (min-width: 990px) {
-    .sundo-online-dating-img {
+    .sundo-home-lucid-dreaming-img {
         position: relative;
         float: right;
         right: 20px;
@@ -36,13 +36,13 @@
         width: 300px;
         height: 355px;
         background-size: contain;
-        background-image: url('images/main/online-dating.webp');
+        background-image: url('images/lucid-dreaming/home-page-lucid-dreaming-image.webp');
         background-repeat: no-repeat;
     }
 }
 
 @media only screen and (max-width: 990px) {
-    .sundo-online-dating-img {
+    .sundo-home-lucid-dreaming-img {
         position: relative;
         float: right;
         right: 20px;
@@ -51,14 +51,14 @@
         width: 100px;
         height: 355px;
         background-size: contain;
-        background-image: url('images/main/online-dating.webp');
+        background-image: url('images/lucid-dreaming/home-page-lucid-dreaming-image.webp');
         background-repeat: no-repeat;
     }
 }
 
 
 @media only screen and (min-width: 990px) {
-    .sundo-online-dating h1 {
+    .sundo-home-lucid-dreaming h1 {
         font-size: 24pt;
         font-weight: 700;
         margin-left: 20px;
@@ -68,14 +68,14 @@
 
 
 @media only screen and (max-width: 990px) {
-    .sundo-online-dating h1 {
+    .sundo-home-lucid-dreaming h1 {
         font-size: 16pt;
         font-weight: 700;
         margin-top: 10px;
     }
 }
 @media only screen and (max-width: 990px) {
-    .sundo-online-dating-title-prefix {
+    .sundo-home-lucid-dreaming-title-prefix {
         display: none;
     }
 }

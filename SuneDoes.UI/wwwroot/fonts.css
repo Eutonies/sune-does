@@ -25,3 +25,52 @@
     font-style: normal;
     src: url('fonts/Inkfree.ttf');
 }
+
+@font-face {
+    font-family: 'Merienda';
+    font-weight: 100;
+    font-style: normal;
+    src: url('fonts/merienda/Merienda-Light.ttf');
+}
+
+@font-face {
+    font-family: 'Merienda';
+    font-weight: 300;
+    font-style: normal;
+    src: url('fonts/merienda/Merienda-Regular.ttf');
+}
+
+@font-face {
+    font-family: 'Merienda';
+    font-weight: 500;
+    font-style: normal;
+    src: url('fonts/merienda/Merienda-Medium.ttf');
+}
+
+@font-face {
+    font-family: 'Merienda';
+    font-weight: 600;
+    font-style: normal;
+    src: url('fonts/merienda/Merienda-SemiBold.ttf');
+}
+
+@font-face {
+    font-family: 'Merienda';
+    font-weight: 700;
+    font-style: normal;
+    src: url('fonts/merienda/Merienda-Bold.ttf');
+}
+
+@font-face {
+    font-family: 'Merienda';
+    font-weight: 800;
+    font-style: normal;
+    src: url('fonts/merienda/Merienda-Black.ttf');
+}
+
+@font-face {
+    font-family: 'Merienda';
+    font-weight: 900;
+    font-style: normal;
+    src: url('fonts/merienda/Merienda-ExtraBold.ttf');
+}

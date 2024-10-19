@@ -105,14 +105,13 @@ public partial class LucidDreamingGlimmerComponent
             returnee.AppendLine($" {perc}% {{");
                         if(perc <= 10)
                             returnee.AppendLine($"    opacity: {(perc/10d).ToString("f1", _enUs)};");
-            //returnee.AppendLine($"    opacity: 1;");
             returnee.AppendLine($"    filter: brightness({currentBrightness}%);");
             returnee.AppendLine($"    transform: rotate({currentRotate}deg) translate({currentTranslate}px) scale({currentScale.ToString("f5",_enUs)});");
             if (perc >= 90)
                 returnee.AppendLine($"    opacity: {((100 - perc) / 10d).ToString("f1", _enUs)};");
 
             if (perc == 100)
-               returnee.AppendLine($"    top: 100vh;");
+               returnee.AppendLine($"    top: 150vh;");
             returnee.AppendLine(" }");
         }
 

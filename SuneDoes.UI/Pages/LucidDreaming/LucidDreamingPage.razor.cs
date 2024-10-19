@@ -15,12 +15,12 @@ public partial class LucidDreamingPage
     private object _glimmerLock = new { };
     private IReadOnlyCollection<Glimmer> _glimmers = new List<Glimmer>();
 
-    private const int MinNumberOfSeconds = 20;
-    private const int MaxNumberOfSeconds = 25;
+    private const int MinNumberOfSeconds = 15;
+    private const int MaxNumberOfSeconds = 35;
     private static int DrawSeconds => MinNumberOfSeconds + Random.Next(0, MaxNumberOfSeconds - MinNumberOfSeconds);
-    private static int DrawDelay => Random.Next(0, MinNumberOfSeconds);
+    private static int DrawDelay => Random.Next(0, MaxNumberOfSeconds);
 
-    private const int NumberOfGlimmers = 100;
+    private const int NumberOfGlimmers = 300;
 
     protected override Task OnParametersSetAsync()
     {
@@ -46,13 +46,16 @@ public partial class LucidDreamingPage
         {
             if (_glimmers.Any())
                 return;
-            var stepBy = 100 / NumberOfGlimmers;
+            var stepBy = 1;
             var newGlimmers = new List<Glimmer>();
             for (var perc = 0; perc < 100; perc += stepBy)
             {
-                var numberOfSeconds = DrawSeconds;
-                var delay = DrawDelay;
-                newGlimmers.Add(new Glimmer(perc, numberOfSeconds, delay));
+                for(var indx = 0; indx < NumberOfGlimmers / 100; indx++)
+                {
+                    var numberOfSeconds = DrawSeconds;
+                    var delay = DrawDelay;
+                    newGlimmers.Add(new Glimmer(perc, numberOfSeconds, delay));
+                }
             }
             _glimmers = newGlimmers;
             secondsToWait = newGlimmers.Max(_ => _.InitialDelay + _.AnimationTimeSeconds) + 2;

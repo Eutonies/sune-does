@@ -1,0 +1,21 @@
+﻿.sundo-popover-detailed-button {
+    border-color: rgba(128, 128, 128,0.4);
+    background-color: transparent;
+    color: rgb(10,10,10);
+    border-radius: 3px;
+    border-width:0.5px;
+}
+
+
+.sundo-popover-detailed-popover {
+    min-width: 200px;
+    min-height: 200px;
+    max-width: 350px;
+    border-color: rgba(128, 128, 128,0.4);
+    border-radius: 10px;
+    border-width: 1px;
+    padding: 10px;
+    background-color: transparent;
+    color: rgb(10,10,10);
+    font-style: italic;
+}

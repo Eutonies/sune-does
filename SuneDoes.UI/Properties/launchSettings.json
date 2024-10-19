@@ -8,7 +8,7 @@
       },
       "dotnetRunMessages": true,
       "applicationUrl": "http://localhost/",
-      "launchUrl": "lucid-dreaming"
+      "launchUrl": ""
     },
     "https": {
       "commandName": "Project",

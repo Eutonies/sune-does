@@ -15,7 +15,7 @@
     .sundo-home-lucid-dreaming {
         background-color: rgba(255,255,255,0.7);
         min-height: 200px;
-        max-height: 550px;
+        max-height: 650px;
         min-width: 350px;
         max-width: 400px;
         border-radius: 8px;
@@ -30,11 +30,12 @@
     .sundo-home-lucid-dreaming-img {
         position: relative;
         float: right;
-        right: 20px;
         top: 20px;
-        transform: rotate(2deg);
-        width: 300px;
-        height: 355px;
+        transform: rotate(2deg) translate(30px, 30px);
+        width: 250px;
+        height: 250px;
+        margin-top: 20px;
+        margin-bottom: 40px;
         background-size: contain;
         background-image: url('images/lucid-dreaming/home-page-lucid-dreaming-image.webp');
         background-repeat: no-repeat;
@@ -45,8 +46,7 @@
     .sundo-home-lucid-dreaming-img {
         position: relative;
         float: right;
-        right: 20px;
-        top: 20px;
+        top: 50px;
         transform: rotate(2deg);
         width: 100px;
         height: 355px;

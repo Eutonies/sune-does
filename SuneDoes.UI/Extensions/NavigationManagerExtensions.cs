@@ -10,7 +10,7 @@ public static class NavigationManagerExtensions
 {
     public static void NavigateTo<TPage>(this NavigationManager navManager, IOptions<SuneDoesConfiguration> options)
     {
-        var url = typeof(OnlineDatingPage)
+        var url = typeof(TPage)
                     .GetCustomAttribute<RouteAttribute>()!
                     .Template;
         var basePath = options.Value?.HostingBasePath;

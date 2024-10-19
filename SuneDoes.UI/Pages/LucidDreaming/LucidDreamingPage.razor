@@ -3,6 +3,14 @@
 @inherits MasterPage
 
 <div class="sundo-lucid-dreaming-bg container-fluid">
+    @foreach(var glimmer in _glimmers)
+    {
+        <LucidDreamingGlimmerComponent 
+            PercentLeft="glimmer.PercentLeft" 
+            InitialDelay="glimmer.InitialDelay" 
+            NumberOfSeconds="glimmer.AnimationTimeSeconds"
+        ></LucidDreamingGlimmerComponent>
+    }
     <div class="row">
         <div class="col-md-3"></div>
         <div class="sundo-lucid-dreaming-summary col-md-8 col-sm-12">

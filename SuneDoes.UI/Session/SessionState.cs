@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Components;
 using SuneDoes.UI.Components;
 using SuneDoes.UI.Pages.Home;
+using SuneDoes.UI.Pages.LucidDreaming;
 using SuneDoes.UI.Pages.Meditation;
 using SuneDoes.UI.Pages.OnlineDating;
 using System.Reflection;
@@ -48,7 +49,8 @@ public record SessionState(Action OnUpdate, IServiceScopeFactory ScopeFactory)
     {
         {typeof(HomePage), SessionSelectedPage.Home},
         {typeof(OnlineDatingPage), SessionSelectedPage.OnlineDating},
-        {typeof(MeditationPage), SessionSelectedPage.Meditation}
+        {typeof(MeditationPage), SessionSelectedPage.Meditation},
+        {typeof(LucidDreamingPage), SessionSelectedPage.LucidDreaming}
     };
 
     public SessionSelectedPage? CurrentPage(NavigationManager navManager)

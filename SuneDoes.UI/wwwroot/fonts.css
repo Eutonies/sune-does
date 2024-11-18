@@ -74,3 +74,10 @@
     font-style: normal;
     src: url('fonts/merienda/Merienda-ExtraBold.ttf');
 }
+
+@font-face {
+    font-family: 'DangerZone';
+    font-weight: 500;
+    font-style: normal;
+    src: url('fonts/dangerzone.ttf');
+}

@@ -8,12 +8,12 @@
       },
       "dotnetRunMessages": true,
       "applicationUrl": "http://localhost/",
-      "launchUrl": ""
+      "launchUrl": "medicine"
     },
     "https": {
       "commandName": "Project",
       "launchBrowser": true,
-      "launchUrl": "online-dating",
+      "launchUrl": "medicine",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       },

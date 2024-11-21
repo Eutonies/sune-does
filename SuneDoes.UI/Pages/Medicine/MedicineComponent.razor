@@ -1,7 +1,40 @@
 ﻿<div class="sundo-medicine-component container-fluid">
     <div class="row">
-        <div class="col-12">
-            <h1 class="medicine-h1">FENTANYL</h1>
+        <div class="col-8">
+            <div class="container-fluid sundo-medicine-component-text">
+                <div class="row">
+                    <div class="col-12">
+                        <h1 class="sundo-medicine-component-header">@(MedicineName.ToUpper())</h1>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        @MedicineDescription
+                    </div>
+                </div>
+
+                <div class="row sundo-medicine-component-suggestion-header-row">
+                    <div class="col-12">
+                        <h2 class="sundo-medicine-component-suggestion-header">SUNE SUGGESTS</h2>
+                    </div>
+                </div>
+
+
+                <div class="row sundo-medicine-component-suggestion">
+                    <div class="col-12">
+                        @Suggestion
+                    </div>
+                </div>
+
+
+            </div>
+
+        </div>
+        <div class="col-4">
+            <div class="container-fluid sundo-medicine-component-notify"></div>
         </div>
     </div>
+
+
+
 </div>

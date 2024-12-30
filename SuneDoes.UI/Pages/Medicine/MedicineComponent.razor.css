@@ -24,3 +24,22 @@
     color: rgb(72, 14, 14);
     font-size: 20pt;
 }
+
+.sundo-medicine-component-notify {
+    width:250px;
+    height: 250px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: stretch;
+}
+
+
+.sundo-medicine-component-image {
+    width: 200px;
+    height: 200px;
+    border-image-source: url('images/medicine/danger-frame.webp');
+    border-image-repeat: space;
+    border-image-width: 200px;
+}
+

@@ -31,7 +31,13 @@
 
         </div>
         <div class="col-4">
-            <div class="container-fluid sundo-medicine-component-notify"></div>
+
+            <div class="container-fluid sundo-medicine-component-notify">
+                @if (ImageFile != null)
+                {
+                    <img src="images/medicine/@ImageFile" class="sundo-medicine-component-image" />
+                }
+            </div>
         </div>
     </div>
 

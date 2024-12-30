@@ -14,5 +14,7 @@ public partial class MedicineComponent
     [Parameter]
     public RenderFragment Suggestion { get; set; }
 
+    [Parameter]
+    public string? ImageFile { get; set; }
 
 }

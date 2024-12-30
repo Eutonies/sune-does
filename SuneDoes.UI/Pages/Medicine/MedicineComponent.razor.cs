@@ -17,4 +17,20 @@ public partial class MedicineComponent
     [Parameter]
     public string? ImageFile { get; set; }
 
+    [Parameter]
+    public MedicineTemperature Temperature { get; set; } = MedicineTemperature.Hot;
+
+    private string TemperatureClass => Temperature switch
+    {
+        MedicineTemperature.Burning => "sundo-medicine-component-burning",
+        _ => "sundo-medicine-component-hot"
+    };
+
+    public enum MedicineTemperature
+    {
+        Burning = 1,
+        Hot = 5
+    }
+
+
 }

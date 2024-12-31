@@ -1,6 +1,7 @@
 using SuneDoes.UI.Components;
 using SuneDoes.UI.Components.Email;
 using SuneDoes.UI.Configuration;
+using SuneDoes.UI.Persistence.Context;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Configuration
@@ -18,6 +19,8 @@ builder.Services.AddRazorComponents()
 builder.Services.AddHttpContextAccessor();
 builder.Services.AddHttpClient();
 builder.Services.AddScoped<ISuneDoesEmailSender, SuneDoesEmailSender>();
+builder.AddSuneDoesDbContext();
+builder.Services.AddSingleton<IVerifiableEmailHandler, VerifiableEmailHandler>();
 
 var app = builder.Build();
 

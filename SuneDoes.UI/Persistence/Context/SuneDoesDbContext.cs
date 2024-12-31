@@ -2,11 +2,21 @@
 using Microsoft.Extensions.Options;
 using Npgsql.NameTranslation;
 using SuneDoes.UI.Configuration;
+using SuneDoes.UI.Persistence.Model;
 
 namespace SuneDoes.UI.Persistence.Context;
 
 public class SuneDoesDbContext : DbContext
 {
+
+    public DbSet<VerifiableEmailDbo> EmailAddresses { get; set; }
+
+    public SuneDoesDbContext(DbContextOptions<SuneDoesDbContext> opts) : base(opts)
+    {
+
+
+    }
+
 
     protected override void ConfigureConventions(ModelConfigurationBuilder configurationBuilder)
     {
@@ -14,6 +24,12 @@ public class SuneDoesDbContext : DbContext
         configurationBuilder.Properties<DateTime?>().HaveColumnType("timestamp without time zone");
         configurationBuilder.Properties<DateTime>().HaveColumnType("timestamp without time zone");
     }
+
+    protected override void OnModelCreating(ModelBuilder modelBuilder)
+    {
+        modelBuilder.ApplyConfigurationsFromAssembly(typeof(SuneDoesDbContext).Assembly);
+    }
+
 
 
 }
@@ -41,5 +57,7 @@ public static class SuneDoesDbContextExtensions
             .EnableDetailedErrors()
             .EnableSensitiveDataLogging();
     }
+
+
 
 }

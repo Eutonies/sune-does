@@ -1,4 +1,5 @@
 using SuneDoes.UI.Components;
+using SuneDoes.UI.Components.Email;
 using SuneDoes.UI.Configuration;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -14,7 +15,9 @@ Console.WriteLine($"Using base path: {appConfig.HostingBasePath}");
 // Add services to the container.
 builder.Services.AddRazorComponents()
     .AddInteractiveServerComponents();
-builder.Services.AddHttpContextAccessor();    
+builder.Services.AddHttpContextAccessor();
+builder.Services.AddHttpClient();
+builder.Services.AddScoped<ISuneDoesEmailSender, SuneDoesEmailSender>();
 
 var app = builder.Build();
 

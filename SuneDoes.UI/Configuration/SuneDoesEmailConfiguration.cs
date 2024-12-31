@@ -9,4 +9,8 @@ public class SuneDoesEmailConfiguration
 
     public string ApiToken { get; set; }
 
+    public string Sender { get; set; }
+
+    public string VerifyEmailUrl { get; set; }
+
 }

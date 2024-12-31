@@ -82,12 +82,12 @@ public partial class TopBarComponent
                 builder.CloseComponent();
             };
         }
-        else if (newPageSelection == SessionSelectedPage.Medication)
+        else if (newPageSelection == SessionSelectedPage.Medicine)
         {
             _additionalLogo = (builder) =>
             {
-                builder.OpenComponent<HomeMedicineLogoComponent>(0);
-                builder.AddAttribute(1, nameof(HomeMedicineLogoComponent.Height), 100);
+                builder.OpenComponent<MedicineLogoComponent>(0);
+                builder.AddAttribute(1, nameof(MedicineLogoComponent.Height), 100);
                 builder.CloseComponent();
             };
         }

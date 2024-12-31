@@ -3,6 +3,7 @@ using Microsoft.Extensions.Options;
 using SuneDoes.UI.Configuration;
 using SuneDoes.UI.Pages.Home;
 using SuneDoes.UI.Pages.LucidDreaming;
+using SuneDoes.UI.Pages.Medicine;
 using SuneDoes.UI.Pages.Meditation;
 using SuneDoes.UI.Pages.OnlineDating;
 using SuneDoes.UI.Session;
@@ -81,6 +82,16 @@ public partial class TopBarComponent
                 builder.CloseComponent();
             };
         }
+        else if (newPageSelection == SessionSelectedPage.Medication)
+        {
+            _additionalLogo = (builder) =>
+            {
+                builder.OpenComponent<HomeMedicineLogoComponent>(0);
+                builder.AddAttribute(1, nameof(HomeMedicineLogoComponent.Height), 100);
+                builder.CloseComponent();
+            };
+        }
+
         _currentLogoPage = newPageSelection;
         InvokeAsync(StateHasChanged);
     }

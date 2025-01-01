@@ -26,4 +26,10 @@ spec:
                configMapKeyRef:
                  name: sunedoes-config
                  key: SuneDoes.BasePath
+           - name: Email__VerifyEmailUrl
+             valueFrom: 
+               configMapKeyRef:
+                 name: sunedoes-config
+                 key: Email.VerifyEmailUrl
+
 

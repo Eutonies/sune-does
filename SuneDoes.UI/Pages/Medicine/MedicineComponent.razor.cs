@@ -20,6 +20,9 @@ public partial class MedicineComponent
     [Parameter]
     public MedicineTemperature Temperature { get; set; } = MedicineTemperature.Hot;
 
+    [Parameter]
+    public Action OnNotifyButtonClicked { get; set; }
+
     private string TemperatureClass => Temperature switch
     {
         MedicineTemperature.Burning => "sundo-medicine-component-burning",

@@ -33,6 +33,7 @@
         <div class="col-4">
 
             <div class="container-fluid sundo-medicine-component-notify">
+                <MedicineNotificationButton OnClick="OnNotifyButtonClicked"></MedicineNotificationButton>
                 @if (ImageFile != null)
                 {
                     <img src="images/medicine/@ImageFile" class="sundo-medicine-component-image @TemperatureClass" />

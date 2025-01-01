@@ -1,0 +1,15 @@
+﻿.sundo-medicine-notify-button {
+    width: 350px;
+    height: 90px;
+    border-radius: 5px;
+    border-width: 0.5px;
+
+}
+
+.sundo-medicine-notify-button-image {
+    width: 350px;
+    height: 100px;
+    background-image: url('images/medicine/notify-button.webp');
+    background-repeat: no-repeat;
+    background-size: cover;
+}

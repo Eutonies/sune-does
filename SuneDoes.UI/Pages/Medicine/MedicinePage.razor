@@ -6,7 +6,7 @@
 <div class="sundo-medicine-bg container-fluid">
     @if(_showDialog) 
     {
-        <MedicineNotifyDoctorComponent RegistrationType="@_notifyMedicineType" CloseDialog="CloseNotifyDialog"></MedicineNotifyDoctorComponent>
+        <MedicineNotifyDoctorComponent RegistrationType="@_notifyRegistrationType" CloseDialog="CloseNotifyDialog"></MedicineNotifyDoctorComponent>
     }
     <div class="row">
         <div class="col-md-3"></div>
@@ -44,7 +44,12 @@
     <div class="row">
         <div class="col-12">
             <div class="sundo-medicine-container">
-                <MedicineComponent MedicineName="FENTANYL" ImageFile="fentanyl-sample.webp" Temperature="MedicineComponent.MedicineTemperature.Burning">
+                <MedicineComponent 
+                    MedicineName="FENTANYL" 
+                    ImageFile="fentanyl-sample.webp" 
+                    Temperature="MedicineComponent.MedicineTemperature.Burning"
+                    OnNotifyButtonClicked="@OnNotifyFentanylClick"
+                >
                     <MedicineDescription>
                         <p>This is a nasty one, and the cause of a majority of opioid-related deaths under the current opioid epidemic.
                             Fentanyl is a synthetic opiate that you can think of kind of like <b><i>Heroin on Steroids</i></b> and is
@@ -64,7 +69,11 @@
                 </MedicineComponent>
             </div>
             <div class="sundo-medicine-container">
-                <MedicineComponent MedicineName="HEROIN" ImageFile="heroin-sample.webp" Temperature="MedicineComponent.MedicineTemperature.Burning">
+                <MedicineComponent 
+                    MedicineName="HEROIN" 
+                    ImageFile="heroin-sample.webp" 
+                    Temperature="MedicineComponent.MedicineTemperature.Burning"
+                    OnNotifyButtonClicked="@OnNotifyHeroinClick">
                     <MedicineDescription>
                         <p>
                             If you are a child of the 1980's like me, you are very unlikely to unsuspectingly find yourself in possession of heroin believing
@@ -83,7 +92,7 @@
                 </MedicineComponent>
             </div>
             <div class="sundo-medicine-container">
-                <MedicineComponent MedicineName="OXYCODONE" ImageFile="oxy-sample.webp">
+                <MedicineComponent MedicineName="OXYCODONE" ImageFile="oxy-sample.webp" OnNotifyButtonClicked="@OnNotifyOxyClick">
                     <MedicineDescription>
                         <p>
                             Sold under brand names such as: OxyFast, OxyNorm, OxyIR (all 3 immediate-release forms) and OxyContin (extended/slow-release form),
@@ -105,7 +114,7 @@
                 </MedicineComponent>
             </div>
             <div class="sundo-medicine-container">
-                <MedicineComponent MedicineName="TRAMADOL" ImageFile="tramadol-sample.webp">
+                <MedicineComponent MedicineName="TRAMADOL" ImageFile="tramadol-sample.webp" OnNotifyButtonClicked="@OnNotifyTramadolClick">
                     <MedicineDescription>
                         <p>
                             This is sort of a tricky one: 
@@ -150,7 +159,7 @@
     <div class="row">
         <div class="col-12">
             <div class="sundo-medicine-container">
-                <MedicineComponent MedicineName="AMPHETAMINE & AMPHETAMINE-LIKE DRUGS" ImageFile="tramadol-sample.webp">
+                <MedicineComponent MedicineName="AMPHETAMINE & AMPHETAMINE-LIKE DRUGS" ImageFile="tramadol-sample.webp" OnNotifyButtonClicked="@OnNotifyStimulantsClick">
                     <MedicineDescription>
                         <p>
                             Actual amphetamine is seldomly used for medical treatments, but amphetamine-like drugs like methylphenidate and lisdexamphetamine is

@@ -1,0 +1,7 @@
+﻿<button class="sundo-medicine-notify-button" type="button" @onclick="@(() => OnClick())">
+    <div class="sundo-medicine-notify-button-image"></div>
+</button>
+@code {
+    [Parameter]
+    public Action OnClick { get; set; }
+}

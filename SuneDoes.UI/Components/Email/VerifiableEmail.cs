@@ -14,6 +14,7 @@ public record VerifiableEmail(
     {
         (_,0L) => VerifiableEmailStatus.NotRegistered,
         (null,_) when LastVerificationEmailSent != null => VerifiableEmailStatus.EmailSent,
+        (DateTime verd, _) => VerifiableEmailStatus.EmailVerified,
         _ => VerifiableEmailStatus.Registered
     });
 

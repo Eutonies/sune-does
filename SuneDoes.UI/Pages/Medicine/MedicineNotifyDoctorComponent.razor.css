@@ -56,6 +56,11 @@
     justify-content: space-between;
 }
 
+#sundo-medicine-notify-verify-button {
+    margin-top:32px;
+    width: 200px;
+}
+
 .sundo-medicine-notify-button {
     border-radius: 5px;
 }

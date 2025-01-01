@@ -6,6 +6,6 @@ public enum VerifiableEmailStatus
     NotRegistered = 10,
     Registered = 20,
     EmailSent = 30,
-    EmailVerified = 30
+    EmailVerified = 100
 
 }

@@ -2,7 +2,7 @@
 @using SuneDoes.UI.Components.Validation
 
 <div class="sundo-medicine-notify-component">
-    <div class="sundo-medicine-notify-container">
+    <div class="sundo-medicine-notify-container" @onclick:stopPropagation>
         <div class="sundo-medicine-notify-header">NOTIFY DOCTOR SUNE</div>
         <div class="sundo-medicine-notify-explain">
             Leave me your email address below along with a short description of what Sune's Dangerous Medication Removal Service 
@@ -15,11 +15,15 @@
                         Label="Email"
                         InputType="email"
                         OnUpdateAsync="OnEmailUpdate"
-                        Text="@_verifiableEmail?.EmailAddress"
                     ></ValidationInputText>
                 </div>
                 <div class="sundo-medicine-notify-divided-part">
-                    <button type="button" class="sundo-medicine-notify-button" disabled="@(CanSendEmail ? null : "disabled")">Verify Email</button>
+                    <button 
+                        type="button" 
+                        class="sundo-medicine-notify-button" 
+                        id="sundo-medicine-notify-verify-button" 
+                        disabled="@(CanSendEmail ? null : "disabled")"
+                    @onclick="@(() => OnSendClicked())">Verify Email</button>
                 </div>
 
             </div>

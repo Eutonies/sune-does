@@ -12,6 +12,11 @@ public partial class MedicinePage
     private bool _showDialog = true;
     private string _notifyMedicineType = "Heroin";
 
+    private void CloseNotifyDialog()
+    {
+        _showDialog = false;
+        _ = InvokeAsync(StateHasChanged);
+    }
 
 }
 

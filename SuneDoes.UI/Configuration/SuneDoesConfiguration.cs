@@ -1,3 +1,5 @@
+using SuneDoes.UI.Configuration;
+
 namespace SuneDoes.UI.Configuration;
 
 public class SuneDoesConfiguration {

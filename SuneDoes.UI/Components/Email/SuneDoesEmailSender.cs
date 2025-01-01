@@ -13,7 +13,7 @@ public class SuneDoesEmailSender : ISuneDoesEmailSender
     private readonly string _emailApiBaseUrl;
     private readonly string _emailApiToken;
     private readonly string _emailSender;
-    private readonly string _verifyEmailBaseUrl;
+    private readonly string _verifyEmailUrl;
     private readonly ILogger<SuneDoesEmailSender> _logger;
 
     private string EmailEndpointUrl => $"{_emailApiBaseUrl}email";
@@ -24,7 +24,7 @@ public class SuneDoesEmailSender : ISuneDoesEmailSender
         _emailApiBaseUrl = conf.Value.Email.ApiBaseAddress;
         _emailApiToken = conf.Value.Email.ApiToken;
         _emailSender = conf.Value.Email.Sender;
-        _verifyEmailBaseUrl = conf.Value.Email.VerifyEmailUrl;
+        _verifyEmailUrl = conf.Value.Email.VerifyEmailUrl;
         _logger = logger;
     }
 
@@ -32,7 +32,7 @@ public class SuneDoesEmailSender : ISuneDoesEmailSender
     {
         using var client = _httpClientFactory.CreateClient();
 
-        var verifyUrl = $"{_verifyEmailBaseUrl}?emailid={mail.EmailAddressId}&code={UrlEncoder.Default.Encode(mail.CodeString)}";
+        var verifyUrl = $"{_verifyEmailUrl}?{ISuneDoesEmailSender.EmailIdQueryParameterName}={mail.EmailAddressId}&{ISuneDoesEmailSender.CodeStringQueryParameterName}={UrlEncoder.Default.Encode(mail.CodeString)}";
         var message = new SendEmailLayout(
             from: new SendPersonLayout(email: _emailSender, "Sune-Does"),
             to: [new SendPersonLayout(

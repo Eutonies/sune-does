@@ -12,6 +12,7 @@ public partial class ValidationInputText
             return ++_currentId;
     }
     private readonly long _inputId = NextId();
+    private bool _isInitialized = false;
     private string ElementId => $"sundo-validation-input-text-{_inputId}";
 
     private ValidationState _state = ValidationState.NotEvaluated;
@@ -66,7 +67,11 @@ public partial class ValidationInputText
 
     protected override void OnParametersSet()
     {
-        CurrentText = Text;
+        if(!_isInitialized)
+        {
+            CurrentText = Text;
+            _isInitialized = true;
+        }
     }
 
 

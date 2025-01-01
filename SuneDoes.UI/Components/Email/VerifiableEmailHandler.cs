@@ -21,7 +21,7 @@ public class VerifiableEmailHandler : IVerifiableEmailHandler
 
     public event EventHandler<VerifiableEmail> OnUpdate;
 
-    public Task<VerifiableEmail?> EntryFor(string email) => WithContext(async cont =>
+    public Task<VerifiableEmail?> EnsureEntryFor(string email) => WithContext(async cont =>
     {
         if (!IsValidEmailAddress(email))
             return null;
@@ -68,19 +68,22 @@ public class VerifiableEmailHandler : IVerifiableEmailHandler
         return isValid;
     }
 
-    public Task<VerifiableEmail?> RegisterVerification(long emailId, string codeString) => WithContext(async cont =>
+    public Task<VerifiableEmail> RegisterVerification(long emailId, string codeString) => WithContext(async cont =>
     {
         var returnee = await Locked(async () => 
         {
             var loaded = await cont.EmailAddresses
                .FirstOrDefaultAsync(_ => _.EmailAddressId == emailId && _.CodeString == codeString);
             if (loaded == null)
-                return null;
+                throw new Exception($"Did not find a verifiable email with ID: {emailId} and code string: {codeString}");
+            if (loaded.VerifiedAt != null)
+                return loaded.ToDomain();
             loaded.VerifiedAt = DateTime.Now;
             cont.Update(loaded);
             await cont.SaveChangesAsync();
             return loaded.ToDomain();
         });
+        OnUpdate?.Invoke(this, returnee);
         return returnee;
     });
 
@@ -107,7 +110,7 @@ public class VerifiableEmailHandler : IVerifiableEmailHandler
 
     public Task<VerifiableEmail?> SendVerificationMail(string email) => WithContext(async cont =>
     {
-        var entry = await EntryFor(email);
+        var entry = await EnsureEntryFor(email);
         if (entry == null)
             return null;
         var returnee = await Locked(async () => 
@@ -124,4 +127,13 @@ public class VerifiableEmailHandler : IVerifiableEmailHandler
         return returnee;  
     });
 
+    public Task<VerifiableEmail?> LoadEntryFor(string email) => WithContext(async cont =>
+    {
+        if(!IsValidEmailAddress(email)) return null;
+        email = email.ToLower().Trim();
+        var loaded = await cont.EmailAddresses
+            .FirstOrDefaultAsync(_ => _.EmailAddress == email);
+        return loaded?.ToDomain();
+
+    });
 }

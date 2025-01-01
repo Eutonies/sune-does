@@ -1,0 +1,9 @@
+﻿<div class="sundo-component-validation-input-text">
+    <label for="@ElementId">@Label</label>
+    <input id="@ElementId" class="@InputClass" @bind="CurrentText" />
+    @if(_validationInfo != null) 
+    {
+        <div class="sundo-component-validation-info @StateClass">@_validationInfo</div>
+    }
+
+</div>

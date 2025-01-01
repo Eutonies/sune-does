@@ -9,16 +9,9 @@ namespace SuneDoes.UI.Pages.Medicine;
 
 public partial class MedicinePage
 {
+    private bool _showDialog = true;
+    private string _notifyMedicineType = "Heroin";
 
-
-
-    protected override async Task OnParametersSetAsync()
-    {
-    }
-
-    protected override async Task OnInitializedAsync()
-    {
-    }
 
 }
 

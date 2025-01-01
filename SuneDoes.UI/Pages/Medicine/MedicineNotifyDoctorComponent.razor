@@ -1,12 +1,40 @@
-﻿<div class="sundo-medicine-notify-component">
-    <div class="sundo-medicine-notify-container">
-        <div class="sundo-mundo-medicine-notify-header">Notify Doctor Sune</div>
-        <div class="sundo-mundo-medicine-notify-explain">
-            Leave me your email address below along with a short description of what Sune's Dangerous Medication Removal Service 
-            can help you with, and I'll get back to you ASAP.'
-            
-        </div>
+﻿@using SuneDoes.UI.Components.Email
+@using SuneDoes.UI.Components.Validation
 
+<div class="sundo-medicine-notify-component">
+    <div class="sundo-medicine-notify-container">
+        <div class="sundo-medicine-notify-header">NOTIFY DOCTOR SUNE</div>
+        <div class="sundo-medicine-notify-explain">
+            Leave me your email address below along with a short description of what Sune's Dangerous Medication Removal Service 
+            can help you with, and I'll get back to you ASAP
+        </div>
+        <div class="sundo-medicine-notify-input-container">
+            <div class="sundo-medicine-notify-divided-input">
+                <div class="sundo-medicine-notify-divided-part">
+                    <ValidationInputText
+                        Label="Email"
+                        InputType="email"
+                        OnUpdateAsync="OnEmailUpdate"
+                        Text="@_verifiableEmail?.EmailAddress"
+                    ></ValidationInputText>
+                </div>
+                <div class="sundo-medicine-notify-divided-part">
+                    <button type="button" class="sundo-medicine-notify-button" disabled="@(CanSendEmail ? null : "disabled")">Verify Email</button>
+                </div>
+
+            </div>
+
+        </div>
+        <div class="sundo-medicine-notify-input-container">
+            <label class="sundo-medicine-notify-input-label" for="sundo-medicine-notify-medicine-type-input">Medicine Type</label>
+            <input class="sundo-medicine-notify-input" id="sundo-medicine-notify-medicine-type-input" type="text" @bind="MedicineType" />
+        </div>
+        <div class="sundo-medicine-notify-input-container">
+            <label class="sundo-medicine-notify-input-label" for="sundo-medicine-notify-medicine-type-input">Comment</label>
+            <textarea class="sundo-medicine-notify-input" id="sundo-medicine-notify-medicine-type-input" rows="5" @bind="Details" />
+        </div>
+        <div class="sundo-medicine-notify-button-container">
+        </div>
 
     </div>
 </div>

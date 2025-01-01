@@ -16,7 +16,8 @@ spec:
     spec:
       containers:
       - name: sunedoes
-        image: docker.io/suneroenne/sunedoes:1.0.15
+        image: docker.io/library/sunedoes:1.0.16
+        imagePullPolicy: Never
         ports:
         - containerPort: 8080
           name: http-sunedoes
@@ -31,5 +32,17 @@ spec:
                configMapKeyRef:
                  name: sunedoes-config
                  key: Email.VerifyEmailUrl
+           - name: Db__ConnectionString
+             valueFrom:
+               secretKeyRef:
+                 name: sunedoes-secrets
+                 key: dbconnstring
+           - name: Email__ApiToken
+             valueFrom:
+               secretKeyRef:
+                 name: sunedoes-secrets
+                 key: emailapitoken
+
+
 
 

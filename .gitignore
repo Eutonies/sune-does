@@ -400,3 +400,4 @@ FodyWeavers.xsd
 */secrets/
 appsettings.local.json
 buildcommands.sh
+**/*secrets.yaml

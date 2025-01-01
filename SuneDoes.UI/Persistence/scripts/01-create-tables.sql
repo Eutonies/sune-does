@@ -6,3 +6,14 @@ create table email_address (
     verified_at timestamp,
     unique(email_address_string)
 );
+
+
+create table medicine_notification (
+    notification_id bigint primary key generated always as identity,
+    email_address varchar(200) not null,
+    notify_type varchar(200) not null,
+    medicine_type varchar(200) not null,
+    notification_time timestamp,
+    notification_comment varchar(2000),
+    unique(email_address, notify_type)
+);

@@ -13,4 +13,6 @@ public class SuneDoesEmailConfiguration
 
     public string VerifyEmailUrl { get; set; }
 
+    public string SunesEmail { get; set; }
+
 }

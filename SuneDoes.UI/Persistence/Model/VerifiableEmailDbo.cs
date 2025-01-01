@@ -35,7 +35,7 @@ internal static class VerifiableEmailDboExtensions
     public static VerifiableEmailDbo ToDbo(this VerifiableEmail em) => new VerifiableEmailDbo
     {
         EmailAddressId = em.EmailAddressId,
-        EmailAddress = em.EmailAddress,
+        EmailAddress = em.EmailAddress.Trim().ToLower(),
         CodeString = em.CodeString,
         LastVerificationMailSent = em.LastVerificationEmailSent,
         VerifiedAt = em.VerifiedAt

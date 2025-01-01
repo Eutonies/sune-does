@@ -15,8 +15,11 @@ public partial class ValidationInputText
     private bool _isInitialized = false;
     private string ElementId => $"sundo-validation-input-text-{_inputId}";
 
-    private ValidationState _state = ValidationState.NotEvaluated;
-    private string? _validationInfo;
+    [Parameter]
+    public ValidationState State { get; set; }
+
+    [Parameter]
+    public string? ValidationInfo { get; set; }
 
     [Parameter]
     public string Label { get; set; }
@@ -43,21 +46,21 @@ public partial class ValidationInputText
             if (OnUpdate != null)
             {
 
-                (_state, _validationInfo) = OnUpdate(_currentText);
+                (State, ValidationInfo) = OnUpdate(_currentText);
                 _ = InvokeAsync(StateHasChanged);
             }
             else if (OnUpdateAsync != null)
                 _ = Task.Run(async () => 
                     { 
-                        (_state, _validationInfo) = await OnUpdateAsync(_currentText);
+                        (State, ValidationInfo) = await OnUpdateAsync(_currentText);
                         _ = InvokeAsync(StateHasChanged);
                     });
         } 
     }
 
-    private string InputClass => $"sundo-component-validation-input-text {(_state == ValidationState.Invalid || _state == ValidationState.Info ? "sundo-validation-infoed" : "")} {StateClass}";
+    private string InputClass => $"sundo-component-validation-input-text {(State == ValidationState.Invalid || State == ValidationState.Info ? "sundo-validation-infoed" : "")} {StateClass}";
 
-    private string StateClass => _state switch
+    private string StateClass => State switch
     {
         ValidationState.Valid => "sundo-validation-valid",
         ValidationState.Invalid => "sundo-validation-invalid",

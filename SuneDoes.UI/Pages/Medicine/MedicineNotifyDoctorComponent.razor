@@ -1,7 +1,7 @@
 ﻿@using SuneDoes.UI.Components.Email
 @using SuneDoes.UI.Components.Validation
 
-<div class="sundo-medicine-notify-component">
+<div class="sundo-medicine-notify-component" @onclick="@(() => CloseDialog())">
     <div class="sundo-medicine-notify-container" @onclick:stopPropagation>
         <div class="sundo-medicine-notify-header">NOTIFY DOCTOR SUNE</div>
         <div class="sundo-medicine-notify-explain">
@@ -15,6 +15,8 @@
                         Label="Email"
                         InputType="email"
                         OnUpdateAsync="OnEmailUpdate"
+                        State="_currentEmailValidationState"
+                        ValidationInfo="@_currentEmailValidationInfo"
                     ></ValidationInputText>
                 </div>
                 <div class="sundo-medicine-notify-divided-part">
@@ -37,7 +39,22 @@
             <label class="sundo-medicine-notify-input-label" for="sundo-medicine-notify-medicine-type-input">Comment</label>
             <textarea class="sundo-medicine-notify-input" id="sundo-medicine-notify-medicine-type-input" rows="5" @bind="Details" />
         </div>
+        @if(_errorMessages.Any()) {
+            <div class="sundo-medicine-notify-errors-container">
+                @foreach(var err in _errorMessages) {
+                    <div class="sundo-medicine-notify-error">* @err</div>
+                }
+            </div>
+
+        }
         <div class="sundo-medicine-notify-button-container">
+            <button type="button" class="sundo-medicine-notify-button" @onclick="(() => OnCancelClicked())">Nevermind</button>
+            <button 
+                type="button" 
+                class="sundo-medicine-notify-button" 
+                disabled="@(_errorMessages.Any() ? "disabled": null)"
+                @onclick="@(() => OnSubmitClicked())"
+            >Notify Doctor Sune</button>
         </div>
 
     </div>

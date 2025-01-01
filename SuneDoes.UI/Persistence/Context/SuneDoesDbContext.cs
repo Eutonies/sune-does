@@ -10,6 +10,7 @@ public class SuneDoesDbContext : DbContext
 {
 
     public DbSet<VerifiableEmailDbo> EmailAddresses { get; set; }
+    public DbSet<MedicineNotificationDbo> Notifications { get; set; }
 
     public SuneDoesDbContext(DbContextOptions<SuneDoesDbContext> opts) : base(opts)
     {

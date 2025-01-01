@@ -17,7 +17,7 @@
     position: absolute;
     z-index: 100;
     width: 800px;
-    height: 800px;
+    height: 900px;
     margin-top: 100px;
     border-radius: 5px;
     border-style: solid;
@@ -64,8 +64,24 @@
 .sundo-medicine-notify-button {
     border-radius: 5px;
 }
+.sundo-medicine-notify-errors-container {
+    display: flex;
+    flex-direction: column;
+    font-style: italic;
+    font-size: 10pt;
+}
 
+.sundo-medicine-notify-error {
+    margin-top: 10px;
+}
 
 .sundo-medicine-notify-button-container {
+    margin-top: 40px;
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+}
 
+.sundo-medicine-notify-button-container button {
+    margin-left: 20px;
 }

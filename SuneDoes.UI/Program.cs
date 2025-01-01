@@ -1,6 +1,7 @@
 using SuneDoes.UI.Components;
 using SuneDoes.UI.Components.Email;
 using SuneDoes.UI.Configuration;
+using SuneDoes.UI.Pages.Medicine;
 using SuneDoes.UI.Persistence.Context;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -21,6 +22,7 @@ builder.Services.AddHttpClient();
 builder.Services.AddScoped<ISuneDoesEmailSender, SuneDoesEmailSender>();
 builder.AddSuneDoesDbContext();
 builder.Services.AddSingleton<IVerifiableEmailHandler, VerifiableEmailHandler>();
+builder.Services.AddSingleton<IMedicineNotificationHandler, MedicineNotificationHandler>();
 
 var app = builder.Build();
 

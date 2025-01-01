@@ -1,6 +1,7 @@
 ﻿
 using Microsoft.Extensions.Options;
 using SuneDoes.UI.Configuration;
+using SuneDoes.UI.Pages.Medicine;
 using System.Net.Http.Headers;
 using System.Text.Encodings.Web;
 
@@ -14,6 +15,7 @@ public class SuneDoesEmailSender : ISuneDoesEmailSender
     private readonly string _emailApiToken;
     private readonly string _emailSender;
     private readonly string _verifyEmailUrl;
+    private readonly string _sunesEmail;
     private readonly ILogger<SuneDoesEmailSender> _logger;
 
     private string EmailEndpointUrl => $"{_emailApiBaseUrl}email";
@@ -25,6 +27,7 @@ public class SuneDoesEmailSender : ISuneDoesEmailSender
         _emailApiToken = conf.Value.Email.ApiToken;
         _emailSender = conf.Value.Email.Sender;
         _verifyEmailUrl = conf.Value.Email.VerifyEmailUrl;
+        _sunesEmail = conf.Value.Email.SunesEmail;
         _logger = logger;
     }
 
@@ -51,6 +54,30 @@ public class SuneDoesEmailSender : ISuneDoesEmailSender
         var responseContent = await response.Content.ReadAsStringAsync();
         response.EnsureSuccessStatusCode();
         _logger.LogInformation($"Sent email to verify email: {mail.EmailAddress}");
+    }
+
+    public async Task SendNotificationEmail(MedicineNotification notification)
+    {
+        using var client = _httpClientFactory.CreateClient();
+
+        var message = new SendEmailLayout(
+            from: new SendPersonLayout(email: _emailSender, "Sune-Does"),
+            to: [new SendPersonLayout(
+                email: _sunesEmail,
+                name: "Sune"
+                )],
+            cc: [],
+            bcc: [],
+            subject: $"New medicine notification received from: {notification.Email} regarding: {notification.MedicineType}",
+            html: $"""{notification.Comment}""");
+
+        var request = new HttpRequestMessage(HttpMethod.Post, new Uri(EmailEndpointUrl));
+        request.Headers.Authorization = new AuthenticationHeaderValue("Bearer", _emailApiToken);
+        request.Content = JsonContent.Create(message);
+        var response = await client.SendAsync(request);
+        var responseContent = await response.Content.ReadAsStringAsync();
+        response.EnsureSuccessStatusCode();
+        _logger.LogInformation($"Sent notification email to: {_sunesEmail}");
     }
 
     private record SendEmailLayout(

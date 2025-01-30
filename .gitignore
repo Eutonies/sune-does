@@ -401,3 +401,4 @@ FodyWeavers.xsd
 appsettings.local.json
 buildcommands.sh
 **/*secrets.yaml
+/nuget.config

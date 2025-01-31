@@ -1,3 +1,4 @@
+using Malarkey.Client;
 using SuneDoes.UI.Components;
 using SuneDoes.UI.Components.Email;
 using SuneDoes.UI.Configuration;
@@ -8,6 +9,8 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Configuration
    .AddJsonFile("appsettings.local.json", optional: true)
    .AddEnvironmentVariables();
+builder.AddMalarkeyClientConfiguration();
+builder.AddMalarkeyClientAuthentication();
 builder.Services.Configure<SuneDoesConfiguration>(builder.Configuration);
 var appConfig = new SuneDoesConfiguration();
 builder.Configuration.Bind(appConfig);
@@ -31,6 +34,7 @@ app.UseAntiforgery();
 
 app.MapRazorComponents<App>()
     .AddInteractiveServerRenderMode();
+app.UseMalarkeyClientAuthentication();
 
 if (!string.IsNullOrEmpty(appConfig.HostingBasePath))
     app.MapBlazorHub("/" + appConfig.HostingBasePath)

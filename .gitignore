@@ -402,3 +402,4 @@ appsettings.local.json
 buildcommands.sh
 **/*secrets.yaml
 /nuget.config
+/SuneDoes.UI/sune-does.key

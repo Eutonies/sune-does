@@ -9,7 +9,8 @@
     <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="Malarkey.Client" Version="1.0.1" />
+    <PackageReference Include="Malarkey.Abstractions" Version="1.1.0" />
+    <PackageReference Include="Malarkey.Client" Version="1.1.0" />
     <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.21.0" />
     <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="9.0.2" />
   </ItemGroup>

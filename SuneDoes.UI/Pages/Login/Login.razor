@@ -1,6 +1,8 @@
 ﻿@using Malarkey.Abstractions
+@using Malarkey.Client.Authentication
 @using Microsoft.AspNetCore.Authorization
-@attribute [Authorize(AuthenticationSchemes = MalarkeyConstants.MalarkeyAuthenticationScheme)]
+@page "/login"
+@attribute [MalarkeyAuthentication()]
 
 <PageTitle>Login</PageTitle>
 

@@ -8,7 +8,7 @@
       },
       "dotnetRunMessages": true,
       "applicationUrl": "http://localhost/",
-      "launchUrl": "medicine"
+      "launchUrl": "login"
     },
     "https": {
       "commandName": "Project",

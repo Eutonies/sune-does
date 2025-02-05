@@ -30,19 +30,17 @@ builder.Services.AddSingleton<IMedicineNotificationHandler, MedicineNotification
 var app = builder.Build();
 
 app.UseStaticFiles();
+app.UseRouting();
 app.UseAntiforgery();
+app.UseMalarkeyClientAuthentication();
+app.UseAuthorization();
 
 app.MapRazorComponents<App>()
     .AddInteractiveServerRenderMode();
-app.UseMalarkeyClientAuthentication();
 
 if (!string.IsNullOrEmpty(appConfig.HostingBasePath))
     app.MapBlazorHub("/" + appConfig.HostingBasePath)
     .WithOrder(-1);
-/*else app.MapBlazorHub()
-    .WithOrder(-1);*/
 
-app.UseRouting();
-app.UseAntiforgery();
 
 app.Run();

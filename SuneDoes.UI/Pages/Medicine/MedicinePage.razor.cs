@@ -17,6 +17,7 @@ public partial class MedicinePage
 
 
     private bool _showDialog = false;
+    private int _dialogOffset = 0;
     private string _notifyRegistrationType = "Heroin";
 
     private void CloseNotifyDialog()
@@ -25,18 +26,19 @@ public partial class MedicinePage
         _ = InvokeAsync(StateHasChanged);
     }
 
-    private Action OnNotifyFentanylClick => OnNotifyButtonClicked(RegTypeFentanyl);
-    private Action OnNotifyHeroinClick => OnNotifyButtonClicked(RegTypeHeroin);
-    private Action OnNotifyOxyClick => OnNotifyButtonClicked(RegTypeOxy);
-    private Action OnNotifyTramadolClick => OnNotifyButtonClicked(RegTypeTramadol);
-    private Action OnNotifyStimulantsClick => OnNotifyButtonClicked(RegTypeStimulants);
+    private void OnNotifyFentanylClick(double yCoordinate)  => OnNotifyButtonClicked(RegTypeFentanyl, yCoordinate);
+    private void OnNotifyHeroinClick(double yCoordinate) => OnNotifyButtonClicked(RegTypeHeroin, yCoordinate);
+    private void OnNotifyOxyClick(double yCoordinate) => OnNotifyButtonClicked(RegTypeOxy, yCoordinate);
+    private void OnNotifyTramadolClick(double yCoordinate) => OnNotifyButtonClicked(RegTypeTramadol, yCoordinate);
+    private void OnNotifyStimulantsClick(double yCoordinate) => OnNotifyButtonClicked(RegTypeStimulants, yCoordinate);
 
-    private Action OnNotifyButtonClicked(string regType) => () =>
+    private void OnNotifyButtonClicked(string regType, double yCoordinate)
     {
         _notifyRegistrationType = regType;
         _showDialog = true;
+        _dialogOffset = (int) yCoordinate;
         _ = InvokeAsync(StateHasChanged);
-    };
+    }
 
 
 

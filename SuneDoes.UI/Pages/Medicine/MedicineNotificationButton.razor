@@ -1,7 +1,17 @@
-﻿<button class="sundo-medicine-notify-button" type="button" @onclick="@(() => OnClick())">
+﻿<button class="sundo-medicine-notify-button" type="button" @onclick="@ClickHandler">
     <div class="sundo-medicine-notify-button-image"></div>
 </button>
 @code {
     [Parameter]
-    public Action OnClick { get; set; }
+    public Action<double> OnClick { get; set; }
+
+    private void ClickHandler(MouseEventArgs args) 
+    {
+        var yOffSet = args.PageY - args.ClientY;
+        if (yOffSet < 100)
+            yOffSet = 100;
+        OnClick(yOffSet);
+    }
+
+
 }

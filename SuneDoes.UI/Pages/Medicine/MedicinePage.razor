@@ -4,9 +4,13 @@
 
 
 <div class="sundo-medicine-bg container-fluid">
-    @if(_showDialog) 
+    @if (_showDialog)
     {
-        <MedicineNotifyDoctorComponent RegistrationType="@_notifyRegistrationType" CloseDialog="CloseNotifyDialog"></MedicineNotifyDoctorComponent>
+        <MedicineNotifyDoctorComponent 
+            RegistrationType="@_notifyRegistrationType" 
+            CloseDialog="CloseNotifyDialog"
+            YOffSet="_dialogOffset"
+        ></MedicineNotifyDoctorComponent>
     }
     <div class="row">
         <div class="col-md-3"></div>

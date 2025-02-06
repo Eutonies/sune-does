@@ -1,6 +1,6 @@
 ﻿<div class="sundo-medicine-component container-fluid">
     <div class="row">
-        <div class="col-8">
+        <div class="col-lg-8 col-12">
             <div class="container-fluid sundo-medicine-component-text">
                 <div class="row">
                     <div class="col-12">
@@ -25,13 +25,10 @@
                         @Suggestion
                     </div>
                 </div>
-
-
             </div>
 
         </div>
-        <div class="col-4">
-
+        <div class="col-lg-4 d-none d-lg-block">
             <div class="container-fluid sundo-medicine-component-notify">
                 <MedicineNotificationButton OnClick="OnNotifyButtonClicked"></MedicineNotificationButton>
                 @if (ImageFile != null)
@@ -41,7 +38,18 @@
             </div>
         </div>
     </div>
+    <div class="row d-lg-none pb-5 mb-5">
+        <div class="col-12">
+            <div class="container-fluid sundo-medicine-component-notify">
+                <MedicineNotificationButton OnClick="OnNotifyButtonClicked"></MedicineNotificationButton>
+                @if (ImageFile != null)
+                {
+                    <img src="images/medicine/@ImageFile" class="sundo-medicine-component-image @TemperatureClass" />
+                }
+            </div>
 
+        </div>
+    </div>
 
 
 </div>

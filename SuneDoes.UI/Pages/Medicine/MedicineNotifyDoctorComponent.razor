@@ -2,7 +2,7 @@
 @using SuneDoes.UI.Components.Validation
 
 <div class="sundo-medicine-notify-component" @onclick="@(() => CloseDialog())">
-    <div class="sundo-medicine-notify-container" @onclick:stopPropagation>
+    <div class="sundo-medicine-notify-container" @onclick:stopPropagation style="top: @(YOffSet)px;">
         <div class="sundo-medicine-notify-header">NOTIFY DOCTOR SUNE</div>
         <div class="sundo-medicine-notify-explain">
             Leave me your email address below along with a short description of what Sune's Dangerous Medication Removal Service 

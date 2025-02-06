@@ -14,6 +14,9 @@ public partial class MedicineNotifyDoctorComponent : IDisposable
     [Parameter]
     public Action CloseDialog { get; set; }
 
+    [Parameter]
+    public int YOffSet { get; set; }
+
     [Inject]
     public IVerifiableEmailHandler EmailHandler { get; set; }
     private bool _hasRegisteredEmailListener = false;

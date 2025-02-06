@@ -21,7 +21,7 @@ public partial class MedicineComponent
     public MedicineTemperature Temperature { get; set; } = MedicineTemperature.Hot;
 
     [Parameter]
-    public Action OnNotifyButtonClicked { get; set; }
+    public Action<double> OnNotifyButtonClicked { get; set; }
 
     private string TemperatureClass => Temperature switch
     {

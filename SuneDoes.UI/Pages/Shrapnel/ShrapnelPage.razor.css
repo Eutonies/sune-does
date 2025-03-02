@@ -8,9 +8,19 @@
 .sundo-shrapnel-chapter-header {
     font-family: 'DancingScript';
     font-size: 50pt;
+    color: rgb(50,10,10);
     font-weight: 900;
     text-align: left;
     padding-left: 60px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin-top: 7px;
+    margin-left: 5px;
+    background-color: rgba(255,255,255,0.8);
+    border-radius: 20px;
+    min-width: 350px;
+    max-width: 850px;
+    box-shadow: 5px 5px rgba(100,100,100,0.7);
 }
 
 .sundo-shrapnel-select-container {
@@ -20,6 +30,8 @@
     border-bottom-width: 1px;
     border-bottom-color: rgb(100,100,100);
     border-bottom-style: solid;
+    border-radius: 3px;
+    max-width: 850px;
     box-shadow: 2px 2px rgb(100,100,100);
 }
 

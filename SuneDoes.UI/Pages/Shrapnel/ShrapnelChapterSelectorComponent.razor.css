@@ -1,6 +1,6 @@
 ﻿.sundo-shrapnel-chapter-selector-component {
     width: 100%;
-    height: 100px;
+    min-height: 100px;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;

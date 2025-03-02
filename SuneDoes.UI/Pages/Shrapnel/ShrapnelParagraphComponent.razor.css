@@ -14,6 +14,7 @@
     padding-top: 30px;
     padding-bottom: 30px;
     background-color: rgba(255,255,255, 0.8);
+    box-shadow: 3px 3px rgba(100,100,100,0.8);
 
 }
 
@@ -22,15 +23,21 @@
 
 }
 
+@media only screen and (min-width: 800px) {
+    .par-even {
+        transform: rotate(0.4deg) translateX(30px);
+    }
+
+    .par-odd {
+        transform: rotate(-0.4deg) translateX(10px);
+    }
+}
 .par-even {
     z-index: 100;
-    transform: rotate(0.4deg) translateX(30px);
-    
 }
 
 .par-odd {
     z-index: 101;
-    transform: rotate(-0.4deg) translateX(10px);
 }
 
 

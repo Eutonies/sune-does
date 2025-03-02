@@ -1,4 +1,5 @@
 ﻿
+using Malarkey.Abstractions.Util;
 using Microsoft.AspNetCore.Components;
 using Microsoft.Extensions.Options;
 using SuneDoes.UI.Components;
@@ -16,6 +17,9 @@ public partial class ShrapnelPage
     public IOptions<SuneDoesConfiguration> Config { get; set; }
 
     private ShrapnelChapter? _currentChapter;
+
+    private string? BackgroundImage => _currentChapter?.Pipe(pip => $"images/shrapnel/{(pip.Order < 10 ? "0" : "") + pip.Order}-sunset.webp");
+
 
     private void OnChapterSelected(ShrapnelChapter chapter)
     {

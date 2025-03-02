@@ -1,6 +1,8 @@
 ﻿.sundo-shrapnel-container {
     display: flex;
     flex-direction: column;
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 .sundo-shrapnel-chapter-header {

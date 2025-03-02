@@ -403,3 +403,5 @@ buildcommands.sh
 **/*secrets.yaml
 /nuget.config
 /SuneDoes.UI/sune-does.key
+.k8s/sunedoes.certificates.yaml
+SuneDoes.UI/nuget.config

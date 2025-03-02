@@ -18,10 +18,13 @@
     background-size: cover;
     background-repeat: no-repeat;
     margin: 5px;
+    padding: 5px;
     
 }
 .sundo-shrapnel-chapter-selector-chapter-header {
     font-family: 'DancingScript';
-    font-size: 8pt;
+    font-size: 12pt;
+    font-weight: 500;
+    color: rgb(0, 100,100);
 
 }

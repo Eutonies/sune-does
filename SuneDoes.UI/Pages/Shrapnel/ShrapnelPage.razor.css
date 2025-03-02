@@ -14,9 +14,13 @@
 }
 
 .sundo-shrapnel-select-container {
-    margin-top: 10px;
+    background-color: rgb(255,255,255);
     position: relative;
     padding-left: 10px;
+    border-bottom-width: 1px;
+    border-bottom-color: rgb(100,100,100);
+    border-bottom-style: solid;
+    box-shadow: 2px 2px rgb(100,100,100);
 }
 
 .sundo-shrapnel-chapter-container {

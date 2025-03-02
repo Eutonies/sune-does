@@ -1,5 +1,6 @@
 ﻿
 using Microsoft.AspNetCore.Components;
+using Microsoft.Extensions.Options;
 using SuneDoes.UI.Components;
 using SuneDoes.UI.Configuration;
 using SuneDoes.UI.Pages.Shrapnel.Model;
@@ -12,18 +13,28 @@ public partial class ShrapnelPage
     private static IReadOnlyCollection<ShrapnelChapter> ShrapnelChapters = [];
 
     [Inject]
-    public SuneDoesConfiguration Config { get; set; }
+    public IOptions<SuneDoesConfiguration> Config { get; set; }
+
+    private ShrapnelChapter? _currentChapter;
+
+    private void OnChapterSelected(ShrapnelChapter chapter)
+    {
+        _currentChapter = chapter;
+        InvokeAsync(StateHasChanged);
+    }
 
 
     protected override Task OnParametersSetAsync()
     {
-        CheckLoadShrapnel(Config);
+        CheckLoadShrapnel(Config.Value);
         if(SessionState!= null)
         {
             SessionState.SelectedPage = SessionSelectedPage.Shrapnel;
         }
         return base.OnParametersSetAsync();
     }
+
+
 
     protected async override Task OnInitializedAsync()
     {

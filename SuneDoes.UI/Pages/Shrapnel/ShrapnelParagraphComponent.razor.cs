@@ -5,7 +5,13 @@ namespace SuneDoes.UI.Pages.Shrapnel;
 
 public partial class ShrapnelParagraphComponent
 {
-    [Inject]
+
+    [Parameter]
     public ShrapnelParagraph Paragraph { get; set; }
+
+    [Parameter]
+    public int ParagraphOrder { get; set; }
+
+    private bool IsEven => ParagraphOrder % 2 == 0;
 
 }

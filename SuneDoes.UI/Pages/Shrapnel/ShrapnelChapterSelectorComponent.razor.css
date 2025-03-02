@@ -1,0 +1,21 @@
+﻿.sundo-shrapnel-chapter-selector-component {
+    width: 100%;
+    height: 100px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    cursor: pointer;
+}
+
+.sundo-shrapnel-chapter-selector-chapter {
+    width: 80px;
+    height: 80px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: black;
+}
+.sundo-shrapnel-chapter-selector-chapter-header {
+    font-family: 'DancingScript';
+    font-size: 8pt;
+
+}

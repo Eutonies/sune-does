@@ -2,8 +2,20 @@
 @using SuneDoes.UI.Pages.OnlineDating.Apps
 @inherits MasterPage
 
-<div class="sundo-shrapnel-bg container-fluid">
+<div class="sundo-shrapnel-container">
+    <div class="sundo-shrapnel-select-container">
+        <ShrapnelChapterSelectorComponent Chapters="ShrapnelChapters" OnChapterSelected="OnChapterSelected"></ShrapnelChapterSelectorComponent>
+    </div>
 
-
+    @if(_currentChapter != null) 
+    {
+        <h1 class="sundo-shrapnel-chapter-header">@_currentChapter.Name</h1>
+        <div class="sundo-shrapnel-chapter-container">
+            @foreach (var (par, indx) in _currentChapter.Paragraphs.Select((p,indx) => (p,indx)))
+            {
+                <ShrapnelParagraphComponent Paragraph="par" ParagraphOrder="indx"></ShrapnelParagraphComponent>
+            }
+        </div>
+    }
 </div>
 

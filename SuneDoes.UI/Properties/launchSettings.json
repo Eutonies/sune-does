@@ -8,7 +8,7 @@
       },
       "dotnetRunMessages": true,
       "applicationUrl": "http://localhost/",
-      "launchUrl": "login"
+      "launchUrl": "shrapnel"
     },
     "https": {
       "commandName": "Project",

@@ -81,3 +81,75 @@
     font-style: normal;
     src: url('fonts/dangerzone.ttf');
 }
+
+@font-face {
+    font-family: 'DancingScript';
+    font-weight: 500;
+    font-style: normal;
+    src: url('fonts/DancingScript.ttf');
+}
+
+@font-face {
+    font-family: 'Cormorant';
+    font-weight: 100;
+    font-style: normal;
+    src: url('fonts/cormorant/CormorantGaramond-Light.ttf');
+}
+@font-face {
+    font-family: 'Cormorant';
+    font-weight: 100;
+    font-style: italic;
+    src: url('fonts/cormorant/CormorantGaramond-LightItalic.ttf');
+}
+
+@font-face {
+    font-family: 'Cormorant';
+    font-weight: 300;
+    font-style: normal;
+    src: url('fonts/cormorant/CormorantGaramond-Medium.ttf');
+}
+@font-face {
+    font-family: 'Cormorant';
+    font-weight: 300;
+    font-style: italic;
+    src: url('fonts/cormorant/CormorantGaramond-MediumItalic.ttf');
+}
+
+@font-face {
+    font-family: 'Cormorant';
+    font-weight: 500;
+    font-style: normal;
+    src: url('fonts/cormorant/CormorantGaramond-Regular.ttf');
+}
+@font-face {
+    font-family: 'Cormorant';
+    font-weight: 500;
+    font-style: italic;
+    src: url('fonts/cormorant/CormorantGaramond-RegularItalic.ttf');
+}
+
+@font-face {
+    font-family: 'Cormorant';
+    font-weight: 700;
+    font-style: normal;
+    src: url('fonts/cormorant/CormorantGaramond-SemiBold.ttf');
+}
+@font-face {
+    font-family: 'Cormorant';
+    font-weight: 700;
+    font-style: italic;
+    src: url('fonts/cormorant/CormorantGaramond-SemiBoldItalic.ttf');
+}
+
+@font-face {
+    font-family: 'Cormorant';
+    font-weight: 900;
+    font-style: normal;
+    src: url('fonts/cormorant/CormorantGaramond-Bold.ttf');
+}
+@font-face {
+    font-family: 'Cormorant';
+    font-weight: 900;
+    font-style: italic;
+    src: url('fonts/cormorant/CormorantGaramond-BoldItalic.ttf');
+}

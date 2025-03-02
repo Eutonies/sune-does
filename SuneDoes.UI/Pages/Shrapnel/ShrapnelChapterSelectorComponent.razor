@@ -1,0 +1,8 @@
+﻿<div class="sundo-shrapnel-chapter-selector-component">
+    @foreach(var chap in Chapters) 
+    {
+        <div class="sundo-shrapnel-chapter-selector-chapter" @onclick="@(() => OnChapterSelected(chap))">
+            <div class="sundo-shrapnel-chapter-selector-chapter-header">@chap.Name</div>
+        </div>
+    }
+</div>

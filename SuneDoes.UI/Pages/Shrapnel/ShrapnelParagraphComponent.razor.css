@@ -1,4 +1,19 @@
 ﻿.sunedoes-shrapnel-paragraph-component {
+    --will-color: rgba(241,6,48,0.9);
+    --jen-color: rgba(84,44,171,0.9);
+    font-family: 'Cormorant';
+    font-size: 12pt;
+    font-style: italic;
+
+    max-width: 800px;
+
+    border-style: solid;
+    border-color: rgb(125, 122, 155);
+    border-width: 2px;
+    border-radius: 10px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    background-color: rgb(250,250,250);
 
 }
 
@@ -7,19 +22,70 @@
 
 }
 
-.jen-name {
+.par-even {
+    z-index: 100;
+    transform: rotate(0.4deg) translateX(30px);
+    
+}
 
+.par-odd {
+    z-index: 101;
+    transform: rotate(-0.4deg) translateX(10px);
+}
+
+
+.jen-name {
+    color: var(--jen-color);
+    font-weight: 900;
+    padding-left: 15px;
+    text-align: left;
 }
 .jen-line {
+    color: var(--jen-color);
+    font-weight: 300;
+
 }
 .jen-description {
+    color: black;
+    font-style: italic;
+    font-weight: 500;
+    font-size: 8pt;
+    color: black;
 }
 
 .will-name {
+    color: var(--will-color);
+    font-weight: 900;
+    text-align: end;
+    padding-right: 15px;
+    padding-bottom: 0px;
 }
 
 .will-line {
+    color: var(--will-color);
+    text-align: end;
+    font-weight: 300;
+    padding-bottom: 0px;
 }
 
 .will-description {
+    color: black;
+    font-style: italic;
+    font-weight: 500;
+    font-size: 8pt;
+    text-align: end;
+}
+
+.stick-up {
+    margin-top: -6px;
+}
+.stick-up div {
+    padding-top: 0px;
+    padding-bottom: 0px;
+    margin-top: 0px;
+}
+
+
+.stick-down {
+    margin-bottom: 0px;
 }

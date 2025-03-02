@@ -1,52 +1,23 @@
-﻿.sundo-meditation-bg {
-    font-family: 'Ink Free';
-    background-image: url('images/meditation/meditation-background.webp');
-    background-size: cover;
-    background-repeat: no-repeat;
-    height: 100%;
-    width: 100%;
-    overflow-x:hidden;
+﻿.sundo-shrapnel-container {
+    display: flex;
+    flex-direction: column;
 }
 
-.sundo-meditation-summary-container {
-    margin-top: 30px;
-    background-color: rgba(245,240,240,0.6);
-    border-radius: 8px;
-    border-style:solid;
-    border-width: 2px;
-    box-shadow: 5px 5px 5px rgba(30,30,30,0.9);
+.sundo-shrapnel-chapter-header {
+    font-family: 'DancingScript';
+    font-size: 50pt;
+    font-weight: 900;
+    text-align: left;
+    padding-left: 60px;
 }
 
-.sundo-meditation-summary-header {
-    font-family: 'Norse';
-    font-size: 30pt;
-    font-weight:bold;
+.sundo-shrapnel-select-container {
+    margin-top: 10px;
+    position: relative;
+    padding-left: 10px;
 }
 
-.sundo-meditation-tracks-header {
-    font-family: 'Norse';
-    font-size: 25pt;
-    font-weight: bold;
-    padding: 10px;
-    background-color: rgba(245,240,240,0.3);
-    border-radius: 8px;
-    border-style: dashed;
-    border-width: 1px;
-    box-shadow: 5px 5px 5px rgba(30,30,30,0.4);
+.sundo-shrapnel-chapter-container {
+    margin-top: 10px;
+    position: relative;
 }
-
-
-.sundo-meditation-footer {
-    margin-top: 40px;
-    font-family: 'Ink Free';
-    font-size: 12pt;
-    font-style: italic;
-    float: right;
-    margin-right: 40px;
-    background-color: rgba(245,240,240,0.3);
-    box-shadow: 5px 5px 5px rgba(240,180,180,0.6);
-    border-radius: 8px;
-    padding: 10px;
-    padding-left: 50px;
-}
-

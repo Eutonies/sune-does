@@ -62,6 +62,7 @@ public static class ShrapnelParser
                 currentCharacter = match.Groups[1].Value;
                 var spoken = match.Groups[2].Value;
                 var description = match.Groups.Count > 3 ? match.Groups[3].Value : null;
+                description = description?.Pipe(desc => desc.Replace("[", "").Replace("]", ""));
                 currentParagraph.Add(new ShrapnelLine(currentCharacter, spoken, string.IsNullOrWhiteSpace(description) ? null : description));
             }
             else if(currentCharacter != null && unnamedMatches != null)
@@ -69,6 +70,7 @@ public static class ShrapnelParser
                 var match = unnamedMatches.First();
                 var spoken = match.Groups[1].Value;
                 var description = match.Groups.Count > 2 ? match.Groups[2].Value : null;
+                description = description?.Pipe(desc => desc.Replace("[", "").Replace("]", ""));
                 currentParagraph.Add(new ShrapnelLine(currentCharacter, spoken, string.IsNullOrWhiteSpace(description) ? null : description));
 
             }

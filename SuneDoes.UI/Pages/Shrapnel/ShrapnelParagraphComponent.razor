@@ -1,0 +1,31 @@
+﻿<div class="sunedoes-shrapnel-paragraph-component">
+    <div class="sunedoes-shrapnel-paragraph-lines container-fluids">
+        @foreach(var lin in Paragraph.Lines) {
+            <div class="row">
+                @if(lin.IsJen) {
+                    <div class="col-4 jen-name">@lin.SaidBy</div>
+                    <div class="col-8 jen-line">@lin.Line</div>
+                }
+                else if(lin.IsWill) {
+                    <div class="col-8 will-line">@lin.Line</div>
+                    <div class="col-4 will-name">@lin.SaidBy</div>
+                }
+                else {
+                    <h1>@(lin.Line)</h1>
+                }
+            </div>
+            @if(lin.Description != null) {
+                <div class="row">
+                    @if(lin.IsJen) {
+                        <div class="col-4"></div>
+                        <div class="col-8 jen-description">@lin.Description</div>
+                    }
+                    else if(lin.IsWill) {
+                        <div class="col-8 will-description">@lin.Description</div>
+                        <div class="col-4"></div>
+                    }
+                </div>
+            }
+        }
+    </div>
+</div>

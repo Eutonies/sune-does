@@ -3,7 +3,9 @@ using SuneDoes.UI.Components;
 using SuneDoes.UI.Components.Email;
 using SuneDoes.UI.Configuration;
 using SuneDoes.UI.Pages.Medicine;
+using SuneDoes.UI.Pages.Shrapnel;
 using SuneDoes.UI.Persistence.Context;
+
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Configuration

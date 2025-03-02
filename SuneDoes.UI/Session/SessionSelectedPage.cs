@@ -6,5 +6,6 @@ public enum SessionSelectedPage
     OnlineDating = 10,
     Meditation = 20,
     LucidDreaming = 30,
-    Medicine = 40
+    Medicine = 40,
+    Shrapnel = 100
 }

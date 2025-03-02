@@ -1,0 +1,52 @@
+﻿.sundo-meditation-bg {
+    font-family: 'Ink Free';
+    background-image: url('images/meditation/meditation-background.webp');
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100%;
+    width: 100%;
+    overflow-x:hidden;
+}
+
+.sundo-meditation-summary-container {
+    margin-top: 30px;
+    background-color: rgba(245,240,240,0.6);
+    border-radius: 8px;
+    border-style:solid;
+    border-width: 2px;
+    box-shadow: 5px 5px 5px rgba(30,30,30,0.9);
+}
+
+.sundo-meditation-summary-header {
+    font-family: 'Norse';
+    font-size: 30pt;
+    font-weight:bold;
+}
+
+.sundo-meditation-tracks-header {
+    font-family: 'Norse';
+    font-size: 25pt;
+    font-weight: bold;
+    padding: 10px;
+    background-color: rgba(245,240,240,0.3);
+    border-radius: 8px;
+    border-style: dashed;
+    border-width: 1px;
+    box-shadow: 5px 5px 5px rgba(30,30,30,0.4);
+}
+
+
+.sundo-meditation-footer {
+    margin-top: 40px;
+    font-family: 'Ink Free';
+    font-size: 12pt;
+    font-style: italic;
+    float: right;
+    margin-right: 40px;
+    background-color: rgba(245,240,240,0.3);
+    box-shadow: 5px 5px 5px rgba(240,180,180,0.6);
+    border-radius: 8px;
+    padding: 10px;
+    padding-left: 50px;
+}
+

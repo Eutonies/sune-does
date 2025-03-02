@@ -5,6 +5,7 @@
     flex-direction: row;
     flex-wrap: wrap;
     cursor: pointer;
+    background-color: rgb(255,255,255);
 }
 
 .sundo-shrapnel-chapter-selector-chapter {
@@ -13,6 +14,11 @@
     border-width: 1px;
     border-style: solid;
     border-color: black;
+    border-radius: 5px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin: 5px;
+    
 }
 .sundo-shrapnel-chapter-selector-chapter-header {
     font-family: 'DancingScript';

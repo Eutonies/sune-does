@@ -7,6 +7,18 @@ namespace SuneDoes.UI.Pages.Shrapnel;
 
 public static class ShrapnelParser
 {
+    private static readonly string[] ChapterNames = [
+        "Nights I can't forget",
+        "Days where we came close",
+        "The day I told you I love you",
+        "Sleepless nights",
+        "The worst days",
+        "Grey days",
+        "Nights with friends",
+        "The day I broke it",
+        "The day it broke me"
+        ];
+
     public static IReadOnlyCollection<ShrapnelChapter> ParseFolder(string folder)
     {
         var files = Directory.GetFiles(folder);
@@ -21,6 +33,10 @@ public static class ShrapnelParser
                         Paragraphs: Parse(File.ReadAllText(fil))
                 ))
             )
+            .Select(_ => _ with
+            {
+                Name = _.Order - 1 <  ChapterNames.Length ? ChapterNames[_.Order - 1] : _.Name
+            })
             .OrderBy(_ => _.Order)
             .ToList();
         return chapters;

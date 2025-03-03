@@ -3,6 +3,8 @@
     flex-direction: column;
     background-size: cover;
     background-repeat: no-repeat;
+    min-height: 100vh;
+    content: '';
 }
 
 .sundo-shrapnel-chapter-header {
@@ -24,13 +26,16 @@
 }
 
 .sundo-shrapnel-select-container {
-    background-color: rgb(255,255,255);
+    background-image: url('images/shrapnel/white-satin.webp');
+    background-size: cover;
+    background-repeat: no-repeat;
     position: relative;
     padding-left: 10px;
     border-bottom-width: 1px;
     border-bottom-color: rgb(100,100,100);
     border-bottom-style: solid;
     border-radius: 3px;
+    border-bottom-right-radius: 5px;
     max-width: 850px;
     box-shadow: 2px 2px rgb(100,100,100);
 }

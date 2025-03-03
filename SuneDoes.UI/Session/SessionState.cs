@@ -5,6 +5,7 @@ using SuneDoes.UI.Pages.LucidDreaming;
 using SuneDoes.UI.Pages.Medicine;
 using SuneDoes.UI.Pages.Meditation;
 using SuneDoes.UI.Pages.OnlineDating;
+using SuneDoes.UI.Pages.Shrapnel;
 using System.Reflection;
 
 namespace SuneDoes.UI.Session;
@@ -52,7 +53,8 @@ public record SessionState(Action OnUpdate, IServiceScopeFactory ScopeFactory)
         {typeof(OnlineDatingPage), SessionSelectedPage.OnlineDating},
         {typeof(MeditationPage), SessionSelectedPage.Meditation},
         {typeof(LucidDreamingPage), SessionSelectedPage.LucidDreaming},
-        {typeof(MedicinePage), SessionSelectedPage.Medicine}
+        {typeof(MedicinePage), SessionSelectedPage.Medicine},
+        {typeof(ShrapnelPage), SessionSelectedPage.Shrapnel}
     };
 
     public SessionSelectedPage? CurrentPage(NavigationManager navManager)

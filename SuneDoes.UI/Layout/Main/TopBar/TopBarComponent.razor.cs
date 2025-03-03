@@ -6,6 +6,7 @@ using SuneDoes.UI.Pages.LucidDreaming;
 using SuneDoes.UI.Pages.Medicine;
 using SuneDoes.UI.Pages.Meditation;
 using SuneDoes.UI.Pages.OnlineDating;
+using SuneDoes.UI.Pages.Shrapnel;
 using SuneDoes.UI.Session;
 using System.Reflection;
 
@@ -88,6 +89,15 @@ public partial class TopBarComponent
             {
                 builder.OpenComponent<MedicineLogoComponent>(0);
                 builder.AddAttribute(1, nameof(MedicineLogoComponent.Height), 100);
+                builder.CloseComponent();
+            };
+        }
+        else if (newPageSelection == SessionSelectedPage.Shrapnel)
+        {
+            _additionalLogo = (builder) =>
+            {
+                builder.OpenComponent<ShrapnelLogoComponent>(0);
+                builder.AddAttribute(1, nameof(ShrapnelLogoComponent.Height), 100);
                 builder.CloseComponent();
             };
         }

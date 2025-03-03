@@ -18,7 +18,9 @@ public partial class ShrapnelPage
 
     private ShrapnelChapter? _currentChapter;
 
-    private string? BackgroundImage => _currentChapter?.Pipe(pip => $"images/shrapnel/{(pip.Order < 10 ? "0" : "") + pip.Order}-sunset.webp");
+    private string? BackgroundImage => "images/shrapnel/" + ( 
+        _currentChapter?.Pipe(pip => $"{(pip.Order < 10 ? "0" : "") + pip.Order}-sunset.webp") ??
+        "unset.webp");
 
 
     private void OnChapterSelected(ShrapnelChapter chapter)

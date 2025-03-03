@@ -1,7 +1,7 @@
 ﻿@media only screen and (max-width: 990px) {
     .sundo-bg {
         position: page;
-        height: 4000px;
+        height: 4700px;
         width: 100%;
         background-image: url('images/main/master-layout.webp');
         background-size: cover;
@@ -14,7 +14,7 @@
 @media only screen and (min-width: 990px) {
     .sundo-bg {
         position: page;
-        height: 3200px;
+        height: 3700px;
         width: 100%;
         background-image: url('images/main/master-layout.webp');
         background-size: cover;

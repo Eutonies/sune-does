@@ -11,8 +11,8 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Configuration
    .AddJsonFile("appsettings.local.json", optional: true)
    .AddEnvironmentVariables();
-builder.AddMalarkeyClientConfiguration();
-builder.AddMalarkeyClientAuthentication();
+//builder.AddMalarkeyClientConfiguration();
+//builder.AddMalarkeyClientAuthentication();
 builder.Services.Configure<SuneDoesConfiguration>(builder.Configuration);
 var appConfig = new SuneDoesConfiguration();
 builder.Configuration.Bind(appConfig);
@@ -34,8 +34,8 @@ var app = builder.Build();
 app.UseStaticFiles();
 app.UseRouting();
 app.UseAntiforgery();
-app.UseMalarkeyClientAuthentication();
-app.UseAuthorization();
+//app.UseMalarkeyClientAuthentication();
+//app.UseAuthorization();
 
 app.MapRazorComponents<App>()
     .AddInteractiveServerRenderMode();

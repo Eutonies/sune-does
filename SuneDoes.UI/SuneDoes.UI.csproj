@@ -15,5 +15,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Persistence\scripts\" />
+    <Folder Include="shrapnel-jen-will\" />
   </ItemGroup>
 </Project>

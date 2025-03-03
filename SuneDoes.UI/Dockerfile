@@ -12,9 +12,11 @@ FROM mcr.microsoft.com/dotnet/sdk:9.0 AS build
 ARG BUILD_CONFIGURATION=Release
 WORKDIR /src
 COPY ["SuneDoes.UI/SuneDoes.UI.csproj", "SuneDoes.UI/"]
+COPY ["nuget.config", "nuget.config"]
 RUN dotnet restore "./SuneDoes.UI/SuneDoes.UI.csproj"
 COPY . .
 WORKDIR "/src/SuneDoes.UI"
+COPY ["./SuneDoes.UI/shrapnel-jen-will/", "shrapnel-jen-will/"]
 RUN dotnet build "./SuneDoes.UI.csproj" -c $BUILD_CONFIGURATION -o /app/build
 
 # This stage is used to publish the service project to be copied to the final stage

@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: sunedoes
-        image: docker.io/library/sunedoes:1.0.17
+        image: docker.io/library/sunedoes:1.0.26
         imagePullPolicy: Never
         ports:
         - containerPort: 8080

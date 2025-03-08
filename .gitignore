@@ -405,3 +405,4 @@ buildcommands.sh
 /SuneDoes.UI/sune-does.key
 .k8s/sunedoes.certificates.yaml
 SuneDoes.UI/nuget.config
+/SuneDoes.UI/designs/blocks/blocks-background.xcf

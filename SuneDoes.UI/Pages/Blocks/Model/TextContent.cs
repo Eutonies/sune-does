@@ -25,6 +25,45 @@ public abstract record TextContent(IReadOnlyCollection<BlockWord> EmphasisWords)
 
     }
 
+    private IReadOnlyCollection<BlocksTextPart>? _parts;
+    public IReadOnlyCollection<BlocksTextPart> Parts => _parts ??= SplitContent();
+
+    private IReadOnlyCollection<BlocksTextPart> SplitContent()
+    {
+        var currentRound = new List<BlocksTextPart> {
+            new BlocksTextPart(Text: StringContent())
+        };
+        foreach(var emphWord in EmphasisWords)
+        {
+            var nextRound = new List<BlocksTextPart>();
+            foreach(var exist in currentRound)
+            {
+                if (exist.FontSettings != null || !exist.Text.Contains(emphWord.Words))
+                    nextRound.Add(exist);
+                else
+                {
+                    var splitted = exist.Text.Split(emphWord.Words);
+                    foreach(var (part,indx) in splitted.Select((_,indx) => (_,indx)))
+                    {
+                        nextRound.Add(new BlocksTextPart(part));
+                        if(indx < splitted.Length - 1)
+                            nextRound.Add(new BlocksTextPart(
+                                Text: emphWord.Words,
+                                FontSettings: new BlocksFontSetting(
+                                    FontFamily: emphWord.FontFamily,
+                                    FontSize: emphWord.FontSize,
+                                    FontWeight: emphWord.IsBold ? 900 : 500,
+                                    FontColor: emphWord.Color))
+                                );
+                    }
+                }
+            }
+            currentRound = nextRound;
+        }
+
+        return currentRound;
+    }
+
 }
 
 public record TextNarrationContent(string Content, IReadOnlyCollection<BlockWord> EmphasisWords

@@ -4,5 +4,7 @@ public record BlockWord(
     string Words,
     string? Color,
     bool IsBold,
-    bool IsItalic
+    bool IsItalic,
+    string? FontFamily,
+    int? FontSize
     );

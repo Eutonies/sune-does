@@ -1,4 +1,5 @@
-﻿@using SuneDoes.UI.Pages.Blocks.Model
+﻿@using SuneDoes.Extensions
+@using SuneDoes.UI.Pages.Blocks.Model
 <div class="sundo-blocks-page-component" @onclick:stopPropagation style="z-index: @(1200 - Order); left: @(Order * 10)px; top: @(Order)px;">
     @if(_showText) {
         <div class="sundo-blocks-page-title">@(Title ?? " ")</div>
@@ -22,7 +23,14 @@
                 {
                     foreach (var txt in txts.Contents)
                     {
-                        <div>@(txt.ToHtmlString())</div>
+                        foreach(var part in txt.Parts) {
+                            if(txt is TextSpeakContent spk) {
+                                <i><span style="@(part.FontSettings?.Pipe(set => set.ToHtml()))">@part.Text</span></i>
+                            }
+                            else {
+                                <span style="@(part.FontSettings?.Pipe(set => set.ToHtml()))">@part.Text</span>
+                            }
+                        }
                     }
                 }
                 else if (cont is BlocksListContent lis)

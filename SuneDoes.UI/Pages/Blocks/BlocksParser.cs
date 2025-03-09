@@ -8,8 +8,18 @@ namespace SuneDoes.UI.Pages.Blocks;
 
 public static class BlocksParser
 {
+    private static IReadOnlyCollection<BlockWord>? EmphasisWords;
+    private static IReadOnlyCollection<BlocksChapter>? Chapters;
 
-    public static IReadOnlyCollection<BlockWord> ParseBlockWords(string blocksFolder)
+
+    public static IReadOnlyCollection<BlocksChapter> LoadChapters(string blocksFolder)
+    {
+        Chapters ??=  ParseChapters(blocksFolder);
+        return Chapters;
+    }
+
+
+    private static IReadOnlyCollection<BlockWord> ParseBlockWords(string blocksFolder)
     {
         var fileContents = Directory.GetFiles(blocksFolder)
             .Where(_ => _.ToLower().EndsWith(".words"))
@@ -26,12 +36,18 @@ public static class BlocksParser
     private static readonly Regex FileNameRegex = new Regex(@"([0-9]+)\-(.*)\.block", RegexOptions.IgnoreCase);
 
 
-    public static IReadOnlyCollection<BlocksChapter> ParseChapters(string blocksFolder)
+    private static IReadOnlyCollection<BlocksChapter> ParseChapters(string blocksFolder)
     {
         var emphWords = ParseBlockWords(blocksFolder);
         var relevantFiles = Directory.GetFiles(blocksFolder)
             .Where(_ => _.ToLower().EndsWith(".block"))
             .ToList();
+        var returnee = relevantFiles
+            .Select(_ => ParseChapterFile(_, emphWords))
+            .OrderBy(_ => _.Order)
+            .ToList();
+        return returnee;
+
     }
 
 
@@ -41,7 +57,9 @@ public static class BlocksParser
         var order = match.Groups[1].Value;
         var title = match.Groups[2].Value;
         var fileContent = File.ReadAllText(fileName);
-
+        var blocks = ParseFile(fileContent, emphasisWords);
+        var returnee = new BlocksChapter(title, order, blocks);
+        return returnee;
     }
 
 
@@ -88,6 +106,7 @@ public static class BlocksParser
                 currentTextContents.Add(new TextSpeakContent(curString, emphasisWords));
             else 
                 currentTextContents.Add(new TextNarrationContent(curString, emphasisWords));
+            startIndex = endIndex;
                 
         };
 
@@ -97,26 +116,34 @@ public static class BlocksParser
             var curChar = fileContent[endIndex];
             char? nextChar = endIndex < fileContent.Length - 1 ? fileContent[endIndex + 1] : null;
             string? curString = endIndex > startIndex ? fileContent.Substring(startIndex, length).Trim('\n').Trim('\r') : null;
-            if (curChar == '"')
+            
+            if(curChar == '1' && newLine && !isSpeach && !isItemList)
             {
-                if(isSpeach)
-                {
-                    var sentence = fileContent.Substring(startIndex, length);
-                    (isSpeach, startIndex, newLine) = (false, endIndex + 1, false);
-                }
-                else
-                {
-                    (isSpeach, startIndex, newLine) = (true, endIndex, false);
-                }
-            }
-            if(curChar == '1' && nextChar == '.' && newLine && !isSpeach && !isItemList)
-            {
+                EndCurrent();
                 isItemList = true;
+            }
+            else if(curChar.IsInt() && newLine && isItemList)
+            {
+                EndCurrent();
+            }
+            else if(!curChar.IsInt() && newLine && isItemList)
+            {
+                EndItemList();
+                isItemList = false;
             }
             else if(curChar.IsNewline() && isItemList)
             {
-                if(curString != null)
-                    currentItems.Add(curString);
+                EndCurrent();
+            }
+            else if(curChar.IsNewline() && !isSpeach)
+            {
+                EndCurrent();
+                returnee.Add(new BlocksNewLineContent());
+            }
+            else if (curChar == '"')
+            {
+                EndCurrent();
+                isSpeach = !isSpeach;
             }
             else if(newLine && !curChar.IsInt() && isItemList)
             {
@@ -124,8 +151,13 @@ public static class BlocksParser
                 {
                 }
             }
-
         }
+        if (startIndex < endIndex)
+            EndCurrent();
+        if (currentItems.Any())
+            EndItemList();
+        if (currentTextContents.Any())
+            EndTextContents();
 
         return returnee;
     }

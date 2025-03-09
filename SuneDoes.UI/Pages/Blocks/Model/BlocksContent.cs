@@ -17,3 +17,5 @@ public record BlocksListContent(IReadOnlyCollection<(string? Title, string Conte
 {
 
 }
+
+public record BlocksNewLineContent() : BlocksContent();

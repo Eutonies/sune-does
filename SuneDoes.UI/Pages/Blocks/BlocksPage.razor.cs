@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Components;
 using Microsoft.Extensions.Options;
 using SuneDoes.UI.Components;
 using SuneDoes.UI.Configuration;
+using SuneDoes.UI.Pages.Blocks.Model;
 using SuneDoes.UI.Pages.Shrapnel.Model;
 using SuneDoes.UI.Session;
 
@@ -15,6 +16,8 @@ public partial class BlocksPage
     [Inject]
     public IOptions<SuneDoesConfiguration> Config { get; set; }
 
+    private IReadOnlyCollection<BlocksChapter> AllChapters = [];
+
     private IReadOnlyCollection<ContentPage> Pages = [
         new ContentPage(0),
         new ContentPage(1),
@@ -25,6 +28,12 @@ public partial class BlocksPage
     private void OnChapterSelected(ShrapnelChapter chapter)
     {
         InvokeAsync(StateHasChanged);
+    }
+
+    protected override Task OnInitializedAsync()
+    {
+        AllChapters = BlocksParser.LoadChapters(Config.Value.BlocksFolder);
+        return base.OnInitializedAsync();
     }
 
 

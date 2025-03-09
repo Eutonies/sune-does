@@ -1,3 +1,44 @@
-﻿<div class="sundo-blocks-page-component" style="z-index: @(1200 - Index);">
+﻿@using SuneDoes.UI.Pages.Blocks.Model
+<div class="sundo-blocks-page-component" @onclick:stopPropagation style="z-index: @(1200 - Order); left: @(Order * 10)px; top: @(Order)px;">
+    @if(_showText) {
+        <div class="sundo-blocks-page-title">@(Title ?? " ")</div>
+        @if (OnClickLeft != null)
+        {
+            <button class="sundo-blocks-page-button click-left" onclick="@(() => OnClickLeft(Index))"></button>
+        }
+        @if (OnClickRight != null)
+        {
+            <button class="sundo-blocks-page-button click-right" onclick="@(() => OnClickRight(Index))"></button>
+        }
+
+        <div class="sundo-blocks-page-body">
+            @foreach (var cont in Content)
+            {
+                if (cont is BlocksNewLineContent)
+                {
+                    <br />
+                }
+                else if (cont is BlocksTextContent txts)
+                {
+                    foreach (var txt in txts.Contents)
+                    {
+                        <div>@(txt.ToHtmlString())</div>
+                    }
+                }
+                else if (cont is BlocksListContent lis)
+                {
+                    <ol>
+                        @foreach (var it in lis.Items)
+                        {
+                            <li>@it.Content</li>
+                        }
+                    </ol>
+                }
+            }
+        </div>
+        <div class="sundo-blocks-page-footer">
+            @($"{PageNumber}/{TotalNumberOfPages}")
+        </div>
+    }
 
 </div>

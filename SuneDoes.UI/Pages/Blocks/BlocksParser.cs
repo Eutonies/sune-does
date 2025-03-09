@@ -8,8 +8,13 @@ namespace SuneDoes.UI.Pages.Blocks;
 
 public static class BlocksParser
 {
-    private static IReadOnlyCollection<BlockWord>? EmphasisWords;
     private static IReadOnlyCollection<BlocksChapter>? Chapters;
+    private static IReadOnlyDictionary<string, string> TitleMap = new List<(string In, string Out)>
+    {
+        ("the-forest", "The Forest"),
+        ("the-village", "The Village"),
+        ("the-whore", "The Whore")
+    }.ToDictionarySafe(_ => _.In, _ => _.Out);
 
 
     public static IReadOnlyCollection<BlocksChapter> LoadChapters(string blocksFolder)
@@ -56,6 +61,7 @@ public static class BlocksParser
         var match = FileNameRegex.Matches(fileName).First();
         var order = match.Groups[1].Value;
         var title = match.Groups[2].Value;
+        title = TitleMap.GetValueOrDefault(title.ToLower()) ?? title;
         var fileContent = File.ReadAllText(fileName);
         var blocks = ParseFile(fileContent, emphasisWords);
         var returnee = new BlocksChapter(title, order, blocks);
@@ -112,12 +118,13 @@ public static class BlocksParser
 
         for(; endIndex < fileContent.Length; endIndex++)
         {
-            var length = endIndex - startIndex;
             var curChar = fileContent[endIndex];
-            char? nextChar = endIndex < fileContent.Length - 1 ? fileContent[endIndex + 1] : null;
-            string? curString = endIndex > startIndex ? fileContent.Substring(startIndex, length).Trim('\n').Trim('\r') : null;
-            
-            if(curChar == '1' && newLine && !isSpeach && !isItemList)
+            if (curChar.IsCarriageReturn())
+            {
+                newLine = false;
+                continue;
+            }
+            else if(curChar == '1' && newLine && !isSpeach && !isItemList)
             {
                 EndCurrent();
                 isItemList = true;
@@ -138,6 +145,7 @@ public static class BlocksParser
             else if(curChar.IsNewline() && !isSpeach)
             {
                 EndCurrent();
+                EndTextContents();
                 returnee.Add(new BlocksNewLineContent());
             }
             else if (curChar == '"')
@@ -145,12 +153,8 @@ public static class BlocksParser
                 EndCurrent();
                 isSpeach = !isSpeach;
             }
-            else if(newLine && !curChar.IsInt() && isItemList)
-            {
-                if(currentItems.Any())
-                {
-                }
-            }
+            newLine = curChar.IsNewline();
+
         }
         if (startIndex < endIndex)
             EndCurrent();
@@ -163,11 +167,11 @@ public static class BlocksParser
     }
 
     private static bool IsInt(this char c) => IntegerChars.Contains(c);
-    private static bool IsNewline(this char c) => NewLineChars.Contains(c);
+    private static bool IsNewline(this char c) => c == '\n';
+    private static bool IsCarriageReturn(this char c) => c == '\r';
 
     private static HashSet<char> CharSet(params IEnumerable<char> chars) => chars.ToHashSet();
     private static readonly HashSet<char> IntegerChars = CharSet('1', '2', '3', '4', '5', '6', '7', '8', '9');
-    private static readonly HashSet<char> NewLineChars = CharSet('\r', '\n');
 
     private static readonly Regex ItemStripRegex = new Regex(@"[0-9]+\. ?(.*)");
     private static string StripItemPrefix(this string str) => ItemStripRegex.Matches(str).First().Groups[1].Value;

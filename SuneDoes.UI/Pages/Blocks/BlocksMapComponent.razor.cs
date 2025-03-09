@@ -1,11 +1,18 @@
-﻿using SuneDoes.UI.Pages.Blocks.Model;
+﻿using Microsoft.AspNetCore.Components;
+using SuneDoes.UI.Pages.Blocks.Model;
 
 namespace SuneDoes.UI.Pages.Blocks;
 
 public partial class BlocksMapComponent
 {
 
-    private static readonly IReadOnlyCollection<MapChapterEntry> Chapters = new List<MapChapterEntry>
+    [Parameter]
+    public IReadOnlyCollection<BlocksChapter> AllChapters { get; set; }
+
+    [Parameter]
+    public Action<BlocksChapter?> OnChapterChanged { get; set; }
+
+    private static readonly IReadOnlyCollection<MapChapterEntry> ChapterEntryDefinitions = new List<MapChapterEntry>
     {
         new MapChapterEntry(Chapter: null, "The Woods", 0),
         new MapChapterEntry(Chapter: null, "The Village", 1),
@@ -14,6 +21,20 @@ public partial class BlocksMapComponent
         new MapChapterEntry(Chapter: null, "The Red River", 4)
     };
 
+    private IReadOnlyCollection<MapChapterEntry> MapChapterEntries = [];
+
+    protected override void OnParametersSet()
+    {
+        if(!MapChapterEntries.Any())
+        {
+            var chapArr = AllChapters.ToArray();
+            MapChapterEntries = ChapterEntryDefinitions
+                .Select(en => en with
+                {
+                    Chapter = en.Index < chapArr.Length ? chapArr[en.Index] : null
+                }).ToList();
+        }
+    }
 
 
     private record MapChapterEntry(

@@ -6,6 +6,7 @@ namespace SuneDoes.UI.Pages.Blocks.Model;
 public abstract record TextContent(IReadOnlyCollection<BlockWord> EmphasisWords)
 {
     public abstract HtmlString ToHtmlString();
+    public abstract string StringContent();
 
     protected string Replace(string input)
     {
@@ -34,6 +35,7 @@ public record TextNarrationContent(string Content, IReadOnlyCollection<BlockWord
         var content = Replace(Content);
         return new HtmlString(content);
     }
+    public override string StringContent() => Content;
 }
 
 public record TextSpeakContent(string Content, IReadOnlyCollection<BlockWord> EmphasisWords) : TextContent(EmphasisWords)
@@ -43,4 +45,6 @@ public record TextSpeakContent(string Content, IReadOnlyCollection<BlockWord> Em
         var returnee = new HtmlString($"<i>{Content}</i>");
         return returnee;
     }
+    public override string StringContent() => Content;
+
 }

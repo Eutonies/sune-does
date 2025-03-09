@@ -1,6 +1,6 @@
 ﻿<div class="sundo-blocks-map-component">
-    @foreach(var mapChap in Chapters) {
-        <div class="sundo-blocks-map-chapter" id="@(mapChap.HtmlId)"></div>
+    @foreach(var mapChap in MapChapterEntries) {
+        <div class="sundo-blocks-map-chapter" id="@(mapChap.HtmlId)" @onclick="@(() => OnChapterChanged(mapChap.Chapter))"></div>
 
     }
 </div>

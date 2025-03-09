@@ -2,14 +2,28 @@
 @inherits MasterPage
 
 <div class="sundo-blocks-container container-fluid">
-    <div class="sundo-blocks-block-container">
-        @foreach (var pag in Pages)
-        {
-            <BlocksPageComponent Index="pag.Index"></BlocksPageComponent>
-        }
-    </div>
+    @if (_currentChapter != null)
+    {
+        <div class="sundo-blocks-block-container" @onclick="@(() => OnChapterSelectionChanged(null))">
+
+            @foreach (var (pag, order) in Pages.Select((pag, indx) => (pag, indx)))
+            {
+                <BlocksPageComponent Order="order"
+                Title="@pag.Title"
+                Index="pag.Index"
+                Content="pag.Content"
+                PageNumber="(pag.Index + 1)"
+                TotalNumberOfPages="Pages.Count"
+                OnClickLeft="@(ClickLeftHandlerFor(pag))"
+                OnClickRight="@(ClickRightHandlerFor(pag))"></BlocksPageComponent>
+            }
+        </div>
+    }
     <div class="sundo-blocks-map-container">
-        <BlocksMapComponent></BlocksMapComponent>
+        <BlocksMapComponent 
+            OnChapterChanged="OnChapterSelectionChanged"
+            AllChapters="AllChapters"
+        ></BlocksMapComponent>
     </div>
 </div>
 

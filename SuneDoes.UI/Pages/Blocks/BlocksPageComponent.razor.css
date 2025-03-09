@@ -2,7 +2,89 @@
     position: absolute;
     width: 834px;
     height: 1153px;
-    background-image: url('images/blocks/writing-page.webp');
     background-size: contain;
     background-repeat: no-repeat;
+    font-family: 'Ink Free';
+    animation-duration: 1s;
+    animation-name: unfoldpaper;
+    animation-fill-mode: both;
+    animation-iteration-count: 1;
+}
+
+.sundo-blocks-page-title {
+    font-size: 36pt;
+    font-weight: 900;
+    padding-left: 120px;
+    padding-top: 40px;
+    height: 100px;
+}
+
+.sundo-blocks-page-body {
+    margin-top: 20px;
+    padding: 40px;
+    padding-left: 120px;
+    padding-top: 15px;
+    font-size: 16pt;
+}
+
+.sundo-blocks-page-button {
+    position: absolute;
+    border: none;
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 50px;
+    height: 50px;
+    background-color: transparent;
+    top: 38%;
+}
+
+.click-left {
+    background-image: url('images/blocks/point-left.webp');
+    left: 2%;
+}
+
+.click-right {
+    background-image: url('images/blocks/point-right.webp');
+    left: 88%;
+}
+
+.sundo-blocks-page-footer {
+    position: absolute;
+    right: 45px;
+    bottom: 40px;
+    font-size: 40pt;
+    font-weight: 900;
+}
+
+@keyframes unfoldpaper {
+    0% {
+        background-image: url('images/blocks/written-page-9.webp');
+    }
+    10% {
+        background-image: url('images/blocks/written-page-8.webp');
+    }
+    20% {
+        background-image: url('images/blocks/written-page-7.webp');
+    }
+    30% {
+        background-image: url('images/blocks/written-page-6.webp');
+    }
+    40% {
+        background-image: url('images/blocks/written-page-5.webp');
+    }
+    50% {
+        background-image: url('images/blocks/written-page-4.webp');
+    }
+    60% {
+        background-image: url('images/blocks/written-page-3.webp');
+    }
+    70% {
+        background-image: url('images/blocks/written-page-2.webp');
+    }
+    80% {
+        background-image: url('images/blocks/written-page-1.webp');
+    }
+    100% {
+        background-image: url('images/blocks/writing-page.webp');
+    }
 }

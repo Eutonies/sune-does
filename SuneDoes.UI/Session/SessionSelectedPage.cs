@@ -7,5 +7,6 @@ public enum SessionSelectedPage
     Meditation = 20,
     LucidDreaming = 30,
     Medicine = 40,
-    Shrapnel = 100
+    Shrapnel = 100,
+    Blocks = 120
 }

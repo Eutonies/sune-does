@@ -1,0 +1,46 @@
+﻿.sundo-blocks-map-component {
+    position: relative;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    background-image: url('images/blocks/blocks-background.webp');
+    background-size: cover;
+    background-repeat: no-repeat;
+    z-index: 100;
+}
+
+.sundo-blocks-map-chapter {
+    position: absolute;
+    width: 25%;
+    height: 6%;
+    cursor: pointer;
+    z-index: 110;
+    background-color: rgba(240,240,240,0.2);
+    border-radius: 5px;
+}
+
+.sundo-blocks-map-chapter:hover {
+    background-color: rgba(54, 155, 99, 0.3);
+}
+
+#sundo-blocks-map-chapter-0 {
+    top: 11.5%;
+    left: 61.82%;
+}
+#sundo-blocks-map-chapter-1 {
+    top: 19%;
+    left: 61.82%;
+}
+#sundo-blocks-map-chapter-2 {
+    top: 27%;
+    left: 61.82%;
+}
+#sundo-blocks-map-chapter-3 {
+    top: 34.5%;
+    left: 61.82%;
+}
+#sundo-blocks-map-chapter-4 {
+    top: 42%;
+    left: 61.82%;
+}

@@ -8,7 +8,7 @@
       },
       "dotnetRunMessages": true,
       "applicationUrl": "http://localhost/",
-      "launchUrl": ""
+      "launchUrl": "blocks"
     },
     "https": {
       "commandName": "Project",

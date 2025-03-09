@@ -2,6 +2,7 @@
 
 public record BlocksChapter(
     string Title,
+    string Order,
     IReadOnlyCollection<BlocksContent> Content
     )
 { 

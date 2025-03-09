@@ -8,4 +8,6 @@ public class SuneDoesConfiguration {
 
     public SuneDoesEmailConfiguration Email { get; set; }
     public string ShrapnelFolder { get; set; }
+    public string BlocksFolder { get; set; }
+
 }

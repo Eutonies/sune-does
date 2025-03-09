@@ -4,6 +4,9 @@
     top: 0px;
     min-height: 1200px;
     padding: 0px;
+    background-image: url('images/blocks/log-wall.webp');
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 .sundo-blocks-block-container {

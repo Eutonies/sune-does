@@ -2,8 +2,24 @@
     position: absolute;
     top: 0px;
     left: 0px;
-
 }
+
+.sundo-blocks-block-container {
+    position: absolute;
+    padding-left: 100px;
+    z-index: 100;
+    content: '';
+    background-color: rgba(100,100,100,0.4);
+    width: 100%;
+    height: 100%;
+}
+
+.sundo-blocks-block-container::before {
+    backdrop-filter: blur(20px);
+    background-color: rgba(100,100,100,0.4);
+}
+
+
 
 .sundo-blocks-map-container {
     position: absolute;
@@ -11,4 +27,5 @@
     left: 20px;
     width: 1024px;
     height: 512px;
+    z-index: 99;
 }

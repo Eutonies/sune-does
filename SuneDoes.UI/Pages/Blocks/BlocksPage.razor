@@ -2,6 +2,12 @@
 @inherits MasterPage
 
 <div class="sundo-blocks-container">
+    <div class="sundo-blocks-block-container">
+        @foreach (var pag in Pages)
+        {
+            <BlocksPageComponent Index="pag.Index"></BlocksPageComponent>
+        }
+    </div>
     <div class="sundo-blocks-map-container">
         <BlocksMapComponent></BlocksMapComponent>
     </div>

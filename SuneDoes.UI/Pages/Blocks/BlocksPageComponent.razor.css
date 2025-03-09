@@ -1,0 +1,8 @@
+﻿.sundo-blocks-page-component {
+    position: absolute;
+    width: 834px;
+    height: 1153px;
+    background-image: url('images/blocks/writing-page.webp');
+    background-size: contain;
+    background-repeat: no-repeat;
+}

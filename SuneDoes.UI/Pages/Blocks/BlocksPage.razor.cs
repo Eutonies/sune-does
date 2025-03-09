@@ -15,6 +15,12 @@ public partial class BlocksPage
     [Inject]
     public IOptions<SuneDoesConfiguration> Config { get; set; }
 
+    private IReadOnlyCollection<ContentPage> Pages = [
+        new ContentPage(0),
+        new ContentPage(1),
+        new ContentPage(2)
+        ];
+
 
     private void OnChapterSelected(ShrapnelChapter chapter)
     {
@@ -26,12 +32,15 @@ public partial class BlocksPage
     {
         if(SessionState!= null)
         {
-            SessionState.SelectedPage = SessionSelectedPage.Shrapnel;
+            SessionState.SelectedPage = SessionSelectedPage.Blocks;
         }
         return base.OnParametersSetAsync();
     }
 
 
+    private record ContentPage(
+        int Index
+        );
 
 
 }

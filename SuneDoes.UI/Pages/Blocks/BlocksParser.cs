@@ -13,7 +13,9 @@ public static class BlocksParser
     {
         ("the-forest", "The Forest"),
         ("the-village", "The Village"),
-        ("the-whore", "The Whore")
+        ("the-whore", "The Whore"),
+        ("the-mother-and-the-father", "The Mother & The Father"),
+        ("the-red-river", "The Red River")
     }.ToDictionarySafe(_ => _.In, _ => _.Out);
 
 

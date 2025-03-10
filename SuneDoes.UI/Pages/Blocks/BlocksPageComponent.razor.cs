@@ -48,4 +48,5 @@ public partial class BlocksPageComponent
             });
         return base.OnInitializedAsync();
     }
+
 }

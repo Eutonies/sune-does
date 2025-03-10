@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Components;
 using SuneDoes.UI.Components;
+using SuneDoes.UI.Pages.Blocks;
 using SuneDoes.UI.Pages.Home;
 using SuneDoes.UI.Pages.LucidDreaming;
 using SuneDoes.UI.Pages.Medicine;
@@ -54,7 +55,8 @@ public record SessionState(Action OnUpdate, IServiceScopeFactory ScopeFactory)
         {typeof(MeditationPage), SessionSelectedPage.Meditation},
         {typeof(LucidDreamingPage), SessionSelectedPage.LucidDreaming},
         {typeof(MedicinePage), SessionSelectedPage.Medicine},
-        {typeof(ShrapnelPage), SessionSelectedPage.Shrapnel}
+        {typeof(ShrapnelPage), SessionSelectedPage.Shrapnel},
+        {typeof(BlocksPage), SessionSelectedPage.Blocks}
     };
 
     public SessionSelectedPage? CurrentPage(NavigationManager navManager)

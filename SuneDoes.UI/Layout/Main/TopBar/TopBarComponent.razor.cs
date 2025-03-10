@@ -108,6 +108,18 @@ public partial class TopBarComponent
 
     private string? BasePath => AppConfig.Value.HostingBasePath;
 
+    private string LogoPath => _currentLogoPage switch 
+    { 
+        SessionSelectedPage.Blocks => "images/main/sune-does-cold.webp",
+        _ => "images/main/sune-does.webp"
+    };
+
+    private string BackgroundPath => _currentLogoPage switch
+    {
+        SessionSelectedPage.Blocks => "images/main/cold-background.webp",
+        _ => "images/main/gold.webp"
+    };
+
     private string HomeLink => BasePath switch {
         null => "",
         string bp => "/" + bp

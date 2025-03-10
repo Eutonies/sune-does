@@ -1,15 +1,16 @@
 ﻿.sundo-blocks-page-component {
+    animation-duration: 1s;
+    animation-name: unfoldpaper;
+    animation-fill-mode: both;
+    animation-iteration-count: 1;
     position: absolute;
     width: 834px;
     height: 1153px;
     background-size: contain;
     background-repeat: no-repeat;
     font-family: 'Ink Free';
-    animation-duration: 1s;
-    animation-name: unfoldpaper;
-    animation-fill-mode: both;
-    animation-iteration-count: 1;
 }
+
 
 .sundo-blocks-page-title {
     font-size: 36pt;
@@ -86,5 +87,19 @@
     }
     100% {
         background-image: url('images/blocks/writing-page.webp');
+    }
+}
+
+@keyframes spawnpaper {
+    0% {
+        display: none;
+    }
+
+    99% {
+        display: none;
+    }
+
+    100% {
+        display: flex;
     }
 }

@@ -58,7 +58,6 @@
             cursor: pointer;
             content: '';
             height: 95%;
-            background-image: url('images/main/sune-does.webp');
             background-size: contain;
             background-repeat: no-repeat;
             min-width: 400px;
@@ -72,7 +71,6 @@
             cursor: pointer;
             content: '';
             height: 75%;
-            background-image: url('images/main/sune-does.webp');
             background-size: contain;
             background-repeat: no-repeat;
             margin-top: 10px;

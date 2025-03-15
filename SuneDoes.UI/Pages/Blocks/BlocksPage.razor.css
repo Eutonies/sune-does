@@ -1,35 +1,77 @@
-﻿.sundo-blocks-container {
-    position: absolute;
-    content: '';
-    top: 0px;
-    min-height: 1200px;
-    padding: 0px;
-    background-image: url('images/blocks/log-wall.webp');
-    background-size: cover;
-    background-repeat: no-repeat;
+﻿@media only screen and (max-width: 990px) {
+    .sundo-blocks-container {
+        position: absolute;
+        content: '';
+        top: 0px;
+        min-height: 1200px;
+        padding: 0px;
+        background-image: url('images/blocks/log-wall.webp');
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+
+    .sundo-blocks-block-container {
+        position: absolute;
+        padding-left: 100px;
+        z-index: 100;
+        background-color: rgba(100,100,100,0.4);
+        width: 100%;
+        min-height: 100%;
+        backdrop-filter: blur(20px);
+    }
+
+        .sundo-blocks-block-container::before {
+            background-color: rgba(100,100,100,0.4);
+        }
+
+
+
+    .sundo-blocks-map-container {
+        position: absolute;
+        top: 20px;
+        left: 10px;
+        width: 100vw;
+        height: 222.2vw;
+        z-index: 99;
+    }
 }
 
-.sundo-blocks-block-container {
-    position: absolute;
-    padding-left: 100px;
-    z-index: 100;
-    background-color: rgba(100,100,100,0.4);
-    width: 100%;
-    min-height: 100%;
-    backdrop-filter: blur(20px);
-}
 
-.sundo-blocks-block-container::before {
-    background-color: rgba(100,100,100,0.4);
-}
+@media only screen and (min-width: 990px) {
+
+    .sundo-blocks-container {
+        position: absolute;
+        content: '';
+        top: 0px;
+        min-height: 1200px;
+        padding: 0px;
+        background-image: url('images/blocks/log-wall.webp');
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+
+    .sundo-blocks-block-container {
+        position: absolute;
+        padding-left: 100px;
+        z-index: 100;
+        background-color: rgba(100,100,100,0.4);
+        width: 100%;
+        min-height: 100%;
+        backdrop-filter: blur(20px);
+    }
+
+        .sundo-blocks-block-container::before {
+            background-color: rgba(100,100,100,0.4);
+        }
 
 
 
-.sundo-blocks-map-container {
-    position: absolute;
-    top: 20px;
-    left: 20px;
-    width: 1024px;
-    height: 512px;
-    z-index: 99;
+    .sundo-blocks-map-container {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        width: 1024px;
+        height: 512px;
+        z-index: 99;
+    }
 }

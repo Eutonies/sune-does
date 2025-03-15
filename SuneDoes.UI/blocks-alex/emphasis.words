@@ -1,0 +1,78 @@
+[
+  {
+    "Words" : "The Forest",
+	"Color" : "rgb(0,0,0)",
+	"IsBold": true,
+	"IsItalic": false
+  },
+  {
+    "Words" : "The Village",
+	"Color" : "rgb(0,0,0)",
+	"IsBold": true,
+	"IsItalic": false
+  },
+  {
+    "Words" : "The Mother",
+	"Color" : "rgb(29,100,125)",
+	"IsBold": true,
+	"IsItalic": false,
+	"FontFamily": "DancingScript"
+  },
+  {
+    "Words" : "Mommy's",
+	"Color" : "rgb(29,100,125)",
+	"IsBold": true,
+	"IsItalic": false,
+	"FontFamily": "DancingScript"
+  },
+  {
+    "Words" : "The Father",
+	"Color" : "rgb(150,91,24)",
+	"IsBold": true,
+	"IsItalic": false,
+	"FontFamily": "DancingScript"
+  },
+  {
+    "Words" : "The Whore",
+	"Color" : "rgb(123,24,150)",
+	"IsBold": true,
+	"IsItalic": false,
+	"FontFamily": "DancingScript"
+  },
+  {
+    "Words" : "HIM",
+	"Color" : "rgb(129,5,35)",
+	"IsBold": false,
+	"IsItalic": false,
+	"FontFamily": "DrippingMarker"
+  },
+  {
+    "Words" : "HIS",
+	"Color" : "rgb(129,5,35)",
+	"IsBold": false,
+	"IsItalic": false,
+	"FontFamily": "DrippingMarker"
+  },
+  {
+    "Words" : "HE",
+	"Color" : "rgb(129,5,35)",
+	"IsBold": false,
+	"IsItalic": false,
+	"FontFamily": "DrippingMarker"
+  },
+  {
+    "Words" : "The Woman",
+	"Color" : "rgb(224,45,75)",
+	"IsBold": true,
+	"IsItalic": false,
+	"FontFamily": "ShadowsIntoLight"
+  },
+  {
+    "Words" : "The Red River",
+	"Color" : "rgb(129,5,35)",
+	"IsBold": false,
+	"IsItalic": false,
+	"FontFamily": "DrippingMarker"
+  }
+
+]

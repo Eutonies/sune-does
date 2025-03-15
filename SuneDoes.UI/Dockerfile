@@ -28,4 +28,5 @@ FROM base AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
 COPY ["./SuneDoes.UI/shrapnel-jen-will/", "shrapnel-jen-will/"]
+COPY ["./SuneDoes.UI/blocks-alex/", "blocks-alex/"]
 ENTRYPOINT ["dotnet", "SuneDoes.UI.dll"]

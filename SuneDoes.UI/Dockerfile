@@ -16,7 +16,6 @@ COPY ["nuget.config", "nuget.config"]
 RUN dotnet restore "./SuneDoes.UI/SuneDoes.UI.csproj"
 COPY . .
 WORKDIR "/src/SuneDoes.UI"
-COPY ["./SuneDoes.UI/shrapnel-jen-will/", "shrapnel-jen-will/"]
 RUN dotnet build "./SuneDoes.UI.csproj" -c $BUILD_CONFIGURATION -o /app/build
 
 # This stage is used to publish the service project to be copied to the final stage
@@ -28,4 +27,5 @@ RUN dotnet publish "./SuneDoes.UI.csproj" -c $BUILD_CONFIGURATION -o /app/publis
 FROM base AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
+COPY ["./SuneDoes.UI/shrapnel-jen-will/", "shrapnel-jen-will/"]
 ENTRYPOINT ["dotnet", "SuneDoes.UI.dll"]

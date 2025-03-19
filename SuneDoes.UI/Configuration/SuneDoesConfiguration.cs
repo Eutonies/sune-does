@@ -7,7 +7,8 @@ public class SuneDoesConfiguration {
     public SuneDoesDbConfiguration Db { get; set; }
 
     public SuneDoesEmailConfiguration Email { get; set; }
-    public string ShrapnelFolder { get; set; }
     public string BlocksFolder { get; set; }
+
+    public string GitHubToken { get; set; }
 
 }

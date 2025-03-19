@@ -42,6 +42,11 @@ spec:
                secretKeyRef:
                  name: sunedoes-secrets
                  key: emailapitoken
+           - name: GitHubToken
+             valueFrom:
+               secretKeyRef:
+                 name: sunedoes-secrets
+                 key: githubtoken
 
 
 

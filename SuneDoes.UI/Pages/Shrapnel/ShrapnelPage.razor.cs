@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Components;
 using Microsoft.Extensions.Options;
 using SuneDoes.UI.Components;
 using SuneDoes.UI.Configuration;
+using SuneDoes.UI.Integration.Github;
 using SuneDoes.UI.Pages.Shrapnel.Model;
 using SuneDoes.UI.Session;
 
@@ -15,6 +16,9 @@ public partial class ShrapnelPage
 
     [Inject]
     public IOptions<SuneDoesConfiguration> Config { get; set; }
+
+    [Inject]
+    public IGitHubRepoBrowser GitHubBrowser { get; set; }
 
     private ShrapnelChapter? _currentChapter;
 
@@ -30,14 +34,13 @@ public partial class ShrapnelPage
     }
 
 
-    protected override Task OnParametersSetAsync()
+    protected override async Task OnParametersSetAsync()
     {
-        CheckLoadShrapnel(Config.Value);
+        await CheckLoadShrapnel(Config.Value, GitHubBrowser);
         if(SessionState!= null)
         {
             SessionState.SelectedPage = SessionSelectedPage.Shrapnel;
         }
-        return base.OnParametersSetAsync();
     }
 
 
@@ -48,18 +51,25 @@ public partial class ShrapnelPage
 
 
 
-    private static readonly object ShrapnelReadLock = new { };
-    private static void CheckLoadShrapnel(SuneDoesConfiguration conf)
+    private static readonly SemaphoreSlim ShrapnelReadLock = new SemaphoreSlim(1,1);
+    private static async Task CheckLoadShrapnel(SuneDoesConfiguration conf, IGitHubRepoBrowser browser)
     {
-        lock (ShrapnelReadLock)
+        await ShrapnelReadLock.WaitAsync();
+        try
         {
-            if(!ShrapnelChapters.Any())
+            if (!ShrapnelChapters.Any())
             {
-                ShrapnelChapters = ShrapnelParser.ParseFolder(conf.ShrapnelFolder)
+                ShrapnelChapters = (await ShrapnelParser.ParseGitHub(browser))
                     .OrderBy(_ => _.Order)
                     .ToList();
             }
+
         }
+        finally
+        {
+            ShrapnelReadLock.Release();
+        }
+
     }
 
 

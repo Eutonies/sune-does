@@ -1,5 +1,6 @@
 ﻿using Microsoft.Extensions.FileSystemGlobbing;
 using SuneDoes.Extensions;
+using SuneDoes.UI.Integration.Github;
 using SuneDoes.UI.Pages.Shrapnel.Model;
 using System.Text.RegularExpressions;
 
@@ -19,28 +20,27 @@ public static class ShrapnelParser
         "The day it broke me"
         ];
 
-    public static IReadOnlyCollection<ShrapnelChapter> ParseFolder(string folder)
+    public static async Task<IReadOnlyCollection<ShrapnelChapter>> ParseGitHub(IGitHubRepoBrowser browser)
     {
-        var files = Directory.GetFiles(folder);
-        var chapters = files
-            .Where(_ => _.ToLower().EndsWith("shrapnel"))
-            .Order()
-            .Select(fil => ParseFileName(fil)
-                .Pipe(pa =>
-                    new ShrapnelChapter(
+        var repoFiles = await browser.DownloadFilesWithEnding(repoName: "jen-and-will", ".shrapnel");
+        var chapters = repoFiles
+            .OrderBy(_ => _.FileName)
+            .Select(fil => ParseFileName(fil.FileName).Pipe(
+                pa => new ShrapnelChapter(
                         Name: pa.ChapterName,
                         Order: pa.ChapterOrder,
-                        Paragraphs: Parse(File.ReadAllText(fil))
-                ))
-            )
+                        Paragraphs: Parse(fil.FileContent)
+                )
+            ))
             .Select(_ => _ with
             {
-                Name = _.Order - 1 <  ChapterNames.Length ? ChapterNames[_.Order - 1] : _.Name
+                Name = _.Order - 1 < ChapterNames.Length ? ChapterNames[_.Order - 1] : _.Name
             })
             .OrderBy(_ => _.Order)
             .ToList();
         return chapters;
     }
+
 
     private static readonly Regex LineRegex = new Regex(@"\- *\(([a-z]+)\) * ""([^""]+)"" *(\[[^\n]+\])?", RegexOptions.IgnoreCase);
     private static readonly Regex ContinuedLineRegex = new Regex(@"""([^""]+)"" *(\[[^\n]+\])?", RegexOptions.IgnoreCase);

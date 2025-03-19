@@ -6,6 +6,7 @@ using SuneDoes.UI.Extensions;
 using SuneDoes.UI.Pages.LucidDreaming;
 using SuneDoes.UI.Pages.OnlineDating;
 using SuneDoes.UI.Pages.Shrapnel;
+using SuneDoes.UI.Pages.Space;
 using System.Reflection;
 
 namespace SuneDoes.UI.Pages.Home;

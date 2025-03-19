@@ -5,6 +5,7 @@ using SuneDoes.UI.Configuration;
 using SuneDoes.UI.Integration.Github;
 using SuneDoes.UI.Pages.Medicine;
 using SuneDoes.UI.Pages.Shrapnel;
+using SuneDoes.UI.Pages.Space;
 using SuneDoes.UI.Persistence.Context;
 
 
@@ -31,6 +32,7 @@ builder.AddSuneDoesDbContext();
 builder.Services.AddSingleton<IVerifiableEmailHandler, VerifiableEmailHandler>();
 builder.Services.AddSingleton<IMedicineNotificationHandler, MedicineNotificationHandler>();
 builder.Services.AddSingleton<IGitHubRepoBrowser, GitHubRepoBrowser>();
+builder.Services.AddSingleton<ISpaceParser, SpaceParser>();
 
 var app = builder.Build();
 

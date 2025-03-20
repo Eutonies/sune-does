@@ -161,10 +161,16 @@
     src: url('fonts/adrip1.ttf');
 }
 
-
 @font-face {
     font-family: 'ShadowsIntoLight';
     font-weight: 500;
     font-style: normal;
     src: url('fonts/SHADOWSINTOLIGHT-REGULAR.TTF');
+}
+
+@font-face {
+    font-family: 'SpecialElite';
+    font-weight: 500;
+    font-style: normal;
+    src: url('fonts/SpecialElite-Regular.ttf');
 }

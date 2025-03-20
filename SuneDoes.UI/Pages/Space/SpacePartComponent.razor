@@ -1,0 +1,78 @@
+﻿@using Booktex.Domain.Book.Model
+<div class="sundo-space-part-container-bg">
+    <div class="sundo-space-part-container">
+        @foreach(var (chunk, indx) in _splitParts.Select((_,indx) => (_,indx))) 
+        {
+            <div class="sundo-space-part-page @(indx == _splitParts.Count - 1 ? "last-page" : "not-last-page")" style="left: @(10 + indx * 5)px; z-index: @(100 - indx);">
+                @foreach(var cont in chunk) 
+                {
+                    if(cont is BookCharacterLine lin) {
+                        @foreach(var (linPart, lpIndx) in lin.LineParts.Select((_,indx) => (_,indx))) 
+                        {
+                            <div class="sundo-space-line-part">
+                                @if(lpIndx == 0) 
+                                {
+                                    <div class="sundo-space-line-part-character-name">@(lin.Character.CharacterName)</div>
+                                }
+                                    <div class="sundo-space-line-part-text">@(linPart.PartText)</div>
+                                @if(linPart.Description != null) {
+                                        <div class="sundo-space-line-part-description">@(linPart.Description)</div>
+                                }
+                            </div>
+
+                        }
+                    }
+                    else if(cont is BookDialog diag) 
+                    {
+                        foreach(var ent in diag.Entries) 
+                        {
+                            if(ent.LeftSide != null) 
+                            {
+                                @foreach (var (linPart, lpIndx) in ent.LeftSide.LineParts.Select((_, indx) => (_, indx)))
+                                {
+                                    <div class="sundo-space-dialog-part left-side">
+                                        @if (lpIndx == 0)
+                                        {
+                                            <div class="sundo-space-dialog-part-character-name">@(ent.LeftSide.Character.CharacterName)</div>
+                                        }
+                                        <div class="sundo-space-dialog-part-text">@(linPart.PartText)</div>
+                                        @if (linPart.Description != null)
+                                        {
+                                            <div class="sundo-space-dialog-part-description">@(linPart.Description)</div>
+                                        }
+                                    </div>
+
+                                }
+                            }
+                            else if (ent.RightSide != null)
+                            {
+                                @foreach (var (linPart, lpIndx) in ent.RightSide.LineParts.Select((_, indx) => (_, indx)))
+                                {
+                                    <div class="sundo-space-dialog-part right-side">
+                                        <div class="sundo-space-dialog-part-text">@(linPart.PartText)</div>
+                                        @if (linPart.Description != null)
+                                        {
+                                            <div class="sundo-space-dialog-part-description">@(linPart.Description)</div>
+                                        }
+                                        @if (lpIndx == 0)
+                                        {
+                                            <div class="sundo-space-dialog-part-character-name">@(ent.RightSide.Character.CharacterName)</div>
+                                        }
+                                    </div>
+                                }
+                            }
+
+                        }
+
+                    }
+                    else if (cont is BookNarration narr) 
+                    {
+                        <div class="sundo-space-narration">@narr.NarrationContent</div>
+                    }
+
+
+            }
+            </div>
+        }
+    </div>
+</div>

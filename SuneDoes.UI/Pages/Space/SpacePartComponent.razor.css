@@ -1,0 +1,95 @@
+﻿.sundo-space-part-container-bg {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(2px);
+    z-index: 1000;
+}
+
+
+.sundo-space-part-container {
+    position: relative;
+    left: 10%;
+    width: 1900px;
+    height: 2600px;
+    font-family: 'Special Elite';
+    font-size: 10pt;
+}
+
+
+.sundo-space-part-page {
+    position: absolute;
+    top: 20px;
+    width: 1000px;
+    height: 1500px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    padding: 60px;
+}
+
+.last-page {
+    background-image: url('images/space-and-time/blank-paper-shadow.webp');
+}
+
+.not-last-page {
+    background-image: url('images/space-and-time/blank-paper-no-shadow.webp');
+}
+
+.sundo-space-line-part {
+    display: flex;
+    flex-direction: row;
+
+}
+
+.sundo-space-line-part-character-name {
+    font-weight: 900;
+}
+
+.sundo-space-line-part-text {
+}
+
+.sundo-space-line-part-description {
+    font-style: italic;
+}
+
+.sundo-space-dialog-part {
+    display: flex;
+    flex-direction: row;
+}
+
+.sundo-space-dialog-part-character-name {
+    font-weight: 900;
+
+}
+.left-side > .sundo-space-dialog-part-character-name {
+    margin-right: 20px;
+}
+
+.right-side > .sundo-space-dialog-part-character-name {
+    margin-left: 20px;
+}
+
+.sundo-space-dialog-part-text {
+}
+
+.sundo-space-dialog-part-description {
+    font-style: italic;
+    min-width: 30%;
+}
+.left-side {
+    text-align: left;
+    justify-content: left;
+}
+
+
+.right-side {
+    text-align: right;
+    justify-content: right;
+}
+
+
+.sundo-space-narration {
+
+}

@@ -1,0 +1,47 @@
+﻿@using Booktex.Domain.Book.Model
+<div class="sundo-space-character-line">
+    @if(!IsRight) 
+    {
+        @foreach (var (linPart, lpIndx) in Line.LineParts.Select((_, indx) => (_, indx)))
+        {
+            <div class="sundo-space-character-line-part left-side">
+                <div class="sundo-space-character-line-part-name" style="width: @(Line.Character.CharacterName.Length * 6)px;">
+                    @if (lpIndx == 0)
+                    {
+                        @(Line.Character.CharacterName)
+                    }
+                </div>
+
+                <div class="sundo-space-character-line-part-text-container">
+                    <div class="sundo-space-character-line-part-text">@(linPart.PartText)</div>
+                    @if (linPart.Description != null)
+                    {
+                        <div class="sundo-space-character-line-part-description">[@(linPart.Description)]</div>
+                    }
+                </div>
+            </div>
+
+        }
+    }
+    else
+    {
+        @foreach (var (linPart, lpIndx) in Line.LineParts.Select((_, indx) => (_, indx)))
+        {
+            <div class="sundo-space-character-line-part right-side">
+                <div class="sundo-space-character-line-part-text-container">
+                    <div class="sundo-space-character-line-part-text">@(linPart.PartText)</div>
+                    @if (linPart.Description != null)
+                    {
+                        <div class="sundo-space-character-line-part-description">[@(linPart.Description)]</div>
+                    }
+                </div>
+                <div class="sundo-space-character-line-part-name" style="width: @(Line.Character.CharacterName.Length * 3)px;">
+                    @if (lpIndx == 0)
+                    {
+                        @(Line.Character.CharacterName)
+                    }
+                </div>
+            </div>
+        }
+    }
+</div>

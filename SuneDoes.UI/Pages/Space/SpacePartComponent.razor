@@ -1,77 +1,61 @@
 ﻿@using Booktex.Domain.Book.Model
 <div class="sundo-space-part-container-bg">
     <div class="sundo-space-part-container">
-        @foreach(var (chunk, indx) in _splitParts.Select((_,indx) => (_,indx))) 
+        @foreach(var part in _splitParts) 
         {
-            <div class="sundo-space-part-page @(indx == _splitParts.Count - 1 ? "last-page" : "not-last-page")" style="left: @(10 + indx * 5)px; z-index: @(100 - indx);">
-                @foreach(var cont in chunk) 
-                {
-                    if(cont is BookCharacterLine lin) {
-                        @foreach(var (linPart, lpIndx) in lin.LineParts.Select((_,indx) => (_,indx))) 
+            <div 
+                class="sundo-space-part-page" 
+                style="left: @(part.Index * 100)px; z-index: @(ZIndexFor(part)); transform: rotate(@((-1 + part.Index))deg);"
+                @onclick="@(() => OnPageClicked(part.Index))"
+            >
+            <div class="sundo-space-part-page-top-no">@(part.Index + 1)</div>
+            <div class="sundo-space-part-focus @(FocusClassFor(part))"></div>
+            <div class="sundo-space-part-content">
+                    @if (part.Index == 0)
+                    {
+                        <div class="sundo-space-part-header">
+                            <div class="sundo-space-part-header-name">@PartName</div>
+                            @if (Specification.SubName != null)
+                            {
+                                <div class="sundo-space-part-header-sub-name">@PartSubName</div>
+                            }
+                        </div>
+                    }
+                    @foreach (var cont in part.Contents)
+                    {
+                        if (cont is BookCharacterLine lin)
                         {
-                            <div class="sundo-space-line-part">
-                                @if(lpIndx == 0) 
-                                {
-                                    <div class="sundo-space-line-part-character-name">@(lin.Character.CharacterName)</div>
-                                }
-                                    <div class="sundo-space-line-part-text">@(linPart.PartText)</div>
-                                @if(linPart.Description != null) {
-                                        <div class="sundo-space-line-part-description">@(linPart.Description)</div>
-                                }
+                            <SpacePartCharacterLineComponent Line="lin" IsRight="false"></SpacePartCharacterLineComponent>
+                        }
+                        else if (cont is BookDialog diag)
+                        {
+                            foreach (var ent in diag.Entries)
+                            {
+                                <SpacePartCharacterLineComponent Line="ent.Line" IsRight="@(ent.LeftSide == null)"></SpacePartCharacterLineComponent>
+                            }
+
+                        }
+                        else if (cont is BookNarration narr)
+                        {
+                            <div class="sundo-space-narration">@narr.NarrationContent</div>
+                        }
+                        else if (cont is BookContextBreak)
+                        {
+                            <div class="sundo-space-context-break"></div>
+                        }
+                        else if (cont is BookChapterSection sect)
+                        {
+                            <div class="sundo-space-section">
+                                <div class="sundo-space-section-name">@(sect.Title)</div>
                             </div>
-
-                        }
-                    }
-                    else if(cont is BookDialog diag) 
-                    {
-                        foreach(var ent in diag.Entries) 
-                        {
-                            if(ent.LeftSide != null) 
-                            {
-                                @foreach (var (linPart, lpIndx) in ent.LeftSide.LineParts.Select((_, indx) => (_, indx)))
-                                {
-                                    <div class="sundo-space-dialog-part left-side">
-                                        @if (lpIndx == 0)
-                                        {
-                                            <div class="sundo-space-dialog-part-character-name">@(ent.LeftSide.Character.CharacterName)</div>
-                                        }
-                                        <div class="sundo-space-dialog-part-text">@(linPart.PartText)</div>
-                                        @if (linPart.Description != null)
-                                        {
-                                            <div class="sundo-space-dialog-part-description">@(linPart.Description)</div>
-                                        }
-                                    </div>
-
-                                }
-                            }
-                            else if (ent.RightSide != null)
-                            {
-                                @foreach (var (linPart, lpIndx) in ent.RightSide.LineParts.Select((_, indx) => (_, indx)))
-                                {
-                                    <div class="sundo-space-dialog-part right-side">
-                                        <div class="sundo-space-dialog-part-text">@(linPart.PartText)</div>
-                                        @if (linPart.Description != null)
-                                        {
-                                            <div class="sundo-space-dialog-part-description">@(linPart.Description)</div>
-                                        }
-                                        @if (lpIndx == 0)
-                                        {
-                                            <div class="sundo-space-dialog-part-character-name">@(ent.RightSide.Character.CharacterName)</div>
-                                        }
-                                    </div>
-                                }
-                            }
-
                         }
 
-                    }
-                    else if (cont is BookNarration narr) 
-                    {
-                        <div class="sundo-space-narration">@narr.NarrationContent</div>
+
                     }
 
+            </div>
+                <div class="sundo-space-part-page-bottom-no">@(part.Index + 1)</div>
 
-            }
             </div>
         }
     </div>

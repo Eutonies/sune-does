@@ -2,9 +2,9 @@
 @using SuneDoes.UI.Pages.OnlineDating.Apps
 @inherits MasterPage
 
-@if(Cache.FirstOrDefault(_ => _.Fragment != null)?.Fragment != null) 
+@if(_recordToDisplay != null) 
 {
-    <SpacePartComponent Contents="@((Cache.FirstOrDefault(_ => _.Fragment != null)!.Fragment!.Content).ToList())"></SpacePartComponent>
+    <SpacePartComponent Contents="@(_recordToDisplay!.Fragment!.Content)" Specification="@_recordToDisplay.Specification"></SpacePartComponent>
 }
 
 <div class="sundo-space-container">

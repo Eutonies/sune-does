@@ -19,4 +19,9 @@
     <Folder Include="Persistence\scripts\" />
     <Folder Include="shrapnel-jen-will\" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Update="Pages\Space\SpacePartCharacterLineComponent.razor">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+    </Content>
+  </ItemGroup>
 </Project>

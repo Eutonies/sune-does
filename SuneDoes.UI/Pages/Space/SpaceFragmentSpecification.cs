@@ -8,7 +8,7 @@ public record SpaceFragmentSpecification(
     string Name,
     string? SubName,
     Func<GitHubRepoFile, bool> FileFilter,
-    Func<BookChapterContent, bool> ContentFilter
+    Func<IReadOnlyCollection<BookChapterContent>, IReadOnlyCollection<BookChapterContent>> ContentFilter
     )
 {
 
@@ -31,7 +31,24 @@ public record SpaceFragmentSpecification(
                SubName: "Emotional Responsibility",
                FileFilter: (file) => file.FileContent.ToLower()
                   .Pipe(cont => cont.Contains("will") && cont.Contains("laura") && cont.Contains("emotion")),
-               ContentFilter: _ => true
+               ContentFilter: input => {
+                   var returnee = new List<BookChapterContent>();
+                   var startTaking = false;
+                   foreach(var cont in input) {
+                       if(cont is BookDialog diag) 
+                       {
+                           if(!startTaking && diag.Entries.Any(_ => _.Line.LineParts.Any(_ => _.PartText.ToLower().Contains("emotional responsibility"))))
+                               startTaking = true;
+                       }
+                       if(startTaking) {
+                           returnee.Add(cont);
+                           if(returnee.Count == 3)
+                               break;
+                       }
+
+                   }
+                   return returnee;
+               }
             )
         
         ];

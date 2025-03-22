@@ -24,8 +24,16 @@ public partial class SpacePage
     protected override async Task OnParametersSetAsync()
     {
         await CheckReadFragments(SpaceParser);
+        if(_recordToDisplay == null)
+        {
+            _recordToDisplay = Cache
+                .FirstOrDefault(_ => _.Fragment != null);
+            if (_recordToDisplay != null)
+                await InvokeAsync(StateHasChanged);
+        }
     }
 
+    private FragmentCacheRecord? _recordToDisplay;
 
     private static async Task CheckReadFragments(ISpaceParser spaceParser)
     {
@@ -42,14 +50,16 @@ public partial class SpacePage
             foreach(var cac in notLoaded)
             {
                 var loaded = await spaceParser.LoadContents(cac.Specification.FileFilter);
-                if (loaded.Count > 0)
-                    cac.Fragment = new SpaceFragment(cac.Specification, loaded);
+                var filtered = cac.Specification.ContentFilter(loaded);
+                if (filtered.Count > 0)
+                    cac.Fragment = new SpaceFragment(cac.Specification, filtered);
             }
         }
         finally
         {
             FragmentReadLock.Release();
         }
+        
     }
 
 

@@ -21,5 +21,7 @@
             <SpacePartNoteComponent Fragment="@(part.Fragment)" Specification="@(part.Specification)" OnPartSelected="OnNoteClicked"></SpacePartNoteComponent>
         }
     </div>
+    <div class="sundo-space-refresh" @onclick="@(() => OnRefreshCache())">
+    </div>
 </div>
 

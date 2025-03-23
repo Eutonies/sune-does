@@ -17,6 +17,7 @@ public partial class SpacePage
     private static readonly IReadOnlyCollection<FragmentCacheRecord> Cache = SpaceFragmentSpecification.Specifications
         .Select(_ => new FragmentCacheRecord(_))
         .ToList();
+    private static DateTime LastCacheUpdate = DateTime.Now;
 
     [Inject]
     public ISpaceParser SpaceParser { get; set; }
@@ -39,7 +40,30 @@ public partial class SpacePage
         _ = InvokeAsync(StateHasChanged);
     }
 
+    private void OnRefreshCache()
+    {
+        if ((DateTime.Now - LastCacheUpdate).TotalSeconds < 5)
+            return;
+        Task.Run(async () =>
+        {
+            await FragmentReadLock.WaitAsync();
+            try
+            {
+                foreach (var record in Cache)
+                    record.Fragment = null;
+                LastCacheUpdate = DateTime.Now;
+            }
+            finally
+            {
+                FragmentReadLock.Release();
+            }
+            await CheckReadFragments(SpaceParser);
+
+        });
+    }
+
     private FragmentCacheRecord? _recordToDisplay;
+
 
     private static async Task CheckReadFragments(ISpaceParser spaceParser)
     {

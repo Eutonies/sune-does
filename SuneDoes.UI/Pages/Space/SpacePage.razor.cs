@@ -24,13 +24,19 @@ public partial class SpacePage
     protected override async Task OnParametersSetAsync()
     {
         await CheckReadFragments(SpaceParser);
-        if(_recordToDisplay == null)
-        {
-            _recordToDisplay = Cache
-                .FirstOrDefault(_ => _.Fragment != null);
-            if (_recordToDisplay != null)
-                await InvokeAsync(StateHasChanged);
-        }
+    }
+
+    private void OnNoteClicked(SpaceFragmentSpecification spec, SpaceFragment frag)
+    {
+        _recordToDisplay = Cache
+            .FirstOrDefault(_ => _.Specification.FragmentId == spec.FragmentId);
+        _ = InvokeAsync(StateHasChanged);
+    }
+
+    private void OnCloseClicked()
+    {
+        _recordToDisplay = null;
+        _ = InvokeAsync(StateHasChanged);
     }
 
     private FragmentCacheRecord? _recordToDisplay;

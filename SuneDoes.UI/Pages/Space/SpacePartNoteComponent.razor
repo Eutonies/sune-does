@@ -1,0 +1,10 @@
+﻿@using Booktex.Domain.Book.Model
+<div class="sundo-space-part-note" @onclick="@(() => OnClicked())">
+    <div class="sundo-space-part-note-name">@(Specification.Name)</div>
+
+    @if(Specification.SubName != null) {
+        <div class="sundo-space-part-note-sub-name">@(Specification.SubName)</div>
+    }
+
+
+</div>

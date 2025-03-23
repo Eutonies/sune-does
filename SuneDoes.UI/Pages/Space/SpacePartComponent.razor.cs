@@ -12,6 +12,9 @@ public partial class SpacePartComponent
     [Parameter]
     public SpaceFragmentSpecification Specification { get; set; }
 
+    [Parameter]
+    public Action Close { get; set; }
+
     private const int CharsPerLine = 100;
     private const int PageBreakMinLimit = 70;
     private const int PageBreakMaxLimit = 90;
@@ -32,16 +35,12 @@ public partial class SpacePartComponent
           "page-focus" :
           "page-not-focus";
 
-    private int ZIndexFor(SplitPart part) => part.ZIndex;
-        //part.Index == _selectedIndex ? 1000 : (100 - part.Index);
+    private int ZIndexFor(SplitPart part) => //part.ZIndex;
+        part.Index == _selectedIndex ? 1000 : (100 - part.Index);
 
     private void OnPageClicked(int index)
     {
         _selectedIndex = index;
-        foreach(var selPart in _splitParts.Where(_ => _.Index == index))
-        {
-            selPart.ZIndex = _splitParts.Max(_ => _.ZIndex) + 1;
-        }
         _ = InvokeAsync(StateHasChanged);
     }
 

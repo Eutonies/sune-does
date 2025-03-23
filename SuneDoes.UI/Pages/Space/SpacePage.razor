@@ -4,12 +4,22 @@
 
 @if(_recordToDisplay != null) 
 {
-    <SpacePartComponent Contents="@(_recordToDisplay!.Fragment!.Content)" Specification="@_recordToDisplay.Specification"></SpacePartComponent>
+    <SpacePartComponent 
+        Contents="@(_recordToDisplay!.Fragment!.Content)" 
+        Specification="@_recordToDisplay.Specification"
+        Close="OnCloseClicked"
+    ></SpacePartComponent>
 }
 
 <div class="sundo-space-container">
     <div class="sundo-space-blur">
 
+    </div>
+    <div class="sundo-space-notes-container">
+        @foreach(var part in Cache.Where(_ => _.Fragment != null)) 
+        {
+            <SpacePartNoteComponent Fragment="@(part.Fragment)" Specification="@(part.Specification)" OnPartSelected="OnNoteClicked"></SpacePartNoteComponent>
+        }
     </div>
 </div>
 

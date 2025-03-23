@@ -1,15 +1,16 @@
 ﻿@using Booktex.Domain.Book.Model
-<div class="sundo-space-part-container-bg">
-    <div class="sundo-space-part-container">
+<div class="sundo-space-part-container-bg" @onclick="@(() => Close())">
+    <div class="sundo-space-part-container" @onclick:stopPropagation>
         @foreach(var part in _splitParts) 
         {
-            <div 
-                class="sundo-space-part-page" 
-                style="left: @(part.Index * 100)px; z-index: @(ZIndexFor(part)); transform: rotate(@((-1 + part.Index))deg);"
+            <div class="sundo-space-part-page @(FocusClassFor(part))"
+                 style="left: @(part.Index * 50)px; z-index: @(ZIndexFor(part));"
                 @onclick="@(() => OnPageClicked(part.Index))"
             >
-            <div class="sundo-space-part-page-top-no">@(part.Index + 1)</div>
-            <div class="sundo-space-part-focus @(FocusClassFor(part))"></div>
+                <div class="sundo-space-part-page-tab" style="left: @(part.Index * 50)px">
+                    <div class="sundo-space-part-page-top-no">@(part.Index + 1)</div>
+            </div>
+            <div class="sundo-space-part-focus"></div>
             <div class="sundo-space-part-content">
                     @if (part.Index == 0)
                     {

@@ -172,6 +172,10 @@ public partial class SpacePartComponent
         BookNarration narr => CountLines(narr.NarrationContent),
         BookChapterSection _ => 10,
         BookContextBreak _ => 5,
+        BookQuote quot => quot.QuoteString
+           .Split('\n')
+           .Select(CountLines)
+           .Sum() + 1,
         _ => 10
     };
 

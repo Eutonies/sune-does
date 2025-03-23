@@ -28,6 +28,14 @@ public record SpaceFragmentSpecification(
     public static readonly IReadOnlyCollection<SpaceFragmentSpecification> Specifications = [
         new SpaceFragmentSpecification(
                Name: "Laura & Will",
+               SubName: "in The Pit",
+               FileFilter: (file) => file.FileContent.ToLower()
+                  .Pipe(cont => cont.Contains("will") && cont.Contains("laura") && cont.Contains("wham")),
+               ContentFilter: input => input
+        ),
+
+        new SpaceFragmentSpecification(
+               Name: "Laura & Will",
                SubName: "Emotional Responsibility",
                FileFilter: (file) => file.FileContent.ToLower()
                   .Pipe(cont => cont.Contains("will") && cont.Contains("laura") && cont.Contains("emotion")),

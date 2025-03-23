@@ -49,6 +49,10 @@
                                 <div class="sundo-space-section-name">@(sect.Title)</div>
                             </div>
                         }
+                        else if(cont is BookQuote quot) 
+                        {
+                            <SpacePartQuoteComponent Quote="quot"></SpacePartQuoteComponent>
+                        }
 
 
                     }

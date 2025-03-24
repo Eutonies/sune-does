@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: sunedoes
-        image: docker.io/library/sunedoes:1.0.33
+        image: docker.io/library/sunedoes:1.0.36
         imagePullPolicy: Never
         ports:
         - containerPort: 8080
@@ -46,7 +46,7 @@ spec:
              valueFrom:
                secretKeyRef:
                  name: sunedoes-secrets
-                 key: githubtoken
+                 key: githubpat
 
 
 

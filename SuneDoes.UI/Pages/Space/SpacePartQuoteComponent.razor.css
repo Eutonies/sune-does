@@ -1,34 +1,80 @@
-﻿.sundo-space-quote {
-    font-family: 'Ink Free';
-    font-style: italic;
-    font-size: 12pt;
-    text-align: left;
-    margin-left: 20%;
-    width: 75%;
+﻿
+@media only screen and (max-width: 990px) {
+    .sundo-space-quote {
+        font-family: 'Ink Free';
+        font-style: italic;
+        font-size: 8pt;
+        text-align: left;
+        margin-left: 15%;
+        width: 75%;
+    }
+
+    .sundo-space-quote-text {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .sundo-space-quote-text-line {
+        margin-top: 8px;
+    }
+
+    .sundo-space-quote-text-line {
+    }
+
+    .sundo-space-quote-footer {
+        border-top: 1px solid rgba(40, 40, 40, 0.5);
+        display: flex;
+        flex-direction: row;
+        justify-content: end;
+        padding-top: 10px;
+    }
+
+    .sundo-space-quote-footer-name {
+        font-weight: 900;
+    }
+
+    .sundo-space-quote-footer-sub-name {
+    }
+
+
 }
 
-.sundo-space-quote-text {
-    display: flex;
-    flex-direction: column;
-}
-.sundo-space-quote-text-line {
-    margin-top: 8px;
-}
+@media only screen and (min-width: 990px) {
+    .sundo-space-quote {
+        font-family: 'Ink Free';
+        font-style: italic;
+        font-size: 12pt;
+        text-align: left;
+        margin-left: 20%;
+        width: 75%;
+    }
 
-.sundo-space-quote-text-line {
-}
+    .sundo-space-quote-text {
+        display: flex;
+        flex-direction: column;
+    }
 
-.sundo-space-quote-footer {
-    border-top: 1px solid rgba(40, 40, 40, 0.5);
-    display: flex;
-    flex-direction: row;
-    justify-content: end;
-    padding-top: 10px;
-    
-}
+    .sundo-space-quote-text-line {
+        margin-top: 8px;
+    }
 
-.sundo-space-quote-footer-name {
-    font-weight: 900;
-}
-.sundo-space-quote-footer-sub-name {
+    .sundo-space-quote-text-line {
+    }
+
+    .sundo-space-quote-footer {
+        border-top: 1px solid rgba(40, 40, 40, 0.5);
+        display: flex;
+        flex-direction: row;
+        justify-content: end;
+        padding-top: 10px;
+    }
+
+    .sundo-space-quote-footer-name {
+        font-weight: 900;
+    }
+
+    .sundo-space-quote-footer-sub-name {
+    }
+
+
 }

@@ -25,6 +25,11 @@ public partial class SpacePage
     protected override async Task OnParametersSetAsync()
     {
         await CheckReadFragments(SpaceParser);
+        if (SessionState != null && SessionState.SelectedPage != SessionSelectedPage.SpaceAndTime)
+        {
+            SessionState.SelectedPage = SessionSelectedPage.SpaceAndTime;
+            await InvokeAsync(StateHasChanged);
+        }
     }
 
     private void OnNoteClicked(SpaceFragmentSpecification spec, SpaceFragment frag)

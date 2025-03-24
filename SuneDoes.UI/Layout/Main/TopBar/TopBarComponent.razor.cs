@@ -7,6 +7,7 @@ using SuneDoes.UI.Pages.Medicine;
 using SuneDoes.UI.Pages.Meditation;
 using SuneDoes.UI.Pages.OnlineDating;
 using SuneDoes.UI.Pages.Shrapnel;
+using SuneDoes.UI.Pages.Space;
 using SuneDoes.UI.Session;
 using System.Reflection;
 
@@ -98,6 +99,15 @@ public partial class TopBarComponent
             {
                 builder.OpenComponent<ShrapnelLogoComponent>(0);
                 builder.AddAttribute(1, nameof(ShrapnelLogoComponent.Height), 100);
+                builder.CloseComponent();
+            };
+        }
+        else if (newPageSelection == SessionSelectedPage.SpaceAndTime)
+        {
+            _additionalLogo = (builder) =>
+            {
+                builder.OpenComponent<SpaceLogoComponent>(0);
+                builder.AddAttribute(1, nameof(SpaceLogoComponent.Height), 100);
                 builder.CloseComponent();
             };
         }

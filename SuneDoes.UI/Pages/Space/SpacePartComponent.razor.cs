@@ -1,11 +1,16 @@
 ﻿using Booktex.Domain.Book.Model;
 using Booktex.Domain.Util;
 using Microsoft.AspNetCore.Components;
+using SuneDoes.UI.Session;
 
 namespace SuneDoes.UI.Pages.Space;
 
 public partial class SpacePartComponent
 {
+    [CascadingParameter]
+    public SessionState SessionState { get; set; }
+    private bool IsSmallScreen => SessionState.IsSmallScreen ?? false;
+
     [Parameter]
     public IReadOnlyCollection<BookChapterContent> Contents { get; set; }
 
@@ -35,7 +40,8 @@ public partial class SpacePartComponent
           "page-focus" :
           "page-not-focus";
 
-    private int ZIndexFor(SplitPart part) => //part.ZIndex;
+    private int ZIndexFor(SplitPart part) => IsSmallScreen ? 
+        10 : 
         part.Index == _selectedIndex ? 1000 : (100 - part.Index);
 
     private void OnPageClicked(int index)

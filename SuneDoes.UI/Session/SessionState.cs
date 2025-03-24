@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Components;
+using SuneDoes.Extensions;
 using SuneDoes.UI.Components;
 using SuneDoes.UI.Pages.Blocks;
 using SuneDoes.UI.Pages.Home;
@@ -47,6 +48,10 @@ public record SessionState(Action OnUpdate, IServiceScopeFactory ScopeFactory)
 
     private bool _sideBarExpanded = false;
     public bool SideBarExpanded { get => _sideBarExpanded; set { _sideBarExpanded = value; OnUpdate(); } }
+
+    public int? ScreenWidth { get; set; }
+
+    public bool? IsSmallScreen => ScreenWidth?.Pipe(wid => wid < 800);
 
 
     private static readonly Dictionary<Type, SessionSelectedPage> TypeToPageMap = new Dictionary<Type, SessionSelectedPage>

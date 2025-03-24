@@ -20,4 +20,22 @@ public partial class MainLayout
         _sessionState = new SessionState(() => InvokeAsync(StateHasChanged), ScopeFactory);
         return base.OnParametersSetAsync();
     }
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        await LoadScreenWidth();
+    }
+
+    private async Task LoadScreenWidth()
+    {
+        if (_sessionState == null)
+            return;
+        try
+        {
+            _sessionState.ScreenWidth = await Js.InvokeAsync<int>("transferScreenWidth");
+            await InvokeAsync(StateHasChanged);
+        }
+        catch { }
+    }
+
 }

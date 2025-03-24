@@ -1,9 +1,9 @@
 ﻿@media only screen and (max-width: 990px) {
     .sundo-space-sing {
-        background-image: url('images/space-and-time/music.webp');
-        background-size: contain;
+        background-image: url('images/space-and-time/music-sm.webp');
+        background-size: 30px;
         background-repeat: no-repeat;
-        background-position-x: 150px;
+        background-position-y: 15px;
         display: flex;
         flex-direction: column;
     }
@@ -15,7 +15,7 @@
 
     .sundo-space-sing-line-name {
         font-weight: 900;
-        margin-right: 60px;
+        margin-right: 20px;
     }
 
     .sundo-space-sing-line-text {

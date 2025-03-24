@@ -6,33 +6,40 @@
         backdrop-filter: blur(20px);
         z-index: 1000;
         cursor: pointer;
+        overflow-x: hidden;
     }
 
 
     .sundo-space-part-container {
-        position: relative;
-        left: 10px;
+        position: fixed;
+        left: calc(calc(100vw - 400px)/2);
         top: 60px;
-        min-width: 250px;
-        max-width: 650px;
-        max-height: 1000px;
+        width: 400px;
+        height: 1000px;
         font-family: 'Special Elite';
-        font-size: 8pt;
+        font-size: 6pt;
         cursor: default;
         overflow-y: scroll;
+        overflow-x: hidden;
         display: flex;
         flex-direction: column;
         justify-content: start;
         align-items: center;
+        border-width: 20px;
+        border-style: solid;
+        border-color: rgb(240,240,240);
+        background-color: rgb(20,20,20);
+        overflow-x: hidden;
     }
 
 
     .sundo-space-part-page {
         width: 350px;
-        height: 510px;
+        height: 1020px;
         background-image: url('images/space-and-time/matrix-paper.webp');
         background-size: cover;
         background-repeat: no-repeat;
+        padding: 30px;
     }
 
     .sundo-space-part-page-tab {
@@ -44,12 +51,12 @@
     }
 
     .sundo-space-part-page-bottom-no {
-        position: relative;
+        position: absolute;
         bottom: 10px;
-        left: 50%;
+        right: 30px;
         z-index: 1;
         font-family: 'Special Elite';
-        font-size: 16pt;
+        font-size: 8pt;
         font-weight: 700;
     }
 
@@ -63,18 +70,19 @@
     .sundo-space-part-header {
         font-family: 'Ink Free';
         font-style: italic;
-        font-size: 30pt;
+        font-size: 20pt;
         font-weight: 800;
         display: flex;
         flex-direction: column;
         justify-content: start;
         align-items: center;
         transform: rotate(-4deg);
+        margin-top: 20px;
         margin-bottom: 20px;
     }
 
     .sundo-space-part-header-name {
-        font-size: 30pt;
+        font-size: 20pt;
         font-weight: 800;
         margin-bottom: 0px;
     }
@@ -88,16 +96,17 @@
 
 
     .sundo-space-narration {
+        padding-left: 25px;
+        padding-right: 30px;
     }
 
     .sundo-space-context-break {
-        display: none;
         position: relative;
-        left: -40px;
-        width: 109%;
-        height: 150px;
-        background-image: url('images/space-and-time/context-break.webp');
-        background-size: 100% 100%;
+        left: -38px;
+        width: 367px;
+        height: 45px;
+        background-image: url('images/space-and-time/context-break-sm.webp');
+        background-size: cover;
         background-repeat: no-repeat;
     }
 

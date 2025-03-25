@@ -33,6 +33,16 @@
 
 @media only screen and (min-width: 990px) {
     .sundo-space-sing {
+        background-image: url('images/space-and-time/music-sm.webp');
+        background-size: 30px;
+        background-repeat: no-repeat;
+        background-position-y: 15px;
+        display: flex;
+        flex-direction: column;
+    }
+
+
+    .sundo-space-singNOT {
         background-image: url('images/space-and-time/music.webp');
         background-size: contain;
         background-repeat: no-repeat;

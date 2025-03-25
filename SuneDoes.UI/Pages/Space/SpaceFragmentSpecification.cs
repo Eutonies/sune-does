@@ -59,8 +59,8 @@ public record SpaceFragmentSpecification(
         ),
 
         new SpaceFragmentSpecification(
-               Name: "Jen arrests Will",
-               SubName: null,
+               Name: "Jen & Will",
+               SubName: "At Odds",
                FileFilter: (file) => file.FileContent.Contains("Moors"),
                ContentFilter: input => input
         )

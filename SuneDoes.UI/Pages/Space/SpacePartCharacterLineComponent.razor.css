@@ -46,6 +46,21 @@
         justify-content: right;
     }
 
+    .right-side .int-phone {
+        transform: scaleX(-1);
+    }
+
+
+    .int-phone {
+        margin-top: -5px;
+        position: absolute;
+        width: 14px;
+        height: 15px;
+        content: '';
+        background-image: url('images/space-and-time/phone-sm.webp');
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
 
 }
 
@@ -97,7 +112,28 @@
         justify-content: right;
     }
 
+    .right-side .int-phone {
+        transform: scaleX(-1);
+    }
 
+
+    .int-phone {
+        margin-top: -8px;
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        content: '';
+        background-image: url('images/space-and-time/phone-sm.webp');
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+
+}
+
+.sundo-space-character-line-part-name {
+}
+
+.left-side .int-phone {
 }
 
 

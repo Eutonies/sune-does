@@ -26,7 +26,7 @@
                     {
                         if (cont is BookCharacterLine lin)
                         {
-                            <SpacePartCharacterLineComponent Line="lin" IsRight="false"></SpacePartCharacterLineComponent>
+                            <SpacePartCharacterLineComponent Line="lin" IsRight="false" InteractionType="@lin.InteractionType"></SpacePartCharacterLineComponent>
                         }
                         else if(cont is BookSinging sing) 
                         {
@@ -36,7 +36,7 @@
                         {
                             foreach (var ent in diag.Entries)
                             {
-                                <SpacePartCharacterLineComponent Line="ent.Line" IsRight="@(ent.LeftSide == null)"></SpacePartCharacterLineComponent>
+                                <SpacePartCharacterLineComponent Line="ent.Line" IsRight="@(ent.LeftSide == null)" InteractionType="diag.InteractionType"></SpacePartCharacterLineComponent>
                             }
 
                         }

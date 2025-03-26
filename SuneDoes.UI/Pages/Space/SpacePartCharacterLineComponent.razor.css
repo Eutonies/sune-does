@@ -29,7 +29,7 @@
     }
 
     .sundo-space-character-line-part-description {
-        margin-top: -7px;
+        margin-top: -3px;
         font-family: 'Ink Free';
         font-style: italic;
         color: rgb(12, 6, 86);
@@ -78,7 +78,7 @@
     }
 
     .left-side > .sundo-space-character-line-part-name {
-        margin-right: 20px;
+        margin-right: 40px;
     }
 
     .right-side > .sundo-space-character-line-part-name {
@@ -120,8 +120,8 @@
     .int-phone {
         margin-top: -8px;
         position: absolute;
-        width: 20px;
-        height: 20px;
+        width: 30px;
+        height: 30px;
         content: '';
         background-image: url('images/space-and-time/phone-sm.webp');
         background-size: contain;

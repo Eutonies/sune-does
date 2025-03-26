@@ -3,14 +3,7 @@
     <div class="sundo-space-part-container" @onclick:stopPropagation>
         @foreach(var part in _splitParts) 
         {
-            <div class="sundo-space-part-page @(FocusClassFor(part))"
-                 style="left: @(part.Index * 50)px; z-index: @(ZIndexFor(part));"
-                @onclick="@(() => OnPageClicked(part.Index))"
-            >
-                <div class="sundo-space-part-page-tab" style="left: @(part.Index * 50)px">
-                    <div class="sundo-space-part-page-top-no">@(part.Index + 1)</div>
-            </div>
-            <div class="sundo-space-part-focus"></div>
+          <div class="sundo-space-part-page @(FocusClassFor(part))">
             <div class="sundo-space-part-content">
                     @if (part.Index == 0)
                     {
@@ -58,14 +51,9 @@
                         {
                             <SpacePartQuoteComponent Quote="quot"></SpacePartQuoteComponent>
                         }
-
-
                     }
-
             </div>
-                <div class="sundo-space-part-page-bottom-no">@(part.Index + 1)</div>
-
-            </div>
+          </div>
         }
     </div>
 </div>

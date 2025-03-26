@@ -119,103 +119,65 @@
         position: absolute;
         width: 100%;
         height: 100%;
-        backdrop-filter: blur(2px);
-        z-index: 100;
+        backdrop-filter: blur(20px);
+        z-index: 1000;
         cursor: pointer;
+        overflow-x: hidden;
     }
 
 
     .sundo-space-part-container {
-        position: relative;
-        left: 2%;
-        top: 60px;
+        position: fixed;
+        left: calc(calc(100vw - 1000px)/2);
+        top: 20px;
+        width: 1000px;
+        height: 1400px;
         font-family: 'Special Elite';
-        font-size: 10pt;
+        font-size: 12pt;
         cursor: default;
+        overflow-y: scroll;
+        overflow-x: hidden;
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        align-items: center;
+        border-width: 20px;
+        border-style: solid;
+        border-color: rgb(240,240,240);
+        background-color: rgb(20,20,20);
+        overflow-x: hidden;
     }
 
 
     .sundo-space-part-page {
-        position: absolute;
-        top: 20px;
-        width: 1000px;
-        height: 1500px;
+        width: 900px;
+        height: 2623px;
+        background-image: url('images/space-and-time/matrix-paper.webp');
         background-size: cover;
         background-repeat: no-repeat;
-        display: flex;
-        flex-direction: column;
-        padding: 40px;
-        background-image: url('images/space-and-time/blank-paper-no-shadow.webp');
-        box-shadow: 3px 3px rgba(50,50,50,0.5);
-    }
-
-    .page-not-focus .sundo-space-part-page-tab {
-        background-image: url('images/space-and-time/paper-tab-dark.webp');
-    }
-
-    .page-focus .sundo-space-part-page-tab {
-        background-image: url('images/space-and-time/paper-tab.webp');
-    }
-
-    .sundo-space-part-page-tab {
-        position: absolute;
-        top: -81px;
-        width: 155px;
-        height: 81px;
-        background-size: contain;
-        background-repeat: no-repeat;
-        cursor: pointer;
-    }
-
-    .sundo-space-part-page-top-no {
-        position: absolute;
-        top: 8px;
-        right: 70px;
-        z-index: 1;
-        font-family: 'Ink Free';
-        font-size: 30pt;
-        font-weight: 900;
-    }
-
-    .sundo-space-part-page-bottom-no {
-        position: absolute;
-        bottom: 10px;
-        left: 50%;
-        z-index: 1;
-        font-family: 'Special Elite';
-        font-size: 16pt;
-        font-weight: 700;
+        padding: 70px;
+        padding-right: 110px;
     }
 
     .sundo-space-part-content {
-        z-index: 2;
-    }
-
-    .page-not-focus .sundo-space-part-focus {
-        position: absolute;
-        top: 0px;
-        left: 0px;
-        bottom: 0px;
-        right: 0px;
-        z-index: 3;
-        backdrop-filter: blur(2px) brightness(0.7);
     }
 
     .sundo-space-part-header {
         font-family: 'Ink Free';
         font-style: italic;
-        font-size: 30pt;
+        font-size: 20pt;
         font-weight: 800;
         display: flex;
         flex-direction: column;
         justify-content: start;
         align-items: center;
         transform: rotate(-4deg);
+        margin-top: 20px;
         margin-bottom: 20px;
     }
 
     .sundo-space-part-header-name {
-        font-size: 50pt;
+        font-size: 40pt;
         font-weight: 800;
         margin-bottom: 0px;
     }
@@ -223,21 +185,23 @@
     .sundo-space-part-header-sub-name {
         margin-top: -20px;
         font-style: italic;
-        font-size: 30pt;
+        font-size: 40pt;
         font-weight: 500;
     }
 
 
     .sundo-space-narration {
+        padding-left: 25px;
+        padding-right: 30px;
     }
 
     .sundo-space-context-break {
-        position: relative;
-        left: -40px;
-        width: 109%;
-        height: 150px;
-        background-image: url('images/space-and-time/context-break.webp');
-        background-size: 100% 100%;
+        left: 1px;
+        width: 945px;
+        margin-left: -90px;
+        aspect-ratio: 367/45;
+        background-image: url('images/space-and-time/context-break-sm.webp');
+        background-size: cover;
         background-repeat: no-repeat;
     }
 

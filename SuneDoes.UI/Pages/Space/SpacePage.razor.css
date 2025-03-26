@@ -54,7 +54,7 @@
         background-image: url('images/space-and-time/time-and-space-background.webp');
         background-size: cover;
         background-repeat: no-repeat;
-        height: 4000px;
+        height: 2000px;
         position: relative;
     }
 
@@ -84,6 +84,7 @@
         flex-wrap: wrap;
         padding: 60px;
         padding-top: 300px;
+        justify-content: start;
     }
 
 

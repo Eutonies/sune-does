@@ -27,6 +27,35 @@ public record SpaceFragmentSpecification(
 
     public static readonly IReadOnlyCollection<SpaceFragmentSpecification> Specifications = [
         new SpaceFragmentSpecification(
+               Name: "Danny & Bjarki",
+               SubName: "A Simpler Time",
+               FileFilter: (file) => file.FileContent.ToLower()
+                  .Pipe(cont => cont.Contains("bjarki") && cont.Contains("danny") && cont.Contains("archipelago")),
+               ContentFilter: input => {
+                   var returnee = new List<BookChapterContent>();
+                   var startTaking = false;
+                   foreach(var cont in input) {
+                       if(cont is BookDialog diag)
+                       {
+                           if(!startTaking && 
+                               diag.Entries.Any(_ => _.Line.Character.CharacterName.ToLower() == "danny") &&
+                               diag.Entries.Any(_ => _.Line.Character.CharacterName.ToLower() == "bjarki") 
+                               )
+                               startTaking = true;
+                       }
+                       if(startTaking) {
+                           returnee.Add(cont);
+                           if(returnee.Count == 5)
+                               break;
+                       }
+
+                   }
+                   return returnee;
+               }
+            ),
+
+
+        new SpaceFragmentSpecification(
                Name: "Laura & Will",
                SubName: "Emotional Responsibility",
                FileFilter: (file) => file.FileContent.ToLower()

@@ -5,8 +5,8 @@
         font-style: italic;
         font-size: 8pt;
         text-align: left;
-        margin-left: 15%;
-        width: 75%;
+        padding-left: 10%;
+        width: 95%;
     }
 
     .sundo-space-quote-text {
@@ -45,8 +45,8 @@
         font-style: italic;
         font-size: 12pt;
         text-align: left;
-        margin-left: 20%;
-        width: 75%;
+        padding-left: 10%;
+        width: 95%;
     }
 
     .sundo-space-quote-text {
@@ -77,4 +77,12 @@
     }
 
 
+
+}
+
+.quot-cold-war {
+    background-image: url('images/space-and-time/cold-war-bg.webp');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position-x: 45%;
 }

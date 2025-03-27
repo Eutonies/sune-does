@@ -72,5 +72,12 @@
         font-style: italic;
     }
 
+
+    .quot-cold-war {
+        background-image: url('images/space-and-time/cold-war-bg.webp');
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+
 }
 

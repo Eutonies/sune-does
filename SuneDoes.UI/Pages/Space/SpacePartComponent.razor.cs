@@ -40,16 +40,6 @@ public partial class SpacePartComponent
           "page-focus" :
           "page-not-focus";
 
-    private int ZIndexFor(SplitPart part) => IsSmallScreen ? 
-        10 : 
-        part.Index == _selectedIndex ? 1000 : (100 - part.Index);
-
-    private void OnPageClicked(int index)
-    {
-        _selectedIndex = index;
-        _ = InvokeAsync(StateHasChanged);
-    }
-
     protected override void OnParametersSet()
     {
         SplitParts();
@@ -285,8 +275,6 @@ public partial class SpacePartComponent
         }
         return returnee.ToArray();
     }
-
-
 
 
 

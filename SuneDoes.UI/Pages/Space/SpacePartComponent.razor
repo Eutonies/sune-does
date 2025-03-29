@@ -1,20 +1,17 @@
 ﻿@using Booktex.Domain.Book.Model
 <div class="sundo-space-part-container-bg" @onclick="@(() => Close())">
     <div class="sundo-space-part-container" @onclick:stopPropagation>
+        <div class="sundo-space-part-page">
+            <div class="sundo-space-part-header">
+                <div class="sundo-space-part-header-name">@PartName</div>
+                @if (Specification.SubName != null)
+                {
+                    <div class="sundo-space-part-header-sub-name">@PartSubName</div>
+                }
+            </div>
+
         @foreach(var part in _splitParts) 
         {
-          <div class="sundo-space-part-page @(FocusClassFor(part))">
-            <div class="sundo-space-part-content">
-                    @if (part.Index == 0)
-                    {
-                        <div class="sundo-space-part-header">
-                            <div class="sundo-space-part-header-name">@PartName</div>
-                            @if (Specification.SubName != null)
-                            {
-                                <div class="sundo-space-part-header-sub-name">@PartSubName</div>
-                            }
-                        </div>
-                    }
                     @foreach (var cont in part.Contents)
                     {
                         if (cont is BookCharacterLine lin)
@@ -54,8 +51,8 @@
                             <SpacePartQuoteComponent Quote="quot"></SpacePartQuoteComponent>
                         }
                     }
-            </div>
-          </div>
         }
+        </div>
+
     </div>
 </div>

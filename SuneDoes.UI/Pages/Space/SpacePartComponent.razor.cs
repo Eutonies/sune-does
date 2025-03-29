@@ -35,10 +35,6 @@ public partial class SpacePartComponent
     private IReadOnlyCollection<SplitPart> _splitParts = [];
     private int _selectedIndex = 0;
 
-    private string FocusClassFor(SplitPart part) =>
-        part.Index == _selectedIndex ?
-          "page-focus" :
-          "page-not-focus";
 
     protected override void OnParametersSet()
     {

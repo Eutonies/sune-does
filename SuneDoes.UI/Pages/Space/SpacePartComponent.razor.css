@@ -181,7 +181,10 @@
     .sundo-space-narration {
         padding-left: 25px;
         padding-right: 30px;
+        margin-top: 4px;
+        margin-bottom: 4px;
     }
+
 
     .sundo-space-context-break {
         left: 1px;
@@ -194,4 +197,8 @@
     }
 
 
+}
+
+.sundo-space-narration {
+    text-indent: 8px;
 }

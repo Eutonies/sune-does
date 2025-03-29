@@ -35,7 +35,9 @@
                         }
                         else if (cont is BookNarration narr)
                         {
-                            <div class="sundo-space-narration">@narr.NarrationContent</div>
+                            foreach(var narrLin in SplitForRendering(narr)) {
+                                <div class="sundo-space-narration">@narrLin</div>
+                            }
                         }
                         else if (cont is BookContextBreak)
                         {

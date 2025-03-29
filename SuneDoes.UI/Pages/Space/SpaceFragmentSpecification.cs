@@ -88,6 +88,33 @@ public record SpaceFragmentSpecification(
         ),
 
         new SpaceFragmentSpecification(
+               Name: "Laura",
+               SubName: "A Rite of Passage",
+               FileFilter: (file) => file.FileContent.ToLower()
+                  .Pipe(cont => cont.Contains("laura") && cont.Contains("oft-visited recreational")),
+               ContentFilter: input => {
+                   var returnee = new List<BookChapterContent>();
+                   var startTaking = false;
+                   foreach(var cont in input) {
+                       if(cont is BookQuote quot && (quot.Name?.ToLower()?.Contains("cold war") ?? false))
+                           returnee.Add(cont);
+                       else if(cont is BookNarration narr && narr.NarrationContent.ToLower().Contains("oft-visited recreational")) {
+                           startTaking = true;
+                           returnee.Add(cont);
+                       }
+                       else if(startTaking && cont is BookContextBreak)
+                           returnee.Add(cont);
+                       else if(startTaking)
+                           break;
+
+
+                   }
+                   return returnee;
+               }
+            ),
+
+
+        new SpaceFragmentSpecification(
                Name: "Jen & Will",
                SubName: "At Odds",
                FileFilter: (file) => file.FileContent.Contains("Moors"),

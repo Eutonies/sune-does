@@ -67,6 +67,7 @@
         flex-direction: row;
         justify-content: end;
         padding-top: 10px;
+        margin-bottom: 10px;
     }
 
     .sundo-space-quote-footer-name {

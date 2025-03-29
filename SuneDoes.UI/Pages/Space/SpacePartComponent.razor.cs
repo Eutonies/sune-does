@@ -155,7 +155,11 @@ public partial class SpacePartComponent
 
     }
 
-
+    private string[] SplitForRendering(BookNarration narr) => narr.NarrationContent
+        .Split('\n')
+        .Select(_ => _.Replace("\r", ""))
+        .ToArray();
+        
 
     private int CountLines(BookChapterContent cont) => cont switch
     {

@@ -1,61 +1,55 @@
 ﻿@using Booktex.Domain.Book.Model
 <div class="sundo-space-part-container-bg" @onclick="@(() => Close())">
     <div class="sundo-space-part-container" @onclick:stopPropagation>
-        @foreach(var part in _splitParts) 
-        {
-          <div class="sundo-space-part-page @(FocusClassFor(part))">
-            <div class="sundo-space-part-content">
-                    @if (part.Index == 0)
-                    {
-                        <div class="sundo-space-part-header">
-                            <div class="sundo-space-part-header-name">@PartName</div>
-                            @if (Specification.SubName != null)
-                            {
-                                <div class="sundo-space-part-header-sub-name">@PartSubName</div>
-                            }
-                        </div>
-                    }
-                    @foreach (var cont in part.Contents)
-                    {
-                        if (cont is BookCharacterLine lin)
-                        {
-                            <SpacePartCharacterLineComponent Line="lin" IsRight="false" InteractionType="@lin.InteractionType"></SpacePartCharacterLineComponent>
-                        }
-                        else if(cont is BookSinging sing) 
-                        {
-                            <SpacePartSingingComponent Singing="sing"></SpacePartSingingComponent>
-                        }
-                        else if (cont is BookDialog diag)
-                        {
-                            foreach (var ent in diag.Entries)
-                            {
-                                <SpacePartCharacterLineComponent Line="ent.Line" IsRight="@(ent.LeftSide == null)" InteractionType="diag.InteractionType"></SpacePartCharacterLineComponent>
-                            }
-
-                        }
-                        else if (cont is BookNarration narr)
-                        {
-                            foreach(var narrLin in SplitForRendering(narr)) {
-                                <div class="sundo-space-narration">@narrLin</div>
-                            }
-                        }
-                        else if (cont is BookContextBreak)
-                        {
-                            <div class="sundo-space-context-break"></div>
-                        }
-                        else if (cont is BookChapterSection sect)
-                        {
-                            <div class="sundo-space-section">
-                                <div class="sundo-space-section-name">@(sect.Title)</div>
-                            </div>
-                        }
-                        else if(cont is BookQuote quot) 
-                        {
-                            <SpacePartQuoteComponent Quote="quot"></SpacePartQuoteComponent>
-                        }
-                    }
+        <div class="sundo-space-part-page">
+            <div class="sundo-space-part-header">
+                <div class="sundo-space-part-header-name">@PartName</div>
+                @if (Specification.SubName != null)
+                {
+                    <div class="sundo-space-part-header-sub-name">@PartSubName</div>
+                }
             </div>
-          </div>
+
+        @foreach(var cont in Contents) 
+        {
+            if (cont is BookCharacterLine lin)
+            {
+                <SpacePartCharacterLineComponent Line="lin" IsRight="false" InteractionType="@lin.InteractionType"></SpacePartCharacterLineComponent>
+            }
+            else if(cont is BookSinging sing) 
+            {
+                <SpacePartSingingComponent Singing="sing"></SpacePartSingingComponent>
+            }
+            else if (cont is BookDialog diag)
+            {
+                foreach (var ent in diag.Entries)
+                {
+                    <SpacePartCharacterLineComponent Line="ent.Line" IsRight="@(ent.LeftSide == null)" InteractionType="diag.InteractionType"></SpacePartCharacterLineComponent>
+                }
+
+            }
+            else if (cont is BookNarration narr)
+            {
+                foreach(var narrLin in SplitForRendering(narr)) {
+                    <div class="sundo-space-narration">@narrLin</div>
+                }
+            }
+            else if (cont is BookContextBreak)
+            {
+                <div class="sundo-space-context-break"></div>
+            }
+            else if (cont is BookChapterSection sect)
+            {
+                <div class="sundo-space-section">
+                    <div class="sundo-space-section-name">@(sect.Title)</div>
+                </div>
+            }
+            else if(cont is BookQuote quot) 
+            {
+                <SpacePartQuoteComponent Quote="quot"></SpacePartQuoteComponent>
+            }
         }
+        </div>
+
     </div>
 </div>

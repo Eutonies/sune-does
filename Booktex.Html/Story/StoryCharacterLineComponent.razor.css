@@ -1,34 +1,34 @@
 ﻿@media only screen and (max-width: 990px) {
-    .sundo-space-character-line {
+    .story-character-line {
     }
 
-    .sundo-space-character-line-part {
+    .story-character-line-part {
         display: flex;
         flex-direction: row;
     }
 
-    .sundo-space-character-line-part-name {
+    .story-character-line-part-name {
         font-weight: 900;
     }
 
-    .left-side > .sundo-space-character-line-part-name {
+    .left-side > .story-character-line-part-name {
         margin-right: 10px;
     }
 
-    .right-side > .sundo-space-character-line-part-name {
+    .right-side > .story-character-line-part-name {
         margin-left: 10px;
     }
 
-    .sundo-space-character-line-part-text-container {
+    .story-character-line-part-text-container {
         display: flex;
         flex-direction: column;
     }
 
-    .sundo-space-character-line-part-text {
+    .story-character-line-part-text {
         margin-bottom: 0px;
     }
 
-    .sundo-space-character-line-part-description {
+    .story-character-line-part-description {
         margin-top: -3px;
         font-family: 'Ink Free';
         font-style: italic;
@@ -65,36 +65,36 @@
 }
 
 @media only screen and (min-width: 990px) {
-    .sundo-space-character-line {
+    .story-character-line {
     }
 
-    .sundo-space-character-line-part {
+    .story-character-line-part {
         display: flex;
         flex-direction: row;
     }
 
-    .sundo-space-character-line-part-name {
+    .story-character-line-part-name {
         font-weight: 900;
     }
 
-    .left-side > .sundo-space-character-line-part-name {
+    .left-side > .story-character-line-part-name {
         margin-right: 40px;
     }
 
-    .right-side > .sundo-space-character-line-part-name {
+    .right-side > .story-character-line-part-name {
         margin-left: 20px;
     }
 
-    .sundo-space-character-line-part-text-container {
+    .story-character-line-part-text-container {
         display: flex;
         flex-direction: column;
     }
 
-    .sundo-space-character-line-part-text {
+    .story-character-line-part-text {
         margin-bottom: 0px;
     }
 
-    .sundo-space-character-line-part-description {
+    .story-character-line-part-description {
         margin-top: -7px;
         font-family: 'Ink Free';
         font-style: italic;
@@ -130,7 +130,7 @@
 
 }
 
-.sundo-space-character-line-part-name {
+.story-character-line-part-name {
 }
 
 .left-side .int-phone {

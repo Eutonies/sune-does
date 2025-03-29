@@ -2,9 +2,9 @@
 using Booktex.Domain.Util;
 using Microsoft.AspNetCore.Components;
 
-namespace SuneDoes.UI.Pages.Space;
+namespace Booktex.Html.Story;
 
-public partial class SpacePartSingingComponent
+public partial class StorySingingComponent
 {
     [Parameter]
     public BookSinging Singing { get; set; }

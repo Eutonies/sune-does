@@ -1,14 +1,18 @@
 ﻿@page "/space-and-time"
+@using Booktex.Html.Story
 @using SuneDoes.UI.Pages.OnlineDating.Apps
 @inherits MasterPage
 
 @if(_recordToDisplay != null) 
 {
-    <SpacePartComponent 
-        Contents="@(_recordToDisplay!.Fragment!.Content)" 
-        Specification="@_recordToDisplay.Specification"
-        Close="OnCloseClicked"
-    ></SpacePartComponent>
+    <div class="sundo-space-story-bg" @onclick="(() => OnCloseClicked())">
+        <div class="sundo-space-story-container" @onclick:stopPropagation>
+            <StoryComponent Contents="@(_recordToDisplay!.Fragment!.Content)"
+                            ChapterName="@(_recordToDisplay!.Specification.Name)"
+                            ChapterSubName="@(_recordToDisplay!.Specification.SubName)"></StoryComponent>
+        </div>
+
+    </div>
 }
 
 <div class="sundo-space-container">

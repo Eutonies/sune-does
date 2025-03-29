@@ -1,6 +1,6 @@
 ﻿
 @media only screen and (max-width: 990px) {
-    .sundo-space-quote {
+    .story-quote {
         font-family: 'Ink Free';
         font-style: italic;
         font-size: 8pt;
@@ -9,19 +9,19 @@
         width: 95%;
     }
 
-    .sundo-space-quote-text {
+    .story-quote-text {
         display: flex;
         flex-direction: column;
     }
 
-    .sundo-space-quote-text-line {
+    .story-quote-text-line {
         margin-top: 8px;
     }
 
-    .sundo-space-quote-text-line {
+    .story-quote-text-line {
     }
 
-    .sundo-space-quote-footer {
+    .story-quote-footer {
         border-top: 1px solid rgba(40, 40, 40, 0.5);
         display: flex;
         flex-direction: row;
@@ -29,18 +29,18 @@
         padding-top: 10px;
     }
 
-    .sundo-space-quote-footer-name {
+    .story-quote-footer-name {
         font-weight: 900;
     }
 
-    .sundo-space-quote-footer-sub-name {
+    .story-quote-footer-sub-name {
     }
 
 
 }
 
 @media only screen and (min-width: 990px) {
-    .sundo-space-quote {
+    .story-quote {
         font-family: 'Ink Free';
         font-style: italic;
         font-size: 12pt;
@@ -49,19 +49,19 @@
         width: 95%;
     }
 
-    .sundo-space-quote-text {
+    .story-quote-text {
         display: flex;
         flex-direction: column;
     }
 
-    .sundo-space-quote-text-line {
+    .story-quote-text-line {
         margin-top: 8px;
     }
 
-    .sundo-space-quote-text-line {
+    .story-quote-text-line {
     }
 
-    .sundo-space-quote-footer {
+    .story-quote-footer {
         border-top: 1px solid rgba(40, 40, 40, 0.5);
         display: flex;
         flex-direction: row;
@@ -70,20 +70,10 @@
         margin-bottom: 10px;
     }
 
-    .sundo-space-quote-footer-name {
+    .story-quote-footer-name {
         font-weight: 900;
     }
 
-    .sundo-space-quote-footer-sub-name {
+    .story-quote-footer-sub-name {
     }
-
-
-
-}
-
-.quot-cold-war {
-    background-image: url('images/space-and-time/cold-war-bg.webp');
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position-x: 45%;
 }

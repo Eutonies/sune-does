@@ -1,22 +1,12 @@
-﻿.sundo-space-part-container-bg {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    backdrop-filter: blur(20px);
-    z-index: 1000;
-    cursor: pointer;
-    overflow-x: hidden;
-}
-
-.sundo-space-part-page {
-    background-image: url('images/space-and-time/matrix-paper.webp');
+﻿.story-page {
+    background-image: url('images/story/matrix-paper.webp');
     background-size: 100%;
     background-repeat: repeat-y;
 }
 
-.sundo-space-part-container {
+.story-container {
     position: fixed;
-    font-family: 'SpecialElite';
+    font-family: 'StoryElite';
     cursor: default;
     overflow-y: scroll;
     overflow-x: hidden;
@@ -26,8 +16,8 @@
     align-items: center;
 }
 
-.sundo-space-part-header {
-    font-family: 'Ink Free';
+.story-header {
+    font-family: 'StoryInkFree';
     font-style: italic;
     display: flex;
     flex-direction: column;
@@ -36,14 +26,12 @@
 }
 
 
-
 @media only screen and (max-width: 990px) {
-    .sundo-space-part-container {
+    .story-container {
         left: calc(calc(100vw - 400px)/2);
         top: 60px;
         width: 400px;
-        height: 90%;
-        font-family: 'SpecialElite';
+        height: 95%;
         font-size: 6pt;
         border-width: 20px;
         border-style: solid;
@@ -52,12 +40,12 @@
     }
 
 
-    .sundo-space-part-page {
+    .story-page {
         width: 350px;
         padding: 30px;
     }
 
-    .sundo-space-part-header {
+    .story-header {
         font-size: 20pt;
         font-weight: 800;
         transform: rotate(-4deg);
@@ -65,46 +53,27 @@
         margin-bottom: 20px;
     }
 
-    .sundo-space-part-header-name {
+    .story-header-name {
         font-size: 20pt;
         font-weight: 800;
         margin-bottom: 0px;
     }
 
-    .sundo-space-part-header-sub-name {
+    .story-header-sub-name {
         margin-top: -20px;
         font-style: italic;
         font-size: 20pt;
         font-weight: 500;
     }
-
-
-    .sundo-space-narration {
-        padding-left: 25px;
-        padding-right: 30px;
-    }
-
-    .sundo-space-context-break {
-        position: relative;
-        left: -38px;
-        width: 367px;
-        height: 45px;
-        background-image: url('images/space-and-time/context-break-sm.webp');
-        background-size: cover;
-        background-repeat: no-repeat;
-    }
-
-
-
 }
 
 @media only screen and (min-width: 990px) {
 
-    .sundo-space-part-container {
+    .story-container {
         left: calc(calc(100vw - 1000px)/2);
         top: 20px;
         width: 1000px;
-        height: 1400px;
+        height: 95%;
         font-size: 12pt;
         border-width: 20px;
         border-style: solid;
@@ -113,13 +82,13 @@
     }
 
 
-    .sundo-space-part-page {
+    .story-page {
         width: 900px;
         padding: 70px;
         padding-right: 110px;
     }
 
-    .sundo-space-part-header {
+    .story-header {
         font-size: 20pt;
         font-weight: 800;
         transform: rotate(-4deg);
@@ -127,41 +96,18 @@
         margin-bottom: 20px;
     }
 
-    .sundo-space-part-header-name {
+    .story-header-name {
         font-size: 40pt;
         font-weight: 800;
         margin-bottom: 0px;
     }
 
-    .sundo-space-part-header-sub-name {
+    .story-header-sub-name {
         margin-top: -20px;
         font-style: italic;
         font-size: 40pt;
         font-weight: 500;
     }
 
-
-    .sundo-space-narration {
-        padding-left: 25px;
-        padding-right: 30px;
-        margin-top: 4px;
-        margin-bottom: 4px;
-    }
-
-
-    .sundo-space-context-break {
-        left: 1px;
-        width: 945px;
-        margin-left: -90px;
-        aspect-ratio: 367/45;
-        background-image: url('images/space-and-time/context-break-sm.webp');
-        background-size: cover;
-        background-repeat: no-repeat;
-    }
-
-
 }
 
-.sundo-space-narration {
-    text-indent: 8px;
-}

@@ -12,6 +12,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "k8s", "k8s", "{3B9B0639-23A
 		.k8s\sunedoes.service.yaml = .k8s\sunedoes.service.yaml
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Booktex.Html", "Booktex.Html\Booktex.Html.csproj", "{1E80FFF0-DA7D-4E95-92AE-C981C2464BFE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -22,6 +24,10 @@ Global
 		{5D4FCE8E-1B66-4B6E-9871-70CA02BAB27C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5D4FCE8E-1B66-4B6E-9871-70CA02BAB27C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5D4FCE8E-1B66-4B6E-9871-70CA02BAB27C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1E80FFF0-DA7D-4E95-92AE-C981C2464BFE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1E80FFF0-DA7D-4E95-92AE-C981C2464BFE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1E80FFF0-DA7D-4E95-92AE-C981C2464BFE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1E80FFF0-DA7D-4E95-92AE-C981C2464BFE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

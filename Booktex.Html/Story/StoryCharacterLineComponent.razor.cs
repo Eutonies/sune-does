@@ -2,9 +2,9 @@
 using Booktex.Domain.Util;
 using Microsoft.AspNetCore.Components;
 
-namespace SuneDoes.UI.Pages.Space;
+namespace Booktex.Html.Story;
 
-public partial class SpacePartCharacterLineComponent
+public partial class StoryCharacterLineComponent
 {
     [Parameter]
     public BookCharacterLine Line { get; set; }

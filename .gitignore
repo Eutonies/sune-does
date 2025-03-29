@@ -406,3 +406,4 @@ buildcommands.sh
 .k8s/sunedoes.certificates.yaml
 SuneDoes.UI/nuget.config
 /SuneDoes.UI/designs/blocks/blocks-background.xcf
+/Booktex.Html/nuget.config

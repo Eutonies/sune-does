@@ -9,7 +9,9 @@
         <div class="sundo-space-story-container" @onclick:stopPropagation>
             <StoryComponent Contents="@(_recordToDisplay!.Fragment!.Content)"
                             ChapterName="@(_recordToDisplay!.Specification.Name)"
-                            ChapterSubName="@(_recordToDisplay!.Specification.SubName)"></StoryComponent>
+                            ChapterSubName="@(_recordToDisplay!.Specification.SubName)"
+                            BackgroundDeriver="BackgroundFor"
+            ></StoryComponent>
         </div>
 
     </div>

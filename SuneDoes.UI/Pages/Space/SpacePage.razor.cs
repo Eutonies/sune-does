@@ -1,4 +1,6 @@
 ﻿
+using Booktex.Domain.Book.Model;
+using Booktex.Html.Common.Style;
 using Malarkey.Abstractions.Util;
 using Microsoft.AspNetCore.Components;
 using Microsoft.Extensions.Options;
@@ -94,9 +96,14 @@ public partial class SpacePage
         {
             FragmentReadLock.Release();
         }
-        
     }
 
+    private BooktexBackgroundImageSpecification? BackgroundFor(BookQuote quote) => (quote
+        .Name ?? "").ToLower().Contains("cold war") ? new BooktexBackgroundImageSpecification(
+            BackgroundImage: "url('images/space-and-time/cold-war-bg.webp')",
+            BackgroundSize: "contain",
+            BackgroundRepeat: "no-repeat"
+            ) : null;
 
 
     private record FragmentCacheRecord(

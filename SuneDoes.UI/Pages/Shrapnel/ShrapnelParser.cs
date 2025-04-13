@@ -1,7 +1,10 @@
-﻿using Microsoft.Extensions.FileSystemGlobbing;
+﻿using Booktex.Domain.Book.Model;
+using Booktex.Domain.Parsing;
+using Microsoft.Extensions.FileSystemGlobbing;
 using SuneDoes.Extensions;
 using SuneDoes.UI.Integration.Github;
 using SuneDoes.UI.Pages.Shrapnel.Model;
+using System.Text;
 using System.Text.RegularExpressions;
 
 namespace SuneDoes.UI.Pages.Shrapnel;
@@ -23,15 +26,30 @@ public static class ShrapnelParser
     public static async Task<IReadOnlyCollection<ShrapnelChapter>> ParseGitHub(IGitHubRepoBrowser browser)
     {
         var repoFiles = await browser.DownloadFilesWithEnding(repoName: "jen-and-will", ".shrapnel");
-        var chapters = repoFiles
-            .OrderBy(_ => _.FileName)
-            .Select(fil => ParseFileName(fil.FileName).Pipe(
-                pa => new ShrapnelChapter(
-                        Name: pa.ChapterName,
-                        Order: pa.ChapterOrder,
-                        Paragraphs: Parse(fil.FileContent)
-                )
-            ))
+        var chapters = new List<ShrapnelChapter>();
+        foreach(var file in repoFiles.OrderBy(_ => _.FileName))
+        {
+            Console.WriteLine($"Doing: {file.FileName}");
+            var chapterContents = WritingParser.ParseFileContents(FixNewLines(file.FileContent));
+            var (chapterName, chapterIndex) = ParseFileName(file.FileName);
+            var chapter = new ShrapnelChapter(
+                Name: chapterName,
+                Order: chapterIndex,
+                Paragraphs: chapterContents
+                   .OfType<BookDialog>()
+                   .Select(diag =>
+                      new ShrapnelParagraph(
+                          Lines: diag.Entries
+                             .SelectMany(ent => ent.Line.LineParts.Select(_ => (Entry: ent, LinePart: _)))
+                             .Select(comb => new ShrapnelLine(SaidBy: comb.Entry.Line.Character.CharacterName, Line: comb.LinePart.PartText, Description: comb.LinePart.Description))
+                             .ToReadonlyCollection()
+                       )
+                   ).ToReadonlyCollection()
+                );
+            chapters.Add(chapter);
+
+        }
+        chapters = chapters
             .Select(_ => _ with
             {
                 Name = _.Order - 1 < ChapterNames.Length ? ChapterNames[_.Order - 1] : _.Name
@@ -39,6 +57,26 @@ public static class ShrapnelParser
             .OrderBy(_ => _.Order)
             .ToList();
         return chapters;
+    }
+
+    private static string FixNewLines(string str)
+    {
+        var returnee = new StringBuilder();
+        var split = str.Split("\n");
+        foreach (var part in split)
+        {
+            if (returnee.Length > 0)
+            {
+                if (returnee[returnee.Length - 1] != '\r')
+                    returnee.Append('\r');
+                returnee.Append('\n');
+            }
+            foreach (var ch in part)
+            {
+                returnee.Append(ch);
+            }
+        }
+        return returnee.ToString();
     }
 
 

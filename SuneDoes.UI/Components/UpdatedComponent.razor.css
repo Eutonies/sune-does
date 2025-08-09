@@ -1,0 +1,42 @@
+﻿.sundo-updated-container {
+    position: absolute;
+    z-index: 10;
+    background-size: 80% 80%;
+    background-image: url('images/main/fire-ball.webp');
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'ShadowsIntoLight';
+    font-weight: 900;
+    color: rgb(40, 5, 5);
+}
+.sundo-updated-text {
+    width: 120%;
+    text-align: center;
+}
+
+
+@media only screen and (max-width: 990px) {
+    .sundo-updated-container {
+        top: -10px;
+        left: 360px;
+        width: 80px;
+        height: 120px;
+        padding-top: 35px;
+        padding-left: 0px;
+        font-size: 10pt;
+    }
+}
+
+@media only screen and (min-width: 990px) {
+    .sundo-updated-container {
+        top: -10px;
+        left: 670px;
+        width: 120px;
+        height: 140px;
+        padding-top: 35px;
+        padding-left: 0px;
+        font-size: 14pt;
+    }
+}

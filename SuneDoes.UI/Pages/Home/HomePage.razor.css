@@ -24,5 +24,6 @@
     }
 }
 .sundo-home-container-row {
+    position: relative;
     margin-top: 80px;
 }

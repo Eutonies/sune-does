@@ -16,6 +16,7 @@ public partial class OnlineDatingPage
     private static ImageShowComponent.ShowImage HappnImage(string imageName, string name) => Image("happn", imageName, name);
 
     private static ImageShowComponent.ShowImage FeeldImage(string imageName, string name) => Image("feeld", imageName, name);
+    private static ImageShowComponent.ShowImage LinkedInImage(string imageName, string name) => Image("li", imageName, name);
 
 
     protected override Task OnParametersSetAsync()
@@ -69,5 +70,14 @@ public partial class OnlineDatingPage
                 HappnImage("thinking-out-loud-conversation-topics.png", "Conversation topics"),
                 HappnImage("books-i-like.jpg", "Books I like")
             ];
+
+    private static IReadOnlyCollection<ImageShowComponent.ShowImage> LiImages = [
+                LinkedInImage("li1.png", "The Tension Mounts!"),
+                LinkedInImage("li2.png", "LinkedIn Book Club"),
+                LinkedInImage("li3.png", "The Golgafrinchan Trick"),
+                LinkedInImage("li4.png", "Corporate Wheel-O-Fortune"),
+                LinkedInImage("li5.png", "Angela and John Forever")
+            ];
+
 
 }

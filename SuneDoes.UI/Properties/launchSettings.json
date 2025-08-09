@@ -8,7 +8,7 @@
       },
       "dotnetRunMessages": true,
       "applicationUrl": "http://localhost/",
-      "launchUrl": "shrapnel"
+      "launchUrl": "online-dating"
     },
     "https": {
       "commandName": "Project",
